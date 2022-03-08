@@ -1,0 +1,157 @@
+header {
+  position: absolute !important;
+  height: 150px;
+  box-shadow: $box-shadow;
+
+  background: $white;
+
+  .logo {
+    position: absolute;
+    left: 8.96%;
+    right: 67.42%;
+    top: 24%;
+    bottom: 29.33%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .nav {
+    position: absolute;
+    font-family: Open Sans;
+    left: 59%;
+    top: 43%;
+    width: 41%;
+    gap: 10px;
+    font-size: 20px;
+
+    a {
+      margin-left: 3px;
+      border-radius: 50px;
+      color: $black;
+      font-size: 12px;
+      padding: 5px 15px;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:hover {
+        background: $yellow;
+        border-radius: 17px;
+      }
+    }
+  }
+}
+
+#menu-bar {
+  cursor: pointer;
+  font-size: 20px;
+  display: none !important;
+}
+
+@media (max-width: 1200px) {
+  header {
+    width: 100%;
+    height: 160px;
+
+    .nav {
+      position: absolute;
+      left: 53%;
+      top: 37%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    width: 100%;
+    height: 170px;
+
+    .nav {
+      position: absolute;
+      width: 53%;
+      left: 46%;
+      top: 30%;
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 151px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+
+    .logo {
+      position: absolute;
+      left: 30.6%;
+      right: 30.34%;
+      top: 1.19%;
+      bottom: 96.92%;
+    }
+
+    .nav {
+      left: 0;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    height: 62px;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    .logo {
+      position: absolute;
+      left: 30.13%;
+      top: 10.31%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    #menu-bar {
+      display: block !important;
+    }
+
+    .nav {
+      padding-left: 140px;
+      gap: 20px;
+      top: 62px;
+      position: absolute;
+      height: 896px;
+      background: $white;
+      flex-direction: column;
+      display: block;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+      left: -100%;
+
+      a {
+        padding-bottom: 10px;
+        display: block;
+
+        &:hover {
+          width: 150px;
+        }
+      }
+    }
+
+    .show {
+      left: 0%;
+    }
+  }
+}
