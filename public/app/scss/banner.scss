@@ -36,21 +36,22 @@
 .content {
   bottom: 20px;
   width: 50% !important;
-
   font-style: normal;
   font-weight: normal;
   letter-spacing: -0.05em;
 
-  h3 {
+  .banner-title {
     font-family: UTM BryantLG;
     color: $black;
     font-size: 38px;
     line-height: 61px;
+
   }
 
-  h2 {
+  .banner-logo {
     color: rgba(17, 17, 78, 1);
     font-size: 50px;
+    font-weight: 700;
   }
 
   p {
@@ -58,7 +59,6 @@
     line-height: 25px;
     color: #505353;
   }
-;
 
   .btn-banner {
     position: absolute;
@@ -79,11 +79,11 @@
 
 @media (max-width: 992px) {
   .content {
-    h3 {
+    .banner-title {
       font-size: 26px;
     }
 
-    h2 {
+    .banner-logo {
       font-size: 27px;
 
       img {
@@ -108,9 +108,13 @@
     height: 350px;
   }
   .content {
-    h3 {
-      font-size: 25px;
+    .banner-title {
+      font-size: 20px;
       line-height: 27px;
+    }
+
+    .banner-logo {
+      font-size:20px ;
     }
 
     p {
@@ -122,7 +126,7 @@
       position: absolute;
       width: 45%;
       height: 25%;
-      font-size: 15px;
+      font-size: 10px;
     }
   }
 
@@ -147,6 +151,7 @@
 
       .btn-banner {
         width: 55%;
+        font-size: 3.2vw;
       }
     }
   }
