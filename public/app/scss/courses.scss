@@ -175,10 +175,9 @@
     position: absolute;
     height: 1000px;
     width: 100%;
-
-    .view-all {
-      right: 22%;
-    }
+  }
+  .view-all {
+    right: 22%;
 
     .container {
       width: 0%;
@@ -196,100 +195,100 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .courses {
-    position: absolute;
-    height: 950px;
-    width: 100%;
-    top: 76%;
+  @media only screen and (max-width: 768px) {
+    .courses {
+      position: absolute;
+      height: 950px;
+      width: 100%;
+      top: 76%;
 
-    .view-all {
-      width: 60%;
-      right: 10%;
-      font-size: 30px;
+      .view-all {
+        width: 60%;
+        right: 10%;
+        font-size: 30px;
+      }
+
+      .container {
+        .other-text {
+          position: absolute;
+          font-size: 40px;
+          line-height: 68px;
+        }
+      }
     }
 
-    .container {
-      .other-text {
-        position: absolute;
-        font-size: 40px;
-        line-height: 68px;
+    .card {
+      .courses-body {
+        .a-courses {
+          height: 17%;
+        }
       }
     }
   }
 
-  .card {
-    .courses-body {
-      .a-courses {
-        height: 17%;
+  @media (max-width: 576px) {
+    .courses {
+      position: absolute;
+      height: 2000px;
+      top: 67%;
+
+      .view-all {
+        top: 133%;
+        width: 60%;
+        right: 18%;
       }
-    }
-  }
-}
 
-@media (max-width: 576px) {
-  .courses {
-    position: absolute;
-    height: 2000px;
-    top: 67%;
+      .container {
+        .other-text {
+          position: absolute;
+          font-size: 40px;
+          line-height: 68px;
+          top: 64%;
+          left: 30%;
+        }
 
-    .view-all {
-      top: 133%;
-      width: 60%;
-      right: 18%;
+        .hot-courses {
+          display: block;
+          height: 950px;
+        }
 
+        .other-courses {
+          top: 69%;
+        }
+      }
     }
 
     .container {
-      .other-text {
-        position: absolute;
-        font-size: 40px;
-        line-height: 68px;
-        top: 64%;
-        left: 30%;
-      }
-
       .hot-courses {
-        display: block;
-        height: 950px;
+        .col-card {
+          height: 40%;
+          width: 56%;
+          margin: auto auto 10%;
+        }
+      }
+    }
+
+    .card {
+      .card-img {
+        img {
+          position: absolute;
+          height: 62%;
+          width: 62%;
+        }
       }
 
-      .other-courses {
-        top: 69%;
+      .courses-body {
+        .card-title {
+          font-size: 4.1vw;
+        }
+
+        .card-text {
+          font-size: 2.7vw;
+        }
       }
     }
   }
 
-  .container {
-    .hot-courses {
-      .col-card {
-        height: 40%;
-        width: 56%;
-        margin: auto auto 10%;
-      }
-    }
-  }
-
-  .card {
-    .card-img {
-      img {
-        position: absolute;
-        height: 62%;
-        width: 62%;
-      }
-    }
-
-    .courses-body {
-      .card-title {
-        font-size: 4.1vw;
-      }
-
-      .card-text {
-        font-size: 2.7vw;
-      }
-    }
-  }
-}
 
 
 
