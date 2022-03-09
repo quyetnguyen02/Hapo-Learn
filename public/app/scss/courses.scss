@@ -64,7 +64,7 @@
   height: 100%;
   background: $white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 15px !important;
+  border-radius: 15px;
 
   .card-img {
     position: absolute;
@@ -151,7 +151,6 @@
   }
 }
 
-
 @media (max-width: 1200px) {
   .courses {
     width: 100%;
@@ -185,11 +184,7 @@
       width: 0%;
 
       .hot-courses {
-        left: 1% !important;
-
-        .col-card {
-          height: 88%;
-        }
+        left: 1%;
       }
 
       .other-text {
@@ -215,10 +210,6 @@
     }
 
     .container {
-      .hot-courses {
-        left: 1% !important;
-      }
-
       .other-text {
         position: absolute;
         font-size: 40px;
@@ -258,18 +249,22 @@
         left: 30%;
       }
 
+      .hot-courses {
+        display: block;
+        height: 950px;
+      }
+
       .other-courses {
         top: 69%;
       }
     }
+  }
 
+  .container {
     .hot-courses {
-      display: block;
-      height: 950px !important;
-
       .col-card {
-        height: 40% !important;;
-        width: 56% !important;
+        height: 40%;
+        width: 56%;
         margin: auto auto 10%;
       }
     }
