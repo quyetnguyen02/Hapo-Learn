@@ -1,9 +1,9 @@
-header {
-  position: absolute ;
+.header {
+  position: absolute;
   height: 150px;
   box-shadow: $box-shadow;
   background: $white;
-
+}
   .logo {
     position: absolute;
     left: 8.96%;
@@ -29,7 +29,7 @@ header {
       margin-left: 3px;
       border-radius: 50px;
       color: $black;
-      font-size: 12px;
+      font-size: 14px;
       padding: 5px 15px;
       text-transform: uppercase;
       text-decoration: none;
@@ -40,7 +40,7 @@ header {
       }
     }
   }
-}
+
 
 .menu-bar {
   cursor: pointer;
@@ -102,7 +102,7 @@ header {
 }
 
 @media (max-width: 576px) {
-  header {
+  .header {
     height: 62px;
     position: absolute;
     left: 0;
