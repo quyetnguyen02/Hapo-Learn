@@ -1,295 +1,259 @@
-.courses {
+.list-courses {
+  margin-top: 100px;
+
+  .col-card {
+    display: flex;
+    justify-content: space-around;
+
+    .card {
+      width: 30%;
+      height: 490px;
+      border-radius: 15px;
+    }
+  }
+}
+
+.img-courses {
   position: absolute;
-  height: 1253px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  top: 900px;
+  height: 42.4%;
+  border-radius: 15px 15px 0px 0px;
+  background: rgba(63, 97, 133, 1);
+}
+
+.html-tut {
+  background: $html;
+}
+
+.laravel-tut {
+  background: $laravel;
+}
+
+.php-tut {
+  background: $php;
+
+}
+
+.css-tut {
+  background: $css;
+}
+
+.ruby-tut {
+  background: $ruby;
+}
+
+.java-tut {
+  background: $java;
+
+}
+
+.card-body {
+  .card-title {
+    font-size: 2.1vw;
+    font-family: 'UTM BryantLG';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 37px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: #B2D235;
+  }
+
+  .card-text {
+    margin-top: 40px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: #505353;
+  }
+
+  .btn-courses {
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 23%;
+    background: #B2D235;
+    box-shadow: inset 0px 1.5px 2px #6F8710;
+    border-radius: 22px;
+  }
+}
+
+.other-text {
+  margin-top: 30px;
+  margin-left: 477px;
+  height: 98px;
+  width: 451px;
+  font-size: 76px;
+  line-height: 98px;
+  letter-spacing: -0.02em;
+  color: #11114E;
+  border-bottom: 4px solid
+}
+
+.view-all {
+  margin-top: 50px;
+  margin-left: 35%;
   font-family: UTM BryantLG;
   font-style: normal;
   font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: -0.02em;
 
-  .container {
-    height: 100%;
-
-    .hot-courses {
-      margin-left: -5px;
-      left: 1%;
-      gap: 2%;
-      position: absolute;
-      width: 99%;
-      height: 40.5%;
-      justify-content: center;
-    }
-  }
-
-  .other-text {
-    position: absolute;
-    left: 35%;
-    top: 47%;
-    font-size: 76px;
-    line-height: 98px;
-    letter-spacing: -0.02em;
-    color: $black;
-    border-bottom: 4px solid $green;
-  }
-
-  .other-courses {
-    top: 59%;
-  }
-
-  .view-all {
-    top: 105%;
-    position: absolute;
-    margin-left: 25%;
-    font-family: UTM BryantLG;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 49px;
-    letter-spacing: -0.02em;
-    color:$paleYellow;
-  }
-}
-
-.container {
-  .hot-courses {
-    .col-card {
-      width: 30%;
-      height: 100%;
-    }
-  }
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  background: $white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-
-  .card-img {
-    position: absolute;
-    width: 100%;
-    height: 42.4%;
-    border-radius: 15px 15px 0px 0px;
-
-    img {
-      position: absolute;
-      height: 58%;
-      width: 62%;
-      left: 19%;
-      top: 18%;
-      border-radius: 0px;
-    }
-  }
-
-  .html-tut {
-    background: $html;
-  }
-
-  .laravel-tut {
-    background: $laravel;
-  }
-
-  .php-tut {
-    background: $php;
-
-  }
-
-  .css-tut {
-    background: $css;
-  }
-
-  .ruby-tut {
-    background: $ruby;
-  }
-
-  .java-tut {
-    background: $java;
-
-  }
-
-  .courses-body {
-    position: absolute;
-    height: 57%;
-    width: 100%;
-    top: 43%;
-
-    .card-title {
-      text-align: center;
-      position: relative;
-      width: 80%;
-      height: 12%;
-      left: 10%;
-      top: 4%;
-      font-size: 2.1vw;
-      letter-spacing: -0.05em;
-      color: $green;
-    }
-
-    .card-text {
-      position: absolute;
-      width: 80%;
-      height: 47%;
-      left: 10%;
-      top: 20%;
-      font-size: 1.2vw;
-      text-align: center;
-      letter-spacing: -0.05em;
-      color: $cardText;
-    }
-
-    .a-courses {
-      position: absolute;
-      width: 70%;
-      height: 13%;
-      left: 15%;
-      top: 72%;
-      background: $green;
-      box-shadow: inset 0px 1.5px 2px #6F8710;
-      border-radius: 22px;
-    }
+  a {
+    color: $paleYellow;
   }
 }
 
 @media (max-width: 1200px) {
-  .courses {
-    width: 100%;
-    height: 1000px;
-
-    .container {
-      .hot-courses {
-        gap: 10px;
-        left: 15px;
-      }
-
-      .other-text {
-        line-height: 1;
-        font-size: 60px;
-      }
+  .card-body {
+    .btn-courses {
+      margin-left: 18px;
     }
+  }
+
+  .other-text {
+    margin-left: 338px;
+    width: 396px;
+    font-size: 66px
   }
 }
 
 @media (max-width: 992px) {
-  .courses {
-    position: absolute;
-    height: 1000px;
-    width: 100%;
+  .card-body {
+    .card-title {
+      font-size: 2.7vw;
+    }
   }
+
+  .other-text {
+    margin-left: 260px;
+    width: 306px;
+    font-size: 51px
+  }
+
   .view-all {
-    right: 22%;
+    margin-left: 28%;
+    font-size: 36px;
+  }
+}
 
-    .container {
-      width: 0%;
+@media (max-width: 768px) {
+  .list-courses {
+    .col-card {
+      gap: 20px;
 
-      .hot-courses {
-        left: 1%;
+      .card {
+        height: 350px;
       }
+    }
+  }
 
-      .other-text {
-        position: absolute;
-        font-size: 40px;
-        line-height: 68px;
-      }
+  .other-text {
+    margin-left: 210px;
+
+  }
+
+  .card-body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .card-title {
+      position: absolute;
+      top: 45%;
+      margin-left: 10px;
+      font-size: 2.4vw;
+    }
+
+    .card-text {
+      position: absolute;
+      top: 45%;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .btn-courses {
+      width: 164px;
+      position: absolute;
+      bottom: 4%;
+      left: 0;
+    }
+  }
+
+  .img-courses {
+    height: 45%;
+
+    img {
+      height: 84px;
+      width: 152px;
+      left: 58px;
+      top: 607px;
     }
   }
 }
 
-  @media only screen and (max-width: 768px) {
-    .courses {
-      position: absolute;
-      height: 950px;
-      width: 100%;
-      top: 76%;
+@media (max-width: 576px) {
+  .list-courses {
+    margin-top: 334px;
 
-      .view-all {
-        width: 60%;
-        right: 10%;
-        font-size: 30px;
-      }
+    .col-card {
+      display: block;
 
-      .container {
-        .other-text {
-          position: absolute;
-          font-size: 40px;
-          line-height: 68px;
-        }
-      }
-    }
-
-    .card {
-      .courses-body {
-        .a-courses {
-          height: 17%;
-        }
+      .card {
+        height: 400px;
+        width: 300px;
+        margin-left: 70px;
+        margin-bottom: 45px;
       }
     }
   }
 
-  @media (max-width: 576px) {
-    .courses {
-      position: absolute;
-      height: 2000px;
-      top: 67%;
-
-      .view-all {
-        top: 133%;
-        width: 60%;
-        right: 18%;
-      }
-
-      .container {
-        .other-text {
-          position: absolute;
-          font-size: 40px;
-          line-height: 68px;
-          top: 64%;
-          left: 30%;
-        }
-
-        .hot-courses {
-          display: block;
-          height: 950px;
-        }
-
-        .other-courses {
-          top: 69%;
-        }
-      }
-    }
-
-    .container {
-      .hot-courses {
-        .col-card {
-          height: 40%;
-          width: 56%;
-          margin: auto auto 10%;
-        }
-      }
-    }
-
-    .card {
-      .card-img {
-        img {
-          position: absolute;
-          height: 62%;
-          width: 62%;
-        }
-      }
-
-      .courses-body {
-        .card-title {
-          font-size: 4.1vw;
-        }
-
-        .card-text {
-          font-size: 2.7vw;
-        }
-      }
+  .img-courses {
+    img {
+      height: 97px;
+      width: 194px;
     }
   }
 
+  .card-body {
+    .card-title {
+      position: absolute;
+      top: 48%;
+      margin-left: 10px;
+      font-size: 5.4vw;
+    }
 
+    .card-text {
+      position: absolute;
+      top: 50%;
+      font-size: 16px;
+    }
 
+    .btn-courses {
+      width: 200px;
+      position: absolute;
+      bottom: 4%;
+      left: 10%;
+    }
+  }
 
+  .other-text {
+    margin-left: 95px;
+  }
 
+  .list-courses {
+    margin-top: 100px;
+  }
+
+  .view-all {
+    margin-left: 12%;
+    font-size: 30px;
+  }
+}

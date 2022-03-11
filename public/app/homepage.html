@@ -15,11 +15,12 @@
 <body>
 <!-- header section start-->
 <header class="header fixed-top py-3">
-    <div class="container d-flex align-items-center justify-content-between">
+    <div class="container d-flex align-items-center justify-content-between header-container">
+        <div id="menu-bar" class="fas fa-bars d-md-none menu-bar"></div>
         <a href="#" class="logo"><img
             src="./img/hapo_learn.png"
-            alt="HapoLearn Logo"></a>
-        <div id="menu-bar" class="fas fa-bars d-md-none menu-bar"></div>
+            alt="HapoLearn Logo">
+        </a>
         <nav class="nav" id="nav">
             <a href="#" class="home">home</a>
             <a href="#" class="all-courses">all courses</a>
@@ -28,146 +29,111 @@
         </nav>
     </div>
 </header>
-<!-- header section end-->
+<!--header section end-->
 <!--banner section start-->
-<div class="hp-banner">
-    <section class="banner">
-        <div class="container">
-            <div class="row align-items-center flex-wrap-reverse banner-row">
-                <div class="col-md-6 content">
-                    <p class="banner-title">Learn&nbspAnytime,&nbspAnywhere</p>
-                    <p class="banner-logo">at HapoLearn <img
-                        src="img/icon_owl.png"
-                        alt="icon-owl">!</p>
-                    <p>Interactive lessons, "on-the-go" <br>
-                        practice, peer support.</p>
-                    <a href="#" class="btn btn-success btn-banner">Start Learning Now!</a>
-                </div>
+<section class="banner">
+    <div class="container-fluid container-banner">
+        <div class="row align-items-center flex-wrap-reverse banner-row">
+            <div class="col-md-6 content">
+                <p class="banner-title">Learn&nbspAnytime,&nbspAnywhere</p>
+                <p class="banner-logo">at HapoLearn <img
+                    src="img/icon_owl.png"
+                    alt="icon-owl">!</p>
+                <p>Interactive lessons, "on-the-go" <br>
+                    practice, peer support.</p>
+                <a href="#" class="btn btn-success btn-banner">Start Learning Now!</a>
             </div>
         </div>
-    </section>
-    <div class="gradient"></div>
-</div>
-banner section end
-courses section start
-<div class="courses">
-    <div class="container">
-        <div class="row hot-courses">
-            <div class="row-col-sm-4 col-card">
-                <div class="card">
-                    <div class="card-img img-courses html-tut">
-                        <img class="card-img"
-                             src="./img/html_logo.png"
-                             alt="Html Logo">
-                    </div>
-                    <div class="courses-body">
-                        <p class="card-title">HTML/CSS/js Tutorial</p>
-                        <div class="card-text">
-                            <p>I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded
-                                quite a bit, but never touched anything in regards to web development.</p>
-                        </div>
-                        <a href="#" class="btn btn-success a-courses">Take This Course</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row-col-sm-4 col-card">
-                <div class="card">
-                    <div class="card-img img-courses laravel-tut">
-                        <img class="card-img "
-                             src="./img/laravel_logo.png"
-                             alt="Laravel-Logo">
-                    </div>
-
-                    <div class="courses-body">
-                        <p class="card-title">LARAVEL Tutorial</p>
-                        <div class="card-text">
-                            <p>I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded
-                                quite a bit, but never touched anything in regards to web development.</p>
-                        </div>
-                        <a href="#" class="btn btn-success a-courses">Take This Course</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row-col-sm-4 col-card">
-                <div class="card">
-                    <div class="card-img img-courses php-tut ">
-                        <img class="card-img"
-                             src="./img/php_logo.png"
-                             alt="PHP Logo">
-                    </div>
-                    <div class="courses-body">
-                        <p class="card-title">PHP Tutorial</p>
-                        <div class="card-text">
-                            <p>I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded
-                                quite a bit, but never touched anything in regards to web development.</p>
-                        </div>
-                        <a href="#" class="btn btn-success a-courses">Take This Course</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p class="other-text">Other courses</p>
-        <div class="row hot-courses other-courses">
-            <div class="row-col-sm-4 col-card">
-                <div class="card">
-                    <div class="card-img img-courses css-tut">
-                        <img class="card-img"
-                             src="./img/css.png"
-                             alt="CSS Logo">
-                    </div>
-                    <div class="courses-body">
-                        <p class="card-title">CSS Tutorial</p>
-                        <div class="card-text">
-                            <p>I knew hardly anything about HTML, JS, and CSS before entering New Media,...</p>
-                        </div>
-                        <a href="#" class="btn btn-success a-courses">Take This Course</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row-col-sm-4 col-card">
-                <div class="card">
-                    <div class="card-img img-courses ruby-tut">
-                        <img class="card-img"
-                             src="./img/group.png"
-                             alt="Ruby Logo">
-                    </div>
-                    <div class="courses-body">
-                        <p class="card-title">Ruby on rails Tutorial</p>
-                        <div class="card-text">
-                            <p>I knew hardly anything about HTML, JS, and CSS before entering New Media,...</p>
-                        </div>
-                        <a href="#" class="btn btn-success a-courses">Take This Course</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row-col-sm-4 col-card">
-                <div class="card">
-                    <div class="card-img img-courses java-tut">
-                        <img class="card-img"
-                             src="./img/java.png"
-                             alt="Java Logo">
-                    </div>
-
-                    <div class="courses-body">
-                        <p class="card-title">Java Tutorial</p>
-                        <div class="card-text">
-                            <p>I knew hardly anything about HTML, JS, and CSS before entering New Media,...</p>
-                        </div>
-                        <a href="#" class="btn btn-success a-courses">Take This Course</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="#" class="view-all">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
+        <div class="gradient"></div>
     </div>
-</div>
-<!--courses section end-->
+</section>
+<!--banner section end-->
+<!--list courses section start-->
+<section class="list-courses">
+    <div class="container-fluid">
+        <div class="row-col-sm-4 col-card">
+            <div class="card">
+                <div class="card-img img-courses html-tut">
+                    <img src="./img/html_logo.png" alt="Html Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">HTML/CSS/js Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had
+                        coded quite a bit, but never touched anything in regards to web development.</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses laravel-tut">
+                    <img src="./img/laravel_logo.png" alt="Html Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">LARAVEL Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had
+                        coded quite a bit, but never touched anything in regards to web development.</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses html-tut">
+                    <img src="./img/php_logo.png" alt="Html Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">PHP Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had
+                        coded quite a bit, but never touched anything in regards to web development.</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<p class="other-text">Other courses</p>
+<!--list courses end-->
+<!--other courses start-->
+<section class="list-courses  other-courses">
+    <div class="container-fluid">
+        <div class="row-col-4 col-card">
+            <div class="card">
+                <div class="card-img img-courses css-tut">
+                    <img src="./img/css.png" alt="CSS Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">CSS Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media,...</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses ruby-tut">
+                    <img src="./img/group.png" alt="Ruby Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">Ruby on rails Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media,...</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses java-tut">
+                    <img src="./img/java.png" alt="Java Logo">
+                </div>
 
-<script src="public/js/app.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-<script src="js/app.js"></script>
+                <div class="card-body">
+                    <p class="card-title">Java Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media,...</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="view-all">
+    <a href="#">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+<!--other courses end-->
 </body>
 </html>
