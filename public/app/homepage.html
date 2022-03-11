@@ -1,10 +1,139 @@
-1.1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HapoLearn</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/derrfxjxx/image/upload/v1646625166/icon_owl_ebeado.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="public/css/app.css">
+</head>
+<body>
+<!-- header section start-->
+<header class="header fixed-top py-3">
+    <div class="container d-flex align-items-center justify-content-between header-container">
+        <div id="menu-bar" class="fas fa-bars d-md-none menu-bar"></div>
+        <a href="#" class="logo"><img
+            src="./img/hapo_learn.png"
+            alt="HapoLearn Logo">
+        </a>
+        <nav class="nav" id="nav">
+            <a href="#" class="home">home</a>
+            <a href="#" class="all-courses">all courses</a>
+            <a href="#" class="login-register">login/register</a>
+            <a href="#" class="profile">profile</a>
+        </nav>
+    </div>
+</header>
+<!--header section end-->
+<!--banner section start-->
+<section class="banner">
+    <div class="container-fluid container-banner">
+        <div class="row align-items-center flex-wrap-reverse banner-row">
+            <div class="col-md-6 content">
+                <p class="banner-title">Learn&nbspAnytime,&nbspAnywhere</p>
+                <p class="banner-logo">at HapoLearn <img
+                    src="img/icon_owl.png"
+                    alt="icon-owl">!</p>
+                <p>Interactive lessons, "on-the-go" <br>
+                    practice, peer support.</p>
+                <a href="#" class="btn btn-success btn-banner">Start Learning Now!</a>
+            </div>
+        </div>
+        <div class="gradient"></div>
+    </div>
+</section>
+<!--banner section end-->
+<!--list courses section start-->
+<section class="list-courses">
+    <div class="container-fluid">
+        <div class="row-col-sm-4 col-card">
+            <div class="card">
+                <div class="card-img img-courses html-tut">
+                    <img src="./img/html_logo.png" alt="Html Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">HTML/CSS/js Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had
+                        coded quite a bit, but never touched anything in regards to web development.</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses laravel-tut">
+                    <img src="./img/laravel_logo.png" alt="Html Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">LARAVEL Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had
+                        coded quite a bit, but never touched anything in regards to web development.</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses html-tut">
+                    <img src="./img/php_logo.png" alt="Html Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">PHP Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had
+                        coded quite a bit, but never touched anything in regards to web development.</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<p class="other-text">Other courses</p>
+<!--list courses end-->
+<!--other courses start-->
+<section class="list-courses  other-courses">
+    <div class="container-fluid">
+        <div class="row-col-4 col-card">
+            <div class="card">
+                <div class="card-img img-courses css-tut">
+                    <img src="./img/css.png" alt="CSS Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">CSS Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media,...</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses ruby-tut">
+                    <img src="./img/group.png" alt="Ruby Logo">
+                </div>
+                <div class="card-body">
+                    <p class="card-title">Ruby on rails Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media,...</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img-courses java-tut">
+                    <img src="./img/java.png" alt="Java Logo">
+                </div>
+
+                <div class="card-body">
+                    <p class="card-title">Java Tutorial</p>
+                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media,...</p>
+                    <a href="#" class="btn btn-success btn-courses">Take This Course</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="view-all">
+    <a href="#">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+<!--other courses end-->
+</body>
+</html>

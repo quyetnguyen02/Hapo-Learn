@@ -1,0 +1,269 @@
+.list-courses {
+  margin-top: 100px;
+
+  .col-card {
+    display: flex;
+    justify-content: space-around;
+
+    .card {
+      width: 30%;
+      height: 490px;
+      border-radius: 15px;
+    }
+  }
+}
+
+.img-courses {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 42.4%;
+  border-radius: 15px 15px 0px 0px;
+  background: rgba(63, 97, 133, 1);
+}
+
+.html-tut {
+  background: $html;
+}
+
+.laravel-tut {
+  background: $laravel;
+}
+
+.php-tut {
+  background: $php;
+
+}
+
+.css-tut {
+  background: $css;
+}
+
+.ruby-tut {
+  background: $ruby;
+}
+
+.java-tut {
+  background: $java;
+
+}
+
+.card-body {
+  margin-top: 44%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .card-title {
+    font-size: 30px;
+    font-family: 'UTM BryantLG';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 37px;
+    letter-spacing: -0.05em;
+    color: #B2D235;
+  }
+
+  .card-text {
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 20px;
+    letter-spacing: -0.05em;
+    color: #505353;
+  }
+
+  .btn-courses {
+    width: 200px;
+    margin-top: 20px;
+    background: #B2D235;
+    box-shadow: inset 0px 1.5px 2px #6F8710;
+    border-radius: 22px;
+  }
+}
+
+.other-text {
+  margin-top: 30px;
+  margin-left: 477px;
+  height: 98px;
+  width: 451px;
+  font-size: 76px;
+  line-height: 98px;
+  letter-spacing: -0.02em;
+  color: #11114E;
+  border-bottom: 4px solid $green;
+}
+
+.view-all {
+  margin-top: 50px;
+  margin-left: 35%;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: -0.02em;
+
+  a {
+    color: $paleYellow;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card-body {
+    margin-top: 18%;
+    .card-title {
+      margin-top: 73%;
+      font-size: 23px;
+      line-height: 37px;
+    }
+
+    .card-text {
+      font-size: 18px;
+    }
+    .btn-courses {
+      margin-left: 12px;
+    }
+  }
+
+  .other-text {
+    margin-left: 338px;
+    width: 396px;
+    font-size: 66px
+  }
+}
+
+@media (max-width: 992px) {
+  .list-courses  {
+    .col-card {
+      .card {
+        width: 33%;
+      }
+  }
+
+  }
+  .card-body {
+    .card-title {
+      font-size: 2.7vw;
+    }
+  }
+
+  .other-text {
+    margin-left: 260px;
+    width: 306px;
+    font-size: 51px
+  }
+
+  .view-all {
+    margin-left: 28%;
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-courses {
+    .col-card {
+      gap: 20px;
+
+      .card {
+        height: 350px;
+      }
+    }
+  }
+
+  .other-text {
+    margin-left: 210px;
+
+  }
+
+  .card-body {
+    .card-title {
+      position: absolute;
+      top: 6%;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .card-text {
+      position: absolute;
+      top: 55%;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .btn-courses {
+      width: 164px;
+      position: absolute;
+      bottom: 4%;
+      left: 0;
+    }
+  }
+
+  .img-courses {
+    height: 45%;
+
+    img {
+      height: 84px;
+      width: 152px;
+      left: 58px;
+      top: 607px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .list-courses {
+    margin-top: 334px;
+
+    .col-card {
+      display: block;
+
+      .card {
+        height: 400px;
+        width: 300px;
+        margin-left: 6%;
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  .card-body {
+    margin-top: 57%;
+    .card-title {
+      position: absolute;
+      margin-top: inherit;
+      font-size: 28px;
+    }
+
+    .card-text {
+        position: absolute;
+      top: 61%;
+      font-size: 19px;
+      line-height: 17px
+    }
+
+    .btn-courses {
+      width: 200px;
+      position: absolute;
+
+      left: 15%;
+    }
+  }
+
+  .other-text {
+    margin-left: 6%;
+  }
+
+  .other-courses {
+    margin-top: 100px;
+  }
+
+  .view-all {
+    margin-left: 6%;
+    font-size: 30px;
+  }
+}
