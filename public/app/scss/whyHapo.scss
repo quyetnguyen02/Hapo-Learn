@@ -47,6 +47,7 @@
   }
 
   .content {
+    margin-left: 0;
     position: absolute;
     left: 2%;
     height: 45%;
@@ -173,7 +174,6 @@
     .mb-left {
       width: 45%;
       top: -3%;
-
     }
 
     .content-why-hp {
@@ -184,7 +184,6 @@
       line-height: 60px;
       width: 58%;
       margin-left: 23%;
-      text-align: left;
     }
 
     .content {
