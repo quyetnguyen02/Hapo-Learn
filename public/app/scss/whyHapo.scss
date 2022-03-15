@@ -9,7 +9,6 @@
     padding-top: 37px;
     margin-left: 30%;
     display: none;
-    font-family: UTM BryantLG;
     font-style: normal;
     font-weight: bold;
     font-size: 70px;
@@ -21,8 +20,7 @@
 
   .mb-left {
     position: absolute;
-    margin-left: -9%;
-    margin-top: -11%;
+    margin-top: -19%;
     width: 33%;
     transform: rotate(17.12deg);
 
@@ -52,7 +50,6 @@
     left: 2%;
     height: 45%;
     margin-top: 24%;
-    font-family: UTM BryantLG;
     font-style: normal;
     font-weight: 700;
     font-size: 70px;
@@ -61,7 +58,7 @@
     letter-spacing: -0.02em;
     color: $white;
 
-    p {
+    .why-content {
       font-weight: 400;
       margin-right: 5%;
       font-size: 20px;
@@ -73,7 +70,7 @@
 }
 
 .content {
-  p {
+  .why-content {
     img {
       padding-right: 10px;
     }
@@ -87,7 +84,7 @@
     .content {
       font-size: 60px;
 
-      p {
+      .why-content {
         font-size: 18px;
       }
     }
@@ -108,7 +105,7 @@
     .content {
       font-size: 41px;
 
-      p {
+      .why-content {
         font-size: 14px;
       }
     }
@@ -123,25 +120,22 @@
 
 @media (max-width: 768px) {
   .why-hp {
-    position: absolute;
-    height: 395px;
-    top: 1690px;
-
     .content {
       width: 50%;
+      margin-top: 267px;
 
       b {
         display: none;
       }
 
-      p {
+      .why-content {
         font-size: 11px;
       }
     }
 
     .mb-right {
       width: 53%;
-      height: 61%;
+      height: 50%;
       left: 47%;
       margin-top: 23%;
     }
@@ -156,7 +150,7 @@
   }
 
   .content {
-    p {
+    .why-content {
       img {
         height: 20px;
         width: 30px;
@@ -168,11 +162,10 @@
 @media (max-width: 576px) {
   .why-hp {
     height: 669px;
-    margin-top: 1890px;
 
     .mb-left {
       width: 45%;
-      top: -3%;
+      margin-top: -16%;
     }
 
     .content-why-hp {
@@ -190,7 +183,7 @@
       margin-top: 47%;
       margin-left: 0;
 
-      p {
+      .why-content {
         font-size: 16px;
       }
     }

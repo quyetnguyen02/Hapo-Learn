@@ -4,34 +4,33 @@
   background: $white;
   height: 150px;
 }
-  .logo {
+.logo {
     width: 340.16px;
     height: 70px;
 
     .logo-hp {
       width: 100%;
     }
-  }
+}
 
-  .nav {
-    .menu-nav {
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 19px;
-      border-radius: 50px;
-      color: $black;
-      padding: 5px 15px;
-      text-transform: uppercase;
-      text-decoration: none;
+.nav {
+  .menu-nav {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    border-radius: 50px;
+    color: $black;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    text-decoration: none;
 
-      &:hover {
-        background: $yellow;
-        border-radius: 17px;
-      }
+    &:hover {
+      background: $yellow;
+      border-radius: 17px;
     }
   }
+}
 
 .menu-bar {
   cursor: pointer;
