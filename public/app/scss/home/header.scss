@@ -5,12 +5,12 @@
   height: 150px;
 }
 .logo {
-    width: 340.16px;
-    height: 70px;
+  width: 340.16px;
+  height: 70px;
 
-    .logo-hp {
-      width: 100%;
-    }
+  .logo-hp {
+    width: 100%;
+  }
 }
 
 .nav {
@@ -35,7 +35,7 @@
 .menu-bar {
   cursor: pointer;
   font-size: 20px;
-  display: none ;
+  display: none;
   transition: 2s linear;
 }
 
@@ -48,12 +48,12 @@
 @media (max-width: 992px) {
   .header {
     .header-container {
-     flex-direction: column;
+      flex-direction: column;
     }
 
     .nav {
       padding-top: 10px;
-       gap: 30px;
+      gap: 30px;
     }
   }
 }
@@ -82,7 +82,7 @@
     }
 
     .menu-bar {
-      display: block ;
+      display: block;
     }
 
     .nav {
