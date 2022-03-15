@@ -8,7 +8,6 @@
   text-align: center;
   gap: 56px;
 
-
   .static-title {
     font-weight: 700;
     font-size: 80px;
@@ -17,7 +16,6 @@
     color: $black;
     width: 290px;
     border-bottom: 3px solid $green;
-
   }
 
   .static-content {
@@ -32,11 +30,10 @@
 
   .content {
     font-size: 60px;
-   display: flex;
+    display: flex;
     flex-direction: column;
 
     .key {
-
       color: $cardText;
     }
 
@@ -89,8 +86,3 @@
     }
   }
 }
-
-
-
-
-

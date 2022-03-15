@@ -7,7 +7,7 @@
   width: 100%;
   display: none;
 
-  .login-form  {
+  .login-form {
     position: relative;
     background-color: $white;
     width: 400px;
@@ -33,22 +33,22 @@
 }
 
 .login-register {
-   a {
+  a {
     flex: 1;
     border: 1px solid $green;
     background-color: $white;
-    color:$green ;
+    color: $green;
     font-weight: bold;
     padding: 8px;
     font-size: 23px;
-     text-align: center;
-     text-transform: uppercase;
-     text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
 
-     &:active {
-       background-color: $green;
-       color: $white;
-     }
+    &:active {
+      background-color: $green;
+      color: $white;
+    }
   }
 
   .link-login {
@@ -60,7 +60,6 @@
     background-color: $green;
     color: $white;
   }
-
 }
 
 .form-lg {
@@ -68,7 +67,7 @@
   padding-bottom: 30px;
 
   .form-group {
-    label{
+    label {
       font-style: normal;
       font-weight: 700;
       font-size: 20px;
@@ -78,8 +77,8 @@
     }
 
     input {
-      background: #F2F2F2;
-      border: 1px solid #E1E1E1;
+      background: #f2f2f2;
+      border: 1px solid #e1e1e1;
       box-sizing: border-box;
       height: 60px;
     }
@@ -91,7 +90,7 @@
     width: 200px;
     height: 42px;
     background: $green;
-    box-shadow: inset 0px 1.5px 2px #6F8710;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
     border-radius: 22px;
   }
 
@@ -105,7 +104,7 @@
     span {
       width: 80px;
       text-align: center;
-      color:black ;
+      color: black;
       background-color: $white;
       font-size: 20px;
     }
@@ -123,8 +122,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    pa
-
+    
     i {
       font-size: 20px;
       padding: 0 10px;
@@ -133,11 +131,11 @@
 }
 
 .login-gg {
-  background: #DC4E41;
+  background: #dc4e41;
 }
 
 .login-rg {
-  background: #3B5999;
+  background: #3b5999;
 }
 
 .checkbox-a {
@@ -153,6 +151,3 @@
     color: $green;
   }
 }
-
-
-
