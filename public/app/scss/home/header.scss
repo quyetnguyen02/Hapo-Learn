@@ -24,6 +24,7 @@
     padding: 5px 15px;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       background: $yellow;
@@ -38,6 +39,11 @@
   display: none;
   transition: 2s linear;
 }
+
+.modal-content {
+  background: none;
+  border: none;
+}//file header
 
 @media (max-width: 1200px) {
   .header {

@@ -13,9 +13,9 @@ $(document).ready(function() {
     $('#btnRegister').removeClass('link-register')
   })
   //close form login/register
-  $('#close').click(function() {
-    $('#login').removeClass('active');
-  })
+  // $('#close').click(function() {
+  //   $('#login').removeClass('active');
+  // })
 
   $('#btnRegister').click(function() {
     $('#closeFormLogin').css('display','none');
