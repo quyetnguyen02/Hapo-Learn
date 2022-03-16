@@ -1,0 +1,207 @@
+.banner {
+  .container-banner {
+    height: 800px;
+    margin-top: 150px;
+    padding-left: 0;
+    padding-right: 0;
+    background: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1646801607/hapo_learn_banner_1_ya6dcc.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .banner-row {
+      width: 100%;
+      min-height:100%;
+    }
+  }
+}
+
+.gradient {
+  height: 161px;
+  background-image: linear-gradient(white, silver);
+}
+
+.banner-content {
+  margin-left: 60px;
+  margin-bottom:170px;
+
+  .banner-title {
+    color: $black;
+    font-size: 45px;
+    line-height: 61px;
+  }
+
+  .banner-logo {
+    color: rgba(17, 17, 78, 1);
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .banner-text {
+    font-size: 20px;
+    line-height: 25px;
+    color: $cardText;
+  }
+
+  .btn-banner {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+    width: 375px;
+    height: 70px;
+    margin-top: 52px;
+    font-size: 30px;
+    text-align: center;
+    background: $green;
+  }
+}
+
+@media (max-width:1200px) {
+  .banner {
+    .container-banner {
+      height: 655px;
+    }
+  }
+
+  .banner-content {
+    margin-left: 60px;
+    margin-bottom:170px ;
+
+    .banner-title {
+      font-size: 35px;
+      line-height: 61px;
+    }
+
+    .banner-logo {
+      font-size: 35px;
+      font-weight: 700;
+    }
+
+    .banner-text {
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    .btn-banner {
+      width: 310px;
+      height: 65px;
+      margin-top: 31px
+    }
+  }
+
+  .gradient {
+    width: 100%;
+    height: 151px;
+  }
+}
+
+@media (max-width:1200px) {
+  .banner {
+    .container-banner {
+      height: 500px;
+    }
+  }
+
+  .banner-content {
+    margin-left: 60px;
+    margin-bottom:100px ;
+
+    .banner-title {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    .banner-logo {
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .banner-text {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    .btn-banner {
+      width: 241px;
+      height: 59px;
+      font-size: 25px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    .container-banner {
+      height: 350px;
+    }
+  }
+
+  .banner-content {
+    height: 167px;
+    margin-top: 82px;
+    margin-left: 25px;
+
+    .banner-title {
+      font-size: 22px;
+    }
+
+    .banner-logo {
+      font-size: 20px;
+      font-weight: 700;
+
+      .icon-owl {
+        height: 34px;
+        width: 36px;
+      }
+    }
+
+    .banner-text {
+      font-size: 13px;
+    }
+
+    .btn-banner {
+      margin-top: 0px;
+      width: 196px;
+      height: 50px;
+      font-size: 19px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    .container-banner {
+      margin-top: 62px;
+      height: 200px;
+    }
+  }
+
+  .banner-content {
+    height: 150px;
+    margin-top: 220px;
+    text-align: center;
+
+    .banner-title {
+      font-size: 25px;
+    }
+
+    .banner-logo {
+      font-size: 30px;
+
+      .icon-owl {
+        height: 34px;
+        width: 36px;
+      }
+    }
+
+    .banner-text {
+      font-size: 19px;
+    }
+
+    .btn-banner {
+      margin-top: 0px;
+      width: 250px;
+      height: 50px;
+      font-size: 19px;
+    }
+  }
+}

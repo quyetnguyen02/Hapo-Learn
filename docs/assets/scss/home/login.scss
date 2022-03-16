@@ -1,0 +1,146 @@
+.login {
+
+  width: 100%;
+  
+  .login-form {
+    position: relative;
+    background-color: $white;
+    width: 400px;
+    margin: auto;
+
+    .close-form {
+      position: absolute;
+      border: none;
+      font-size: 18px;
+      padding: 0 8px;
+      border-radius: 25px;
+      background-color: $green;
+      color: $white;
+      right: -8px;
+      top: -8px;
+    }
+  }
+}
+
+.active {
+  display: block;
+}
+
+.login-register {
+  a {
+    flex: 1;
+    border: 1px solid $green;
+    background-color: $white;
+    color: $green;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:active {
+      background-color: $green;
+      color: $white;
+    }
+  }
+
+  .link-login {
+    background-color: $green;
+    color: $white;
+  }
+
+  .link-register {
+    background-color: $green;
+    color: $white;
+  }
+}
+
+.form-lg {
+  margin-top: 30px;
+  padding-bottom: 30px;
+
+  .form-group {
+    label {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: -0.02em;
+      color: $cardText;
+    }
+
+    input {
+      background: #f2f2f2;
+      border: 1px solid #e1e1e1;
+      box-sizing: border-box;
+      height: 60px;
+    }
+  }
+
+  .btn-login {
+    margin-left: 83px;
+    margin-top: 30px;
+    width: 200px;
+    height: 42px;
+    background: $green;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    border-radius: 22px;
+  }
+
+  .line {
+    text-align: center;
+    margin-top: 34px;
+    line-height: 0.1em;
+    border-bottom: 1px solid black;
+    margin-bottom: 34px;
+
+    span {
+      width: 80px;
+      text-align: center;
+      color: black;
+      background-color: $white;
+      font-size: 20px;
+    }
+  }
+
+  .login-gg,
+  .login-rg {
+    gap: 10px;
+    width: 100%;
+    height: 55px;
+    border: none;
+    color: $white;
+    font-size: 14px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    i {
+      font-size: 20px;
+      padding: 0 10px;
+    }
+  }
+}
+
+.login-gg {
+  background: #dc4e41;
+}
+
+.login-rg {
+  background: #3b5999;
+}
+
+.checkbox-a {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  text-decoration-line: underline;
+  a {
+    float: right;
+    color: $green;
+  }
+}
