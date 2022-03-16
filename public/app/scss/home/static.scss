@@ -1,0 +1,88 @@
+.static-container {
+  height: 574px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 56px;
+
+  .static-title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 98px;
+    letter-spacing: -0.02em;
+    color: $black;
+    width: 290px;
+    border-bottom: 3px solid $green;
+  }
+
+  .static-content {
+    gap: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .content {
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+
+    .key {
+      color: $cardText;
+    }
+
+    .values {
+      color: $green;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .static-container {
+    .static-content {
+      gap: 160px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .static-container {
+    .static-content {
+      gap: 90px;
+
+      .content {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .static-container {
+    .static-content {
+      gap: 40px;
+
+      .content {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .static-container {
+    margin-top: 100px;
+
+    .static-content {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
