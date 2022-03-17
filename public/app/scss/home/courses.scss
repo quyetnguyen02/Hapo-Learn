@@ -108,38 +108,124 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .card-body {
-    margin-top: 18%;
-
-    .card-title {
-      margin-top: 73%;
-      font-size: 23px;
-      line-height: 37px;
+@media (max-width: 1920px) {
+  .list-courses {
+    .col-card {
+      .card {
+        height: 640px;
+      }
     }
+  }
+
+  .card {
+    .img-courses {
+      img {
+        height: 60%;
+      }
+    }
+  }
+
+  .card-body {
+    gap: 20px;
 
     .card-text {
-      font-size: 18px;
+      font-size: 23px;
+      line-height: 24px;
     }
+
+    .card-title {
+      font-size: 40px;
+    }
+
     .btn-courses {
-      margin-left: 12px;
+      width: 250px;
+      font-size: 22px;
+      height: 48px;
     }
   }
 
   .other-text {
-    margin-left: 338px;
-    width: 396px;
-    font-size: 66px
+    margin-top: 30px;
+    margin-left: 37%;
+    width: 26%;
+    font-size: 4vw;
+  }
+
+  .view-all {
+    margin-left: 38%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .list-courses {
+    .col-card {
+      .card {
+        height: 580px;
+      }
+    }
+
+    .card-body {
+      gap: 0;
+      margin-top: 67%;
+
+      .card-title {
+        font-size: 34px;
+      }
+    }
+  }
+
+  .card {
+    .img-courses {
+      img {
+        height: 52%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .list-courses {
+    .col-card {
+      .card {
+        height: 480px;
+      }
+    }
+
+    .card-body {
+      gap: 0;
+      margin-top: 67%;
+
+      .card-title {
+        font-size: 26px;
+        line-height: 21px;
+      }
+
+      .card-text {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .card {
+    .img-courses {
+      img {
+        height: 52%;
+      }
+    }
+  }
+
+  .view-all {
+    margin-left: 34%;
   }
 }
 
 @media (max-width: 992px) {
-  .list-courses  {
+  .list-courses {
     .col-card {
       .card {
         width: 33%;
       }
-  }
+    }
 
   }
   .card-body {
@@ -163,50 +249,43 @@
 @media (max-width: 768px) {
   .list-courses {
     .col-card {
-      gap: 20px;
-
       .card {
-        height: 350px;
+        height: 400px;
+      }
+    }
+
+    .card-body {
+      gap: 0;
+      margin-top: 67%;
+
+      .card-title {
+        font-size: 21px;
+        line-height: 21px;
+      }
+
+      .card-text {
+        font-size: 10px;
+      }
+
+      .btn-courses {
+        width: 200px;
+        font-size: 19px;
+        height: 40px;
+      }
+
+    }
+  }
+
+  .card {
+    .img-courses {
+      img {
+        height: 52%;
       }
     }
   }
 
-  .other-text {
-    margin-left: 210px;
-  }
-
-  .card-body {
-    .card-title {
-      position: absolute;
-      top: 6%;
-      margin-left: 10px;
-      font-size: 20px;
-    }
-
-    .card-text {
-      position: absolute;
-      top: 55%;
-      font-size: 14px;
-      line-height: 17px;
-    }
-
-    .btn-courses {
-      width: 164px;
-      position: absolute;
-      bottom: 4%;
-      left: 0;
-    }
-  }
-
-  .img-courses {
-    height: 45%;
-
-    img {
-      height: 84px;
-      width: 152px;
-      left: 58px;
-      top: 607px;
-    }
+  .view-all {
+    margin-left: 34%;
   }
 }
 
@@ -224,41 +303,40 @@
         margin-bottom: 45px;
       }
     }
+
+    .card-body {
+      margin-top: 57%;
+    }
   }
 
-  .card-body {
-    margin-top: 57%;
+  .other-courses {
+    margin-top: 60px;
+  }
 
-    .card-title {
-      position: absolute;
-      margin-top: inherit;
-      font-size: 28px;
-    }
+  .other-text {
+    margin-left: 72px;
+  }
 
-    .card-text {
-      position: absolute;
-      top: 61%;
-      font-size: 19px;
-      line-height: 17px
-    }
+  .view-all {
+    margin-left: 5%;
+  }
+}
 
-    .btn-courses {
-      width: 200px;
-      position: absolute;
-      left: 15%;
+@media (max-width: 375px) {
+  .list-courses {
+    .col-card {
+      .card {
+        margin-left: 8%;
+      }
     }
   }
 
   .other-text {
-    margin-left: 14%;
-  }
-
-  .other-courses {
-    margin-top: 100px;
+    margin-left: 50px;
   }
 
   .view-all {
-    margin-left: 14%;
-    font-size: 30px;
+    font-size: 29px;
+    margin-left: 8%;
   }
 }

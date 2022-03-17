@@ -22,8 +22,7 @@
 
     position: absolute;
     top: 26%;
-    left: 98%;
-    z-index: 99;
+    left: 97%;
     background: white;
     border-radius: 50%;
     box-sizing: border-box;
@@ -38,6 +37,13 @@
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+}
+
+@media (max-width: 576px) {
+  .slick-next {
+    left: 94%;
+  }
+
 }
 .slick-prev:hover,
 .slick-prev:focus,
@@ -89,7 +95,8 @@
 }
 [dir="rtl"] .slick-prev {
     right: -25px;
-    left: auto;
+    left: auto;npm run watch
+
 }
 .slick-prev:before {
     content: "<";

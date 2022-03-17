@@ -43,6 +43,22 @@
   }
 }
 
+@media (max-width: 1920px) {
+  .static-container {
+    .static-content {
+      gap: 408px;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .static-container {
+    .static-content {
+      gap: 205px;
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .static-container {
     .static-content {
@@ -66,18 +82,14 @@
 @media (max-width: 768px) {
   .static-container {
     .static-content {
-      gap: 40px;
-
-      .content {
-        font-size: 40px;
-      }
+      gap: 75px;
     }
   }
 }
 
 @media (max-width: 576px) {
   .static-container {
-    margin-top: 160px;
+    margin-top: 236px;
 
     .static-content {
       flex-direction: column;

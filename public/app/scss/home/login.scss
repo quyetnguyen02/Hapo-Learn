@@ -1,7 +1,10 @@
-.login {
+.modal-dialog {
+  margin: 0;
+}
 
+.login {
   width: 100%;
-  
+
   .login-form {
     position: relative;
     background-color: $white;
@@ -139,6 +142,7 @@
   line-height: 22px;
   letter-spacing: -0.02em;
   text-decoration-line: underline;
+
   a {
     float: right;
     color: $green;

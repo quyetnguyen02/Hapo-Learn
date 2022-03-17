@@ -94,6 +94,34 @@
   }
 }
 
+@media (max-width:1920px){
+  .banner-content {
+    margin-left: 170px;
+
+    .banner-title {
+      font-size: 50px;
+    }
+
+    .banner-content {
+       font-size: 50px;
+    }
+    
+    .banner-text {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (max-width:1500px){
+  .banner-content {
+    margin-left: 60px;
+
+    .banner-title {
+      font-size: 42px;
+    }
+  }
+}
+
 @media (max-width:1200px) {
   .banner {
     .container-banner {
