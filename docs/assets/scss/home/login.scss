@@ -1,9 +1,6 @@
-.modal-dialog {
-  margin: 0;
-}
+
 
 .login {
-
   width: 100%;
 
   .login-form {
@@ -143,8 +140,55 @@
   line-height: 22px;
   letter-spacing: -0.02em;
   text-decoration-line: underline;
+
   a {
     float: right;
     color: $green;
+  }
+}
+
+@media (max-width: 425px) {
+  .modal-dialog {
+    margin: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .modal-dialog {
+    margin: 0;
+  }
+
+  .login {
+    .login-form {
+      width: 350px;
+    }
+  }
+
+  .form-lg {
+    .btn-login {
+      margin-left: 50px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .modal-dialog {
+    margin: 0;
+  }
+
+  .login {
+    .login-form {
+      width: 300px;
+    }
+  }
+
+  .form-lg {
+    .btn-login {
+      margin-left: 40px;
+    }
+  }
+
+  .checkbox-a {
+    font-size: 17px;
   }
 }

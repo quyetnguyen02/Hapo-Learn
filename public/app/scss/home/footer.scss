@@ -251,3 +251,32 @@ a {
     }
   }
 }
+
+@media (max-width: 320px) {
+  .footer-up {
+    .address-link {
+      .footer-link {
+        width: 47%;
+      }
+    }
+  }
+
+  .footer-link {
+    .link {
+      width: 40%;
+    }
+  }
+
+  .footer-address {
+    padding-left: 48px;
+  }
+
+  .logo-address {
+    .footer-logo {
+      p {
+        font-size: 9px;
+        margin-left: 9px;
+      }
+    }
+  }
+}

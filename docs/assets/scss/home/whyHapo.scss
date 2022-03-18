@@ -80,7 +80,6 @@
 
 @media (max-width: 1500px) {
   .why-hp {
-
     .why-down {
       padding-top: 10%;
     }
@@ -204,4 +203,16 @@
      margin-top: 113%;
    }
  }
+}
+
+@media (max-width: 320px) {
+  .why-hp {
+    height: 500px;
+
+    .mb-right {
+      height: 25%;
+    }
+  }
+
+
 }

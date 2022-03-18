@@ -581,6 +581,20 @@
     margin-left: 8%;
   }
 }
+@media (max-width: 320px) {
+  .list-courses .col-card .card {
+    margin-left: 0%;
+  }
+
+  .other-text {
+    margin-left: 14px;
+    font-size: 45px;
+  }
+
+  .view-all {
+    font-size: 27px;
+  }
+}
 .why-hp {
   background-image: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1646796205/Rectangle_17_rn0hko.png");
   width: 100%;
@@ -749,6 +763,14 @@
     height: 39%;
     left: 22%;
     margin-top: 113%;
+  }
+}
+@media (max-width: 320px) {
+  .why-hp {
+    height: 500px;
+  }
+  .why-hp .mb-right {
+    height: 25%;
   }
 }
 .feedback {
@@ -1091,7 +1113,7 @@ a {
     font-size: 17px;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1920px) and (max-width: 1500px) {
   .footer-up .logo-address {
     gap: 100px;
   }
@@ -1114,7 +1136,7 @@ a {
     font-size: 17px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1920px) and (max-width: 1200px) {
   .footer-up .logo-address {
     gap: 0px;
     padding-left: 0;
@@ -1130,12 +1152,12 @@ a {
     font-size: 16px;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1920px) and (max-width: 992px) {
   .footer-up .logo-address {
     gap: 18px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1920px) and (max-width: 768px) {
   .footer-address {
     padding-left: 73px;
   }
@@ -1149,7 +1171,7 @@ a {
     padding-right: 10px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 1920px) and (max-width: 576px) {
   .footer {
     margin-top: 230px;
   }
@@ -1173,10 +1195,24 @@ a {
     font-size: 11px;
   }
 }
-.modal-dialog {
-  margin: 0;
-}
+@media (max-width: 320px) {
+  .footer-up .address-link .footer-link {
+    width: 47%;
+  }
 
+  .footer-link .link {
+    width: 40%;
+  }
+
+  .footer-address {
+    padding-left: 48px;
+  }
+
+  .logo-address .footer-logo p {
+    font-size: 9px;
+    margin-left: 9px;
+  }
+}
 .login {
   width: 100%;
 }
@@ -1309,6 +1345,41 @@ a {
   color: #B2D235;
 }
 
+@media (max-width: 425px) {
+  .modal-dialog {
+    margin: 0;
+  }
+}
+@media (max-width: 375px) {
+  .modal-dialog {
+    margin: 0;
+  }
+
+  .login .login-form {
+    width: 350px;
+  }
+
+  .form-lg .btn-login {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .modal-dialog {
+    margin: 0;
+  }
+
+  .login .login-form {
+    width: 300px;
+  }
+
+  .form-lg .btn-login {
+    margin-left: 40px;
+  }
+
+  .checkbox-a {
+    font-size: 17px;
+  }
+}
 .message {
   position: fixed;
   right: 33px;

@@ -98,7 +98,7 @@ a {
   }
 }
 
-@media (max-width:1920px){
+@media (max-width: 1920px) {
   .footer-up {
     .logo-address {
       padding-left: 100px;
@@ -107,7 +107,7 @@ a {
     .address-link {
       .footer-address {
         padding-right: 168px;
-       padding-left: 0;
+        padding-left: 0;
       }
     }
   }
@@ -121,138 +121,161 @@ a {
     a {
       font-size: 17px;
     }
-
   }
-}
 
-@media (max-width:1500px){
-  .footer-up {
+  @media (max-width: 1500px) {
+    .footer-up {
+      .logo-address {
+        gap: 100px;
+
+        .footer-logo {
+          margin-left: 0;
+        }
+      }
+
+      .address-link {
+        .footer-address {
+          padding-right: 99px;
+        }
+      }
+    }
+
+    .footer-address {
+      font-size: 23px;
+    }
+
+    .link {
+      a {
+        font-size: 13px;
+      }
+    }
+
     .logo-address {
-      gap: 100px;
-
       .footer-logo {
-        margin-left: 0;
-      }
-    }
-
-    .address-link {
-      .footer-address {
-        padding-right: 99px;
+        p {
+          font-size: 17px;
+        }
       }
     }
   }
 
-  .footer-address {
-    font-size: 23px;
-  }
+  @media (max-width: 1200px) {
+    .footer-up {
+      .logo-address {
+        gap: 0px;
+        padding-left: 0;
 
-  .link {
-    a {
-      font-size: 13px;
-    }
+        .footer-logo {
+          margin-left: 0;
+        }
+      }
 
-  }
-
-  .logo-address {
-    .footer-logo {
-      p {
-        font-size: 17px;
+      .address-link {
+        .footer-address {
+          padding-right: 49px;
+        }
       }
     }
-  }
-}
 
-@media (max-width: 1200px) {
-  .footer-up {
     .logo-address {
-      gap: 0px;
-      padding-left: 0;
-
       .footer-logo {
-        margin-left: 0;
-      }
-    }
-
-    .address-link {
-      .footer-address {
-        padding-right: 49px;
-      }
-    }
-
-  }
-
-  .logo-address {
-    .footer-logo {
-      p {
-        font-size: 16px;
+        p {
+          font-size: 16px;
+        }
       }
     }
   }
 
+  @media (max-width: 992px) {
+    .footer-up {
+      .logo-address {
+        gap: 18px;
+      }
+    }
+  }
 
-}
+  @media (max-width: 768px) {
+    .footer-address {
+      padding-left: 73px;
+    }
 
-@media (max-width: 992px) {
-  .footer-up {
     .logo-address {
-      gap: 18px;
+      .footer-logo {
+        p {
+          margin-left: 46px;
+          font-size: 12px;
+        }
+      }
     }
-  }
-}
 
-@media (max-width: 768px) {
-  .footer-address {
-    padding-left: 73px;
-  }
-
-  .logo-address {
-    .footer-logo {
-      p {
-        margin-left: 46px;
-        font-size: 12px;
+    .footer-up {
+      .address-link {
+        .footer-address {
+          padding-right: 10px;
+        }
       }
     }
   }
 
-  .footer-up {
-    .address-link {
-      .footer-address {
-        padding-right: 10px;
+  @media (max-width: 576px) {
+    .footer {
+      margin-top: 230px;
+    }
+
+    .footer-up {
+      .logo-address {
+        flex-direction: column-reverse;
+      }
+
+      .address-link {
+        flex-direction: column;
+
+        .footer-address {
+          margin-top: 70px;
+          width: 74%;
+        }
+
+        .footer-link {
+          width: 100%;
+          margin-top: 120px;
+        }
       }
     }
-  }
 
-}
-
-@media (max-width: 576px) {
-  .footer {
-    margin-top: 230px;
-  }
-
-  .footer-up {
     .logo-address {
-      flex-direction: column-reverse;
-    }
-
-    .address-link {
-      flex-direction: column;
-
-      .footer-address {
-        margin-top: 70px;
-        width: 74%;
+      .footer-logo {
+        p {
+          font-size: 11px;
+        }
       }
+    }
+  }
+}
 
+@media (max-width: 320px) {
+  .footer-up {
+    .address-link {
       .footer-link {
-        width: 100%;
-        margin-top: 120px;
+        width: 47%;
       }
     }
+  }
+
+  .footer-link {
+    .link {
+      width: 40%;
+    }
+  }
+
+  .footer-address {
+    padding-left: 48px;
   }
 
   .logo-address {
     .footer-logo {
       p {
-        font-size: 11px;
+        font-size: 9px;
+        margin-left: 9px;
       }
     }
   }

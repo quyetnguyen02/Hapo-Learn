@@ -340,3 +340,22 @@
     margin-left: 8%;
   }
 }
+
+@media  (max-width: 320px) {
+  .list-courses {
+    .col-card {
+      .card {
+        margin-left: 0%;
+      }
+    }
+  }
+
+  .other-text {
+    margin-left: 14px;
+    font-size: 45px ;
+  }
+
+  .view-all {
+    font-size: 27px;
+  }
+}

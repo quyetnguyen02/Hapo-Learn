@@ -22,7 +22,7 @@
 
     position: absolute;
     top: 26%;
-    left: 97%;
+    left: 98%;
     background: white;
     border-radius: 50%;
     box-sizing: border-box;
@@ -39,11 +39,16 @@
     transform: translate(0, -50%);
 }
 
+@media (max-width: 768px) {
+  .slick-next {
+    left: 96%;
+  }
+}
+
 @media (max-width: 576px) {
   .slick-next {
     left: 94%;
   }
-
 }
 .slick-prev:hover,
 .slick-prev:focus,

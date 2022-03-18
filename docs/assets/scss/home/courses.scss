@@ -108,7 +108,7 @@
   }
 }
 
-@media (max-width:1920px) {
+@media (max-width: 1920px) {
   .list-courses {
     .col-card {
       .card {
@@ -119,7 +119,7 @@
 
   .card {
     .img-courses {
-      img  {
+      img {
         height: 60%;
       }
     }
@@ -129,8 +129,8 @@
     gap: 20px;
 
     .card-text {
-       font-size: 23px;
-       line-height: 24px;
+      font-size: 23px;
+      line-height: 24px;
     }
 
     .card-title {
@@ -156,7 +156,7 @@
   }
 }
 
-@media (max-width:1500px) {
+@media (max-width: 1500px) {
   .list-courses {
     .col-card {
       .card {
@@ -220,12 +220,12 @@
 }
 
 @media (max-width: 992px) {
-  .list-courses  {
+  .list-courses {
     .col-card {
       .card {
         width: 33%;
       }
-  }
+    }
 
   }
   .card-body {
@@ -320,7 +320,6 @@
   .view-all {
     margin-left: 5%;
   }
-
 }
 
 @media (max-width: 375px) {
@@ -339,5 +338,24 @@
   .view-all {
     font-size: 29px;
     margin-left: 8%;
+  }
+}
+
+@media  (max-width: 320px) {
+  .list-courses {
+    .col-card {
+      .card {
+        margin-left: 0%;
+      }
+    }
+  }
+
+  .other-text {
+    margin-left: 14px;
+    font-size: 45px ;
+  }
+
+  .view-all {
+    font-size: 27px;
   }
 }
