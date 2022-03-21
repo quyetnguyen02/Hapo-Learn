@@ -1,21 +1,18 @@
-.why-hp {
+.why-container {
   background-image: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1646796205/Rectangle_17_rn0hko.png");
-  width: 100%;
-  height: 740px;
+  position: relative;
+  background-size: cover;
   margin-top: 100px;
 
   .content-why-hp {
     position: absolute;
-    padding-top: 37px;
-    margin-left: 30%;
-    display: none;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 70px;
-    line-height: 107px;
+    width: 100%;
     text-align: center;
-    letter-spacing: -0.02em;
-    color: $white;
+    font-size: 50px;
+    color: #fff;
+    margin-top: 36px;
+    display: none;
+    font-weight: 600;
   }
 
   .mb-left {
@@ -30,189 +27,127 @@
     }
   }
 
-  .why-down {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .content {
+    width: 45%;
+    margin-bottom: 96px;
+    color: $white;
+    flex-direction: column;
+
+    b {
+      font-weight: 700;
+      font-size: 70px;
+    }
+
+    .why-content {
+      font-size: 16px;
+      padding: 8px;
+    }
   }
 
   .mb-right {
-    width: 60%;
-    height: 75%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    height: 770px;
+    width: 55%;
 
     img {
       width: 100%;
-      height: 100%;
-    }
-  }
-
-  .content {
-    height: 45%;
-    padding-top: 8%;
-    padding-left: 2%;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 107px;
-    text-align: center;
-    letter-spacing: -0.02em;
-    color: $white;
-
-    .why-content {
-      font-weight: 400;
-      margin-right: 5%;
-      font-size: 20px;
-      line-height: 25px;
-      letter-spacing: -0.05em;
-      color: $white;
     }
   }
 }
 
-.content {
-  .why-content {
-    img {
-      padding-right: 10px;
-    }
-  }
-}
-
-@media (max-width: 1500px) {
-  .why-hp {
-    .why-down {
-      padding-top: 10%;
-    }
-    .content {
-      font-size: 53px;
-
-      .why-content {
-        font-size: 17px;
-      }
-    }
-  }
-}
 @media (max-width: 1200px) {
-  .why-hp {
-    height: 640px;
-
+  .why-container {
     .content {
-      padding-right: 47%;
-      font-size: 55px;
-      line-height: 74px;
-
-      .why-content {
-        font-size: 15px;
-        line-height: 0;
+      b {
+        font-size: 54px;
       }
-    }
-
-    .mb-right {
-      position: absolute;
-      width: 57%;
-      height: 69%;
-      left: 43%;
     }
   }
 }
 
 @media (max-width: 992px) {
-  .why-hp {
-    height: 540px;
-
+  .why-container {
     .content {
-      font-size: 41px;
+      margin-bottom: 202px;
+
+      b {
+        font-size: 42px;
+      }
 
       .why-content {
-        font-size: 14px;
+        font-size: 12px;
       }
-    }
-
-    .mb-right {
-      width: 55%;
-      height: 64%;
-      left: 43%;
     }
   }
 }
 
 @media (max-width: 768px) {
-  .why-hp {
-    height: 640px;
-
-    .why-down {
-      padding-top: 27%;
-    }
-
+  .why-container {
     .content-why-hp {
       display: block;
-      margin-left: 20%;
     }
 
     .content {
-      padding-right: 55%;
-      font-size: 55px;
-      line-height: 74px;
+
+      margin-bottom: 96px;
 
       b {
         display: none;
       }
 
       .why-content {
-        font-size: 13px;
-        margin-right: 0;
+        font-size: 9px;
       }
     }
 
     .mb-right {
-      position: absolute;
-      width: 57%;
-      height: 69%;
-      left: 43%;
+      height: 550px;
     }
   }
 }
 
 @media (max-width: 576px) {
- .why-hp {
-   .mb-left {
-     margin-left: 2%;
-   }
-
-   .content-why-hp {
-     display: block;
-     margin-left: 27%;
-     text-align: left;
-     font-size: 40px;
-     width: 50px;
-     line-height: 1;
-   }
-
-   .why-down {
-     flex-direction: column;
-   }
-
-   .content {
-     padding-right: 0;
-   }
-
-   .mb-right {
-     position: absolute;
-     height: 39%;
-     left: 22%;
-     margin-top: 113%;
-   }
- }
-}
-
-@media (max-width: 320px) {
-  .why-hp {
-    height: 500px;
-
-    .mb-right {
-      height: 25%;
-    }
+  .why-down {
+    flex-direction: column;
+    width: 100%;
+    align-items: center
   }
 
+  .why-container {
+    .content {
+      padding-top: 128px;
+      width: 100%;
+      margin-bottom: 0;
+    }
 
+    .mb-right {
+      height: 300px;
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .why-container {
+    .content-why-hp {
+      font-size: 41px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .why-container {
+    .content-why-hp {
+      font-size: 35px;
+    }
+
+    .content {
+      .why-content {
+        font-size: 10px;
+      }
+    }
+
+    .mb-right {
+      width: 350px;
+    }
+  }
 }
