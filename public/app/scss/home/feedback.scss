@@ -1,3 +1,8 @@
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .feedback {
   margin-top: 100px;
 
@@ -11,6 +16,7 @@
       font-weight: 700;
       line-height: 90px;
       color: $black;
+      font-family: $fontNunito;
       border-bottom: 4px solid $yellow;
       border-radius: 3px;
     }
@@ -23,10 +29,12 @@
       color: $cardText;
       padding: 20px;
       margin-bottom: 0;
+      font-family: $fontNunito;
     }
   }
 
   .feed-back-up {
+    position: relative;
     box-sizing: border-box;
     border-radius: 15px;
     border: 0.5px solid #e2e2e2;
@@ -47,6 +55,15 @@
       font-size: 16px;
       line-height: 20px;
       font-weight: 400;
+      font-family: $fontNunito;
+    }
+
+    i {
+      position: absolute;
+      bottom: -10%;
+      left: 3%;
+      color: rgba(226, 226, 226, 1);;
+      font-size: 30px;
     }
   }
 
@@ -92,8 +109,31 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .feedback {
+    .hapo-feedback-header {
+      .feed-back-header-content {
+        font-size: 19px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .feedback {
+    .hapo-feedback-header {
+      .feed-back-header-content {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: 600px) {
   .feedback {
+    margin-top: 60px;
+
     .hapo-feedback-header {
       .feed-back-header-title {
         font-size: 60px;
@@ -101,7 +141,7 @@
       }
 
       .feed-back-header-content {
-        font-size: 12px;
+        font-size: 15px;
       }
     }
   }

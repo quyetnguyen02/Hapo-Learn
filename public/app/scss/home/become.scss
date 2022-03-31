@@ -17,6 +17,7 @@
     line-height: 74px;
     text-align: center;
     letter-spacing: -0.02em;
+    font-family: $fontNunito;
     color: $white;
   }
 
@@ -32,18 +33,35 @@
     font-weight: 700;
     font-size: 30px;
     line-height: 37px;
+    font-family: $fontNunito;
     letter-spacing: -0.05em;
     color: $paleYellow;
     border: 0.3px solid $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background: $green;
+      color: $white;
+    }
   }
 }
 
 @media (max-width: 768px)  {
   .become {
-    height: 300px;
+    height: 260px;
 
     .content {
-      font-size: 25px;
+      font-size: 35px;
+      line-height: 43px;
+    }
+
+    .btn-become {
+      width: 260px;
+      height: 51px;
+      font-size: 20px;
+      line-height: 25px;
     }
   }
 }

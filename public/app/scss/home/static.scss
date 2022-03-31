@@ -1,5 +1,4 @@
 .static-container {
-  height: 574px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,34 +6,39 @@
   align-items: center;
   text-align: center;
   gap: 56px;
+  max-width: 90%;
+  margin: 0 auto;
 
   .static-title {
     font-weight: 700;
     font-size: 80px;
+    font-family: $fontNunito;
     line-height: 98px;
     letter-spacing: -0.02em;
     color: $black;
-    width: 290px;
     border-bottom: 3px solid $green;
   }
 
   .static-content {
-    gap: 200px;
+    gap: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-style: normal;
     font-weight: 700;
+
   }
 
   .content {
     font-size: 60px;
     display: flex;
     flex-direction: column;
+    font-family: $fontNunito;
 
     .key {
       color: $cardText;
+      font-family: $fontNunito;
     }
 
     .values {
@@ -43,18 +47,11 @@
   }
 }
 
-@media (max-width: 1920px) {
-  .static-container {
-    .static-content {
-      gap: 408px;
-    }
-  }
-}
 
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .static-container {
     .static-content {
-      gap: 205px;
+      gap: 200px;
     }
   }
 }
@@ -62,7 +59,7 @@
 @media (max-width: 1200px) {
   .static-container {
     .static-content {
-      gap: 160px;
+      gap: 110px;
     }
   }
 }
@@ -70,10 +67,16 @@
 @media (max-width: 992px) {
   .static-container {
     .static-content {
-      gap: 90px;
+      gap: 114px;
 
       .content {
         font-size: 50px;
+      }
+    }
+
+    .content {
+      .key {
+        font-size: 40px;
       }
     }
   }
@@ -81,20 +84,39 @@
 
 @media (max-width: 768px) {
   .static-container {
+    gap: 28px;
+    margin-top: 50px;
+
+    .static-title {
+      line-height: 17px;
+      font-size: 50px;
+    }
+
     .static-content {
-      gap: 75px;
+      gap: 52px;
+
+      .content {
+        font-size: 37px;
+
+      }
+
+    }
+  }
+
+  .content {
+    .key {
+      margin-bottom: 0;
     }
   }
 }
 
 @media (max-width: 576px) {
   .static-container {
-    margin-top: 236px;
-
     .static-content {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 35px;
     }
   }
 }

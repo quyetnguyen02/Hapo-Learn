@@ -16,14 +16,15 @@
 <body>
     <!-- header section start-->
     <header class="header fixed-top py-3">
-        <div class="container d-flex align-items-center justify-content-between header-container">
-            <div id="menu-bar" class="fas fa-bars d-md-none menu-bar"></div>
+        <div class="container-fluid d-flex align-items-center justify-content-between header-container">
+            <div id="menuBar" class="fas fa-bars d-md-none menu-bar"></div>
             <a href="#" class="logo"><img class="logo-hp" src="./img/hapo_learn.png" alt="HapoLearn Logo">
             </a>
             <nav class="nav" id="nav">
                 <a href="#" class="menu-nav">home</a>
                 <a href="#" class="menu-nav">all courses</a>
-                <a href="#" id="login-register" class="menu-nav">login/register</a>
+                <a href="" class="menu-nav" id="login-register" data-toggle="modal"
+                   data-target="#loginModal">login/register</a>
                 <a href="#" class="menu-nav">profile</a>
             </nav>
         </div>
@@ -31,19 +32,20 @@
     <!--header section end-->
     <!-- filter start -->
     <section class="filter">
-        <div class="container">
+        <div class="container filter-container">
             <div class="filter-options">
                 <img src="./img/filter_icon.png" alt="icon filter">
-                <p>Filter</p>
+                <span>Filter</span>
             </div>
             <div class="form-search">
                <form action="" method="get">
-                   <div class="form-group">
+
                     <input type="text" name="key" placeholder="Search ..." >
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                   </div>
-                   <button></button>
-                
+                       <button> <i class="fa-solid fa-magnifying-glass"></i></button>
+
+
+                   <button type="submit" class="btn btn-success btn-search">Tìm kiếm</button>
+
                </form>
             </div>
 

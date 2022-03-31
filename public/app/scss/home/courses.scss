@@ -3,7 +3,8 @@
 
   .col-card {
     display: flex;
-    justify-content: space-around;
+    gap: 30px;
+    justify-content: center;
 
     .card {
       width: 30%;
@@ -11,15 +12,22 @@
       border-radius: 15px;
     }
   }
+
+  .list-container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 
+
+
 .img-courses {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 42.4%;
+  height: 200px;
   border-radius: 15px 15px 0px 0px;
   background: rgba(63, 97, 133, 1);
 }
@@ -49,160 +57,103 @@
 }
 
 .card-body {
-  margin-top: 44%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-style: normal;
+  padding: 30px;
+
 
   .card-title {
+    font-style: normal;
     font-size: 30px;
     font-weight: 700;
     line-height: 37px;
     letter-spacing: -0.05em;
     color: $green;
+    font-family: $font;
   }
 
   .card-text {
+    font-style: normal;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 14px;
     line-height: 20px;
+    text-align: center;
     letter-spacing: -0.05em;
     color: $cardText;
+    font-family: $fontNunito;
   }
 
   .btn-courses {
     width: 200px;
+    height: 42px;
+    font-size: 18px;
+    line-height: 22px;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: $green;
     box-shadow: inset 0px 1.5px 2px #6F8710;
     border-radius: 22px;
+    font-family: $font;
   }
 }
 
 .other-text {
   text-align: center;
-  margin-top: 30px;
-  font-size: 76px;
+  padding-top: 110px;
+  font-size: 80px;
+  font-weight: 700;
   line-height: 98px;
   letter-spacing: -0.02em;
   color: $black;
-
+  font-family: $fontNunito;
 
   span {
-    border-bottom: 0.5rem solid #B2D235;
+    border-bottom: 0.3rem solid #B2D235;
     border-radius: 3px;
   }
 }
 
+.other-courses {
+  margin-top: 60px;
+}
+
 .view-all {
-  margin-top: 50px;
+  margin-top: 60px;
   text-align: center;
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
   line-height: 49px;
   letter-spacing: -0.02em;
+  font-family: $fontNunito;
 
   a {
     color: $paleYellow;
+    text-decoration: none;
+  }
+
+  &:hover {
+    font-size: 43px;
   }
 }
 
-@media (max-width: 1920px) {
-  .list-courses {
-    .col-card {
-      .card {
-        height: 640px;
-      }
-    }
-  }
-
-  .card {
-    .img-courses {
-      img {
-        height: 60%;
-      }
-    }
-  }
-
-  .card-body {
-    gap: 20px;
-
-    .card-text {
-      font-size: 23px;
-      line-height: 24px;
-    }
-
-    .card-title {
-      font-size: 40px;
-    }
-
-    .btn-courses {
-      width: 250px;
-      font-size: 22px;
-      height: 48px;
-    }
-  }
-}
-
-@media (max-width: 1500px) {
-  .list-courses {
-    .col-card {
-      .card {
-        height: 580px;
-      }
-    }
-
-    .card-body {
-      gap: 0;
-      margin-top: 67%;
-
-      .card-title {
-        font-size: 34px;
-      }
-    }
-  }
-
-  .card {
-    .img-courses {
-      img {
-        height: 52%;
-      }
-    }
-  }
-}
 
 @media (max-width: 1200px) {
-  .list-courses {
-    .col-card {
-      .card {
-        height: 480px;
-      }
-    }
-
-    .card-body {
-      gap: 0;
-      margin-top: 67%;
-
-      .card-title {
-        font-size: 26px;
-        line-height: 21px;
-      }
-
-      .card-text {
-        font-size: 17px;
-      }
-    }
+.list-courses {
+  .list-container {
+    max-width: 100%;
   }
+}
 
-  .card {
-    .img-courses {
-      img {
-        height: 52%;
-      }
+  .card-body {
+    .card-title {
+      font-size: 23px;
     }
   }
 }
@@ -210,23 +161,39 @@
 @media (max-width: 992px) {
   .list-courses {
     .col-card {
+      gap: 20px;
+
       .card {
-        width: 33%;
+        height: 350px;
       }
     }
-
-    .card-body {
-      margin-top: 70%;
-
-      .card-title {
-        font-size: 24px;
-      }
-    }
-
   }
+
+  .img-courses {
+    img {
+      width: 60%;
+    }
+  }
+
   .card-body {
+    padding: 10px;
+
     .card-title {
-      font-size: 2.7vw;
+      font-size: 20px;
+    }
+
+    .card-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    .btn-courses {
+      width: 116px;
+      height: 29px;
+      font-size: 12px;
     }
   }
 }
@@ -234,52 +201,55 @@
 @media (max-width: 768px) {
   .list-courses {
     .col-card {
+      gap: 10px;
+
       .card {
-        height: 400px;
+        height: 300px;
+        width: 35% ;
       }
-    }
-
-    .card-body {
-      gap: 0;
-      margin-top: 81%;
-
-      .card-title {
-        font-size: 17px;
-        line-height: 21px;
-      }
-
-      .card-text {
-        font-size: 10px;
-      }
-
-      .btn-courses {
-        width: 170px;
-        font-size: 19px;
-        height: 40px;
-        margin-top: 0;
-      }
-
     }
   }
 
-  .card {
-    .img-courses {
-      img {
-        height: 52%;
-      }
+  .img-courses {
+    height: 131px;
+    img {
+      width: 60%;
     }
+  }
+
+  .card-body {
+    padding: 10px;
+
+    .card-title {
+      font-size: 16px;
+      line-height: 35px;
+    }
+  }
+
+  .other-text {
+    padding-top: 60px;
+    font-size: 50px;
+  }
+
+  .other-courses {
+    margin-top: 30px;
+  }
+
+  .view-all {
+    margin-top: 35px;
+    font-size: 28px;
   }
 }
 
 @media (max-width: 576px) {
   .list-courses {
-    margin-top: 334px;
+    margin-top: 270px;
 
     .col-card {
       display: block;
 
       .card {
-        height: 400px;
+        height: 380px;
         width: 300px;
         margin-left: 14%;
         margin-bottom: 45px;
@@ -287,12 +257,25 @@
     }
 
     .card-body {
-      margin-top: 57%;
+      .card-title {
+        font-size: 20px;
+      }
+
+      .card-text {
+        -webkit-line-clamp: 4;
+      }
+
+      .btn-courses {
+        width: 200px;
+        height: 42px;
+        font-size: 18px;
+      }
     }
   }
 
   .other-text {
     font-size: 45px ;
+    padding-top: 25px;
   }
 
   .view-all {
@@ -300,34 +283,34 @@
   }
 
   .other-courses {
-    margin-top: 60px;
+    margin-top: 30px;
   }
 }
 
-@media (max-width: 375px) {
-  .list-courses {
-    .col-card {
-      .card {
-        margin-left: 8%;
-      }
-    }
-  }
-
-
-
-  .view-all {
-    font-size: 29px;
-  }
-}
-
-@media  (max-width: 320px) {
-  .list-courses {
-    .col-card {
-      .card {
-        margin-left: 0%;
-      }
-    }
-  }
-
-
-}
+//@media (max-width: 375px) {
+//  .list-courses {
+//    .col-card {
+//      .card {
+//        margin-left: 8%;
+//      }
+//    }
+//  }
+//
+//
+//
+//  .view-all {
+//    font-size: 29px;
+//  }
+//}
+//
+//@media  (max-width: 320px) {
+//  .list-courses {
+//    .col-card {
+//      .card {
+//        margin-left: 0%;
+//      }
+//    }
+//  }
+//
+//
+//}

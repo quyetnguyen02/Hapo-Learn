@@ -1,0 +1,10 @@
+@extends('Layout.index')
+@section('content')
+    @include('Layout.login')
+    @include('Layout.banner')
+    @include('Layout.list_courses')
+    @include('Layout.other_courses')
+    @include('Layout.why')
+    @include('Layout.feedback')
+    @include('Layout.static')
+@endsection
