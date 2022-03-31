@@ -27,3 +27,4 @@ $(document).ready(function() {
     $('#btnRegister').removeClass('link-register')
   })
 })
+
