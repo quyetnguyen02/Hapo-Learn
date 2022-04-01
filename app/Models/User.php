@@ -49,7 +49,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function teachers()
+    public function teacherCourses()
     {
         return $this->belongsToMany(Course::class, 'teacher_course', 'user_id', 'course_id');
     }
