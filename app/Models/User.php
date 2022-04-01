@@ -48,8 +48,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function review(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function teachers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'teacher_course', 'user_id', 'course_id');
+    }
+
+    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'user_course', 'user_id', 'course_id');
+    }
+
+    public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Review::class, 'user_id');
+    }
+
+    public function lessons(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Lesson::class, 'user_lesson', 'user_id', 'lesson_id');
     }
 }

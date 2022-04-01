@@ -10,7 +10,16 @@ class Document extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'lesson_id',
+        'name',
+        'thumbnail',
+        'type',
+        'link',
+    ];
 
-
+    public function lesson(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Lesson::class, 'lesson_id');
+    }
 }

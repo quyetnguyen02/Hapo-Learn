@@ -10,19 +10,26 @@ class Lesson extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'course_id',
+        'title',
+        'content',
+        'description',
+        'time',
+        'requirements'
+    ];
 
     public function course(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasOne(Course::class, 'course_id', 'id');
     }
 
-    public function document(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function documents(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Document::class, 'lesson_id', 'id');
     }
 
-    public function lesson(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(User::class, 'user_lesson', 'lesson_id', 'user_id');
     }

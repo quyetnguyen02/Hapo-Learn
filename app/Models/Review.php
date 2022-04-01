@@ -10,7 +10,20 @@ class Review extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'user_id',
+        'course_id',
+        'content',
+        'vote',
+    ];
 
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
+    public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Course::class, 'course_id', 'id');
+    }
 }

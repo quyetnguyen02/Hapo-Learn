@@ -16,9 +16,9 @@ class UpdateUserTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('username')->nullable()->unique();
             $table->integer('role')->nullable();
-            $table->string('avatar');
-            $table->date('birthday');
-            $table->string('description');
+            $table->string('avatar')->nullable();
+            $table->date('birthday')->nullable();
+            $table->string('description')->nullable();
             $table->softDeletes();
         });
     }

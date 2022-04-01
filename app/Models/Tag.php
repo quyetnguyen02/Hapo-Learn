@@ -10,5 +10,13 @@ class Tag extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'link',
+    ];
+
+    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'course_tag', 'tag_id', 'course_id');
+    }
 }
