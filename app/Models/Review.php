@@ -23,7 +23,7 @@ class Review extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function course()
     {
         return $this->belongsTo(Course::class, 'course_id', 'id');
     }

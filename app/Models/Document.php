@@ -19,7 +19,7 @@ class Document extends Model
         'link',
     ];
 
-    public function lesson(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function lesson()
     {
         return $this->belongsTo(Lesson::class, 'lesson_id');
     }

@@ -18,26 +18,26 @@ class Course extends Model
         'price',
     ];
 
-    public function teachers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function teachers()
     {
         return $this->belongsToMany(User::class, 'teacher_course', 'course_id', 'user_id');
     }
 
-    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function users()
     {
         return $this->belongsToMany(User::class, 'user_course', 'course_id', 'user_id');
     }
-    public function tags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function tags()
     {
         return $this->belongsToMany(Tag::class, 'course_tag', 'course_id', 'tag_id');
     }
 
-    public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function reviews()
     {
         return $this->hasMany(Review::class, 'course_id', 'id');
     }
 
-    public function lessons(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function lessons()
     {
         return $this->hasMany(Lesson::class, 'course_id', 'id');
     }

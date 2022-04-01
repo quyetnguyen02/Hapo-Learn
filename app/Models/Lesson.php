@@ -20,17 +20,17 @@ class Lesson extends Model
         'requirements'
     ];
 
-    public function course(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function course()
     {
         return $this->hasOne(Course::class, 'course_id', 'id');
     }
 
-    public function documents(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function documents()
     {
         return $this->hasMany(Document::class, 'lesson_id', 'id');
     }
 
-    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function users()
     {
         return $this->belongsToMany(User::class, 'user_lesson', 'lesson_id', 'user_id');
     }

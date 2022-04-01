@@ -16,7 +16,7 @@ class Tag extends Model
         'link',
     ];
 
-    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function courses()
     {
         return $this->belongsToMany(Course::class, 'course_tag', 'tag_id', 'course_id');
     }
