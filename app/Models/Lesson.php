@@ -22,7 +22,7 @@ class Lesson extends Model
 
     public function course()
     {
-        return $this->hasOne(Course::class, 'course_id', 'id');
+        return $this->belongsTo(Course::class, 'course_id', 'id');
     }
 
     public function documents()
