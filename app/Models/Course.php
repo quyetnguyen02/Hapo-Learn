@@ -36,8 +36,8 @@ class Course extends Model
         return $this->hasMany(Review::class, 'course_id', 'id');
     }
 
-    public function lesson(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function lessons(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasOne(Lesson::class, 'course_id', 'id');
+        return $this->hasMany(Lesson::class, 'course_id', 'id');
     }
 }
