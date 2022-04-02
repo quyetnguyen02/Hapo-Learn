@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Database\Factories\UserLessonFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
