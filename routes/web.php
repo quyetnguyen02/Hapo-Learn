@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-//    $courses = \App\Models\Course::find();
-//    dd($courses);
     return view('welcome');
 });
 
