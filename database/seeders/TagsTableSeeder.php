@@ -1,11 +1,11 @@
 <?php
+
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
-
-class UsersTableSeeder extends Seeder
+class TagsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(200)->create();
-
+        Tag::factory(200)->create();
     }
 }
