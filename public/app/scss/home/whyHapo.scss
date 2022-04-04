@@ -169,7 +169,7 @@
 
   .why-container {
     .content-why-hp {
-      width: 79%;
+      width: 64%;
       text-align: left;
       font-size: 45px;
       margin-left: 137px;
@@ -193,34 +193,38 @@
 
     .mb-right {
       height: 300px;
-      width: 400px;
+      width: 100%;
       padding: 0;
     }
   }
 }
 
-//@media (max-width: 375px) {
-//  .why-container {
-//    .content-why-hp {
-//      font-size: 41px;
-//    }
-//  }
-//}
-//
-//@media (max-width: 375px) {
-//  .why-container {
-//    .content-why-hp {
-//      font-size: 35px;
-//    }
-//
-//    .content {
-//      .why-content {
-//        font-size: 10px;
-//      }
-//    }
-//
-//    .mb-right {
-//      width: 350px;
-//    }
-//  }
-//}
+@media (max-width: 375px) {
+  .why-container {
+    .content-why-hp {
+      width: 59%;
+      font-size: 41px;
+    }
+
+    .content {
+      .why-content {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .why-container {
+    .content-why-hp {
+      margin-left: 88px;
+      font-size: 35px;
+    }
+
+    .content {
+      .why-content {
+        font-size: 10px;
+      }
+    }
+  }
+}

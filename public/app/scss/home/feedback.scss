@@ -1,5 +1,5 @@
-.container {
-  max-width: 80%;
+.hp-feedback {
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -30,6 +30,7 @@
       padding: 20px;
       margin-bottom: 0;
       font-family: $fontNunito;
+
     }
   }
 
@@ -119,17 +120,6 @@
   }
 }
 
-@media screen and (max-width: 900px) {
-  .feedback {
-    .hapo-feedback-header {
-      .feed-back-header-content {
-        font-size: 14px;
-      }
-    }
-  }
-}
-
-
 @media screen and (max-width: 600px) {
   .feedback {
     margin-top: 60px;
@@ -156,13 +146,17 @@
       }
 
       .feed-back-header-content {
-        font-size: 16px;
+        font-size: 10px;
       }
     }
 
     .feed-back-up {
       .feed-back-up-content {
         font-size: 15px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }

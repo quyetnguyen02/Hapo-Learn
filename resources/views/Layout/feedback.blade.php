@@ -1,6 +1,6 @@
 <!--feedback start-->
 <div class="feedback">
-    <div class="container">
+    <div class="hp-feedback">
         <div class="hapo-feedback-header">
             <a class="feed-back-header-title">Feedback</a>
             <p class="feed-back-header-content">What other students turned professionals have to say about
@@ -10,7 +10,7 @@
         </div>
         <div class="hapo-feed-back-body">
             <div class="row slick">
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-6 col-sm-6 col-12">
                     <div class="feed-back-up">
                         <p class="feed-back-border"></p>
                         <p class="feed-back-up-content">
