@@ -1,0 +1,129 @@
+.feedback {
+  margin-top: 100px;
+
+  .hapo-feedback-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .feed-back-header-title {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 90px;
+      color: $black;
+      border-bottom: 4px solid $yellow;
+      border-radius: 3px;
+    }
+
+    .feed-back-header-content {
+      text-align: center;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 31px;
+      color: $cardText;
+      padding: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  .feed-back-up {
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 0.5px solid #e2e2e2;
+    background: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 1rem;
+
+    .feed-back-border {
+      padding: 2px;
+      height: 100px;
+      background: #d9dadc;
+    }
+
+    .feed-back-up-content {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+  }
+
+  .feed-back-down {
+    display: flex;
+    padding: 20px;
+
+    .feed-back-img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .feed-back-img-avt {
+      width: 100%;
+    }
+
+    .feed-back-down-content {
+      padding-left: 8px;
+    }
+
+    .feed-back-name {
+      color: $black;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 25px;
+      margin-bottom: 0;
+    }
+
+    .feed-back-span {
+      font-size: 14px;
+      color: $cardText;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+
+    .feed-back-star {
+      color: #f2c54f;
+    }
+
+    .star-special {
+      color: antiquewhite;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .feedback {
+    .hapo-feedback-header {
+      .feed-back-header-title {
+        font-size: 60px;
+        width: 280px;
+      }
+
+      .feed-back-header-content {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .feedback {
+    .hapo-feedback-header {
+      .feed-back-header-title {
+        font-size: 53px;
+        width: 240px;
+      }
+
+      .feed-back-header-content {
+        font-size: 16px;
+      }
+    }
+
+    .feed-back-up {
+      .feed-back-up-content {
+        font-size: 15px;
+      }
+    }
+  }
+}

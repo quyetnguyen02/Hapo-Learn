@@ -1,0 +1,63 @@
+.become {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1647077354/image_become_xyror5.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .content {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: $white;
+  }
+
+  .btn-become {
+    padding-top: 10px;
+    background: $white;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+    width: 377px;
+    height: 70px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    letter-spacing: -0.05em;
+    color: $paleYellow;
+    border: 0.3px solid $white;
+  }
+}
+
+@media (max-width: 768px)  {
+  .become {
+    height: 300px;
+
+    .content {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (max-width: 576px)  {
+  .become {
+    .content {
+      font-size: 25px;
+      line-height: 40px;
+    }
+
+    .btn-become {
+      width: 300px;
+      height: 60px;
+    }
+  }
+}

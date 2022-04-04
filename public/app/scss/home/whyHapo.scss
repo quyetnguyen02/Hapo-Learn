@@ -1,0 +1,153 @@
+.why-container {
+  background-image: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1646796205/Rectangle_17_rn0hko.png");
+  position: relative;
+  background-size: cover;
+  margin-top: 100px;
+
+  .content-why-hp {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    margin-top: 36px;
+    display: none;
+    font-weight: 600;
+  }
+
+  .mb-left {
+    position: absolute;
+    margin-top: -16%;
+    width: 28%;
+    transform: rotate(17.12deg);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .content {
+    width: 45%;
+    margin-bottom: 96px;
+    color: $white;
+    flex-direction: column;
+
+    b {
+      font-weight: 700;
+      font-size: 70px;
+    }
+
+    .why-content {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+
+  .mb-right {
+    height: 770px;
+    width: 55%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .why-container {
+    .content {
+      b {
+        font-size: 54px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .why-container {
+    .content {
+      margin-bottom: 202px;
+
+      b {
+        font-size: 42px;
+      }
+
+      .why-content {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .why-container {
+    .content-why-hp {
+      display: block;
+    }
+
+    .content {
+
+      margin-bottom: 96px;
+
+      b {
+        display: none;
+      }
+
+      .why-content {
+        font-size: 9px;
+      }
+    }
+
+    .mb-right {
+      height: 550px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .why-down {
+    flex-direction: column;
+    width: 100%;
+    align-items: center
+  }
+
+  .why-container {
+    .content {
+      padding-top: 128px;
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    .mb-right {
+      height: 300px;
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .why-container {
+    .content-why-hp {
+      font-size: 41px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .why-container {
+    .content-why-hp {
+      font-size: 35px;
+    }
+
+    .content {
+      .why-content {
+        font-size: 10px;
+      }
+    }
+
+    .mb-right {
+      width: 350px;
+    }
+  }
+}
