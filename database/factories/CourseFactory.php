@@ -16,6 +16,7 @@ class CourseFactory extends Factory
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->text,
+            'image' => $this->faker->imageUrl,
             'time' => $this->faker->numerify,
             'price' => $this->faker->numerify,
         ];
