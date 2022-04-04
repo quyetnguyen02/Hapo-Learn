@@ -1,0 +1,10 @@
+@extends('Layouts.index')
+@section('content')
+    @include('Layouts.login')
+    @include('Layouts.banner')
+    @include('Layouts.list_courses')
+    @include('Layouts.other_courses')
+    @include('Layouts.why')
+    @include('Layouts.feedback')
+    @include('Layouts.static')
+@endsection
