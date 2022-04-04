@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="{{asset('app/slick/slick/slick-theme.css')}}">
     <link rel="stylesheet" href="{{asset('app/slick/slick/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('app/public/css/app.css')}}">
+    <link rel="stylesheet" href={{asset('css/app.css')}}>
 {{--    <link rel="stylesheet" href="scss/home/courses.scss">--}}
 </head>
 
@@ -37,5 +37,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 {{--<script src="{{asset('app/slick/slick/slick.js')}}"></script>--}}
-<script src="{{asset('app/public/js/app.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
 </html>
