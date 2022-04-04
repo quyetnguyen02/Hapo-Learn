@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[\App\Http\Controllers\HomeController::class,'index']);
+Route::get('/courses/detail',[\App\Http\Controllers\HomeController::class,'show'])->name('home.show');
 
 Auth::routes();
 
