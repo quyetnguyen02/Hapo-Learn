@@ -2,36 +2,18 @@
 <section class="list-courses  other-courses">
     <div class="container list-container">
         <div class="row-col-4 col-card">
-            <div class="card">
-                <div class="card-img img-courses css-tut">
-                    <img src="{{asset('app/img/css.png')}}" alt="CSS Logo">
+            @foreach($courses as $course)
+                <div class="card">
+                    <div class="card-img img-courses html-tut">
+                        <img src="{{$course->image}}" alt="Html Logo">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">{{$course->name}}</p>
+                        <p class="card-text">{{$course->description}}</p>
+                        <a href="{{route('home.show')}}" class="btn btn-courses">Take This Course</a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-title">CSS Tutorial</p>
-                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.</p>
-                    <a href="#" class="btn btn-courses">Take This Course</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img img-courses ruby-tut">
-                    <img src="{{asset('app/img/group.png')}}" alt="Ruby Logo">
-                </div>
-                <div class="card-body">
-                    <p class="card-title">Ruby on rails Tutorial</p>
-                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.</p>
-                    <a href="#" class="btn btn-courses">Take This Course</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img img-courses java-tut">
-                    <img src="{{asset('app/img/java.png')}}" alt="Java Logo">
-                </div>
-                <div class="card-body">
-                    <p class="card-title">Java Tutorial</p>
-                    <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.</p>
-                    <a href="#" class="btn btn-courses">Take This Course</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
