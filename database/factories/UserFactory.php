@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Ramsey\Uuid\Type\Integer;
 
 class UserFactory extends Factory
 {
@@ -30,6 +31,7 @@ class UserFactory extends Factory
             'avatar' => $this->faker->imageUrl,
             'birthday' => $this->faker->date,
             'description' => $this->faker->text,
+            'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->email,
             'email_verified_at' => now(),
             'password' => Str::random(10),

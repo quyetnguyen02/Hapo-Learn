@@ -75,6 +75,12 @@
     .feed-back-img {
       width: 60px;
       height: 60px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 30px;
+        }
     }
 
     .feed-back-img-avt {
