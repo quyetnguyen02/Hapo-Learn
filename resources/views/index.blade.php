@@ -1,4 +1,4 @@
-@extends('Layouts.index')
+@extends('layouts.layout')
 @section('content')
     <!--login form start-->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

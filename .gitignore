@@ -17,6 +17,7 @@ yarn-error.log
 /public/css
 /public/js
 /public/image
+/public/images
 /public/fonts
 /public/assets
-
+/ public/mix-manifest.json

@@ -20,14 +20,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function homepage()
+    public function index()
     {
         $courses = Course::all()->random(3);
         $reviews = Review::all()->random(4);
         $courseCount = Course::count();
         $lessonCount = Lesson::count();
         $userLessonCount = UserLesson::count();
-        return view('homepage', compact(['courses','reviews','courseCount','lessonCount','userLessonCount']));
+        return view('index', compact(['courses','reviews','courseCount','lessonCount','userLessonCount']));
     }
 
 }
