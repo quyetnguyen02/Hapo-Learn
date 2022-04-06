@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Courses</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/derrfxjxx/image/upload/v1646625166/icon_owl_ebeado.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="public/css/app.css">
+</head>
+
+<body>
+    <!-- header section start-->
+    <header class="header fixed-top py-3">
+        <div class="container-fluid d-flex align-items-center justify-content-between header-container">
+            <div id="menuBar" class="fas fa-bars d-md-none menu-bar"></div>
+            <a href="#" class="logo"><img class="logo-hp" src="./img/hapo_learn.png" alt="HapoLearn Logo">
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#" class="menu-nav">home</a>
+                <a href="#" class="menu-nav">all courses</a>
+                <a href="" class="menu-nav" id="login-register" data-toggle="modal"
+                   data-target="#loginModal">login/register</a>
+                <a href="#" class="menu-nav">profile</a>
+            </nav>
+        </div>
+    </header>
+    <!--header section end-->
+    <!-- filter start -->
+    <section class="filter">
+        <div class="container filter-container">
+            <div class="filter-options">
+                <img src="./img/filter_icon.png" alt="icon filter">
+                <span>Filter</span>
+            </div>
+            <div class="form-search">
+               <form action="" method="get">
+
+                    <input type="text" name="key" placeholder="Search ..." >
+                       <button> <i class="fa-solid fa-magnifying-glass"></i></button>
+
+
+                   <button type="submit" class="btn btn-success btn-search">Tìm kiếm</button>
+
+               </form>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- filter  end -->
+</body>
+
+</html>

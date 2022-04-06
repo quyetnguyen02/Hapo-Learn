@@ -41,8 +41,8 @@ class RegisterRequest extends FormRequest
             'email.max' => 'email should not exceed 255 characters',
             'email.unique' => 'email already exists',
             'email.email' => 'Please enter correct email format',
-            'password.required'  => 'Passwords must be at least 6 characters!',
-            'password.min'  => 'Please enter the password!',
+            'password.min'  => 'Passwords must be at least 6 characters!',
+            'password.required'  => 'Please enter the password!',
             'confirmPassword.required'  => 'Please enter the confirmPassword!',
             'confirmPassword.password'  => 'confirmPassword does not match password',
         ];
