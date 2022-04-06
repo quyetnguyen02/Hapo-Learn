@@ -40,7 +40,7 @@
                                     <a class="login-rg" href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
                                 </div>
                                 <div id="closeRegisterForm">
-                                    <form action="{{route('login')}}" method="post">
+                                    <form action="{{route('register')}}" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label>Username:</label>

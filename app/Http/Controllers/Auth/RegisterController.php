@@ -73,6 +73,9 @@ class RegisterController extends Controller
     }
 
     public function register(RegisterRequest $request){
-        $user = User::create($request->validated());
+        $input = $request->validated();
+        $input['password'] = bcrypt($input['password']);
+        $user = User::create($input);
+        echo 'a';
     }
 }
