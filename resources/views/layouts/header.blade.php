@@ -1,8 +1,7 @@
-<!-- header section start-->
 <section class="header d-flex">
     <div class="container-fluid d-flex align-items-center justify-content-between header-container">
         <div id="menuBar" class="fas fa-bars d-md-none menu-bar"></div>
-        <a href="#" class="logo"><img class="logo-hp" src="{{asset('image/hapo_learn.png')}}" alt="HapoLearn Logo">
+        <a href="#" class="logo"><img class="logo-hp" src="{{ asset('image/hapo_learn.png') }}" alt="HapoLearn Logo">
         </a>
         <nav class="nav" id="nav">
             <a href="#" class="menu-nav">home</a>
@@ -13,4 +12,4 @@
         </nav>
     </div>
 </section>
-<!--header section end-->
+

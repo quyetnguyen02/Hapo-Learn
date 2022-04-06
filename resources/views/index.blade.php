@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 @section('content')
     @include('layouts.login')
-    <!--banner section start-->
     <section class="banner">
         <div class="container-fluid container-banner">
             <div class="row align-items-center flex-wrap-reverse banner-row">
@@ -18,8 +17,6 @@
             <div class="gradient"></div>
         </div>
     </section>
-    <!--banner section end-->
-    <!--list courses section start-->
     <section class="list-courses">
         <div class="container list-container">
             <div class="row-col-sm-4 col-card">
@@ -41,8 +38,6 @@
     <p class="other-text">
         <span>Other courses</span>
     </p>
-    <!--list courses end-->
-    <!--other courses start-->
     <section class="list-courses  other-courses">
         <div class="container list-container">
             <div class="row-col-4 col-card">
@@ -64,7 +59,6 @@
     <div class="view-all">
         <a href="#">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
     </div>
-    <!--other courses end-->
     <section class="why-hp">
         <div class="container-fluid why-container">
             <div class="mb-left">
@@ -96,8 +90,6 @@
             </div>
         </div>
     </section>
-    <!--Why hapolearn end-->
-    <!--feedback start-->
     <div class="feedback">
         <div class="hp-feedback">
             <div class="hapo-feedback-header">
@@ -126,10 +118,10 @@
                                     <p class="feed-back-name">{{ $review->user->name }}</p>
                                     <p class="feed-back-span">{{ $review->user->job }}</p>
                                     <p class="feed-back-star">
-                                        @for($i =0 ; $i < $review->vote; $i++)
+                                        @for($i = 0; $i < $review->vote; $i++)
                                             <i class="fa-solid fa-star "></i>
                                         @endfor
-                                        @for($i =5 ; $i > $review->vote; $i--)
+                                        @for($i = 5; $i > $review->vote; $i--)
                                             <i class="fa-solid fa-star star-special"></i>
                                         @endfor
                                     </p>
@@ -141,8 +133,6 @@
             </div>
         </div>
     </div>
-    <!--feedback end-->
-    <!--become start-->
     <section class="become">
         <div class="content">
             <p>Become a member of our <br>
@@ -150,8 +140,6 @@
         </div>
         <a href="#" class="btn btn-become">Start Learning Now!</a>
     </section>
-    <!--become end-->
-    <!--static start-->
     <section>
         <div class="container static-container">
             <span class="static-title"><p>Statistic</p></span>
@@ -171,5 +159,4 @@
             </div>
         </div>
     </section>
-    <!--static end-->
 @endsection
