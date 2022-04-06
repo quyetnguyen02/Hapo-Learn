@@ -7,12 +7,8 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="login" id="login">
-                        @if(session()->has('message'))
-                            <div class="alert alert-success">
-                                {{ session()->get('message') }}
-                            </div>
-                        @endif
                         <div class="login-form">
+
                             <div class="close-form" id="close" data-dismiss="modal"><i class="fa-solid fa-xmark"></i>
                             </div>
                             <div class="d-flex login-register">
@@ -22,6 +18,11 @@
                             <div class="col-md-12 form-lg">
                                 <div id="closeFormLogin">
                                     <form action="#" method="post">
+                                        @if(session()->has('message'))
+                                            <div class="alert alert-success" id="success">
+                                                {{ session()->get('message') }}
+                                            </div>
+                                        @endif
                                         <div class="form-group">
                                             <label>Username:</label>
                                             <input type="text" name="userName" class="form-control"

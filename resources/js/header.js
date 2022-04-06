@@ -6,7 +6,6 @@ $(document).ready(function() {
 
   //click to login/register
   $('#login-register').click(function() {
-    $('#login').addClass('active');
     $('#closeFormLogin').css('display','block');
     $('#btnLogin').addClass('link-login')
     $('#closeRegisterForm').css('display','none');

@@ -5,11 +5,11 @@
  */
 
 require('./bootstrap');
-require('slick-carousel');
+require('slick-carousel')
 require('./header');
 require('./message');
 require('./feedback');
-
+require('./register');
 window.Vue = require('vue').default;
 
 /**

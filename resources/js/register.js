@@ -1,6 +1,6 @@
 $(document).ready(function (){
-  if ($("div").hasClass("alert-success")){
-    $('#login').addClass('active');
+  if ($("#success").hasClass("alert-success")){
+    $('#loginModal').modal();
     $('#closeFormLogin').css('display','block');
     $('#btnLogin').addClass('link-login')
     $('#closeRegisterForm').css('display','none');
