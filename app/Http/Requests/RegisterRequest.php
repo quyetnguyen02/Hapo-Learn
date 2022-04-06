@@ -1,0 +1,50 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class RegisterRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'username' => 'required|max:255|unique:User,username',
+            'email' => 'required|email|max:255|unique:User,email',
+            'password' => 'required|min:6',
+            'confirmPassword' => 'required|password',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'username.required'  => 'Please enter the username!',
+            'username.max' => 'username should not exceed 255 characters',
+            'username.unique' => 'username already exists',
+            'email.required'  => 'Please enter the email!',
+            'email.max' => 'email should not exceed 255 characters',
+            'email.unique' => 'email already exists',
+            'email.email' => 'Please enter correct email format',
+            'password.required'  => 'Passwords must be at least 6 characters!',
+            'password.min'  => 'Please enter the password!',
+            'confirmPassword.required'  => 'Please enter the confirmPassword!',
+            'confirmPassword.password'  => 'confirmPassword does not match password',
+        ];
+    }
+}
