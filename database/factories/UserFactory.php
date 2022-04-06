@@ -23,7 +23,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'username' => $this->faker->text,
+            'username' => Str::random(10),
             'job' => Str::random(3),
             'role' => 0,
             'avatar' => $this->faker->imageUrl,

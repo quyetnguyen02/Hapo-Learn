@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'username' => 'required|max:255|unique:users,username',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:6',
-            'confirmPassword' => 'required|password',
+
         ];
     }
 
@@ -35,7 +35,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'username.required'  => 'Please enter the username!',
-            'username.max' => 'username should not exceed 255 characters',
+            'username.max' => 'username should not exceed 30 characters',
             'username.unique' => 'username already exists',
             'email.required'  => 'Please enter the email!',
             'email.max' => 'email should not exceed 255 characters',
@@ -43,8 +43,7 @@ class RegisterRequest extends FormRequest
             'email.email' => 'Please enter correct email format',
             'password.min'  => 'Passwords must be at least 6 characters!',
             'password.required'  => 'Please enter the password!',
-            'confirmPassword.required'  => 'Please enter the confirmPassword!',
-            'confirmPassword.password'  => 'confirmPassword does not match password',
+            'password.confirmed'  => 'confirm password does not match password!',
         ];
     }
 }
