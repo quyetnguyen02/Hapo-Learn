@@ -5,7 +5,10 @@
  */
 
 require('./bootstrap');
-require('slick-carousel')
+require('slick-carousel');
+require('./header');
+require('./message');
+require('./feedback');
 
 window.Vue = require('vue').default;
 
@@ -31,8 +34,3 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
-
-require('./header');
-require('./message');
-require('./feedback')
-

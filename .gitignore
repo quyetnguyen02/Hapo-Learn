@@ -18,6 +18,5 @@ yarn-error.log
 /public/js
 /public/image
 /public/fonts
-/public/assets
-/public/images
-/public/mix-manifest.json
+/public/assets/js/jquery.min.js
+

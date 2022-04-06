@@ -257,15 +257,15 @@
             <div class="static-content">
                 <div class="content">
                     <p class="key">Courses</p>
-                    <p class="values">{!! number_format($countCourses) !!}</p>
+                    <p class="values">{!! number_format($courseCounts) !!}</p>
                 </div>
                 <div class="content">
                     <p class="key">Lessons</p>
-                    <p class="values">{!! number_format($countLessons) !!}</p>
+                    <p class="values">{!! number_format($lessonCounts) !!}</p>
                 </div>
                 <div class="content">
                     <p class="key">Learners</p>
-                    <p class="values">{!! number_format($countLearners) !!}</p>
+                    <p class="values">{!! number_format($userLessonCounts) !!}</p>
                 </div>
             </div>
         </div>
