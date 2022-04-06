@@ -78,6 +78,6 @@ class RegisterController extends Controller
         $input['role'] = 0;
         $input['name'] = $input['username'];
         $user = User::create($input);
-        echo 'a';
+        return redirect()->back()->with('message','register successfully');
     }
 }
