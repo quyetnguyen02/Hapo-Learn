@@ -12,10 +12,10 @@
 </head>
 
 <body>
-@include('Layouts.header')
-@yield('content')
-@include('Layouts.footer')
-@include('Layouts.message')
+    @include('Layouts.header')
+    @yield('content')
+    @include('Layouts.footer')
+    @include('Layouts.message')
 </body>
 <script src="{{asset('js/app.js')}}"></script>
 </html>

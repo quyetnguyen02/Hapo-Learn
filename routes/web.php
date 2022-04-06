@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class,'index']);
-Route::get('/courses/detail', [\App\Http\Controllers\HomeController::class,'show'])->name('home.show');
-
-Auth::routes();
+Route::get('/', [HomeController::class,'index']);
