@@ -20,3 +20,4 @@ yarn-error.log
 /public/fonts
 /public/assets
 /public/images
+/public/mix-manifest.json
