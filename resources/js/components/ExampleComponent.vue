@@ -13,11 +13,10 @@
         </div>
     </div>
 </template>
-
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+export default {
+    mounted() {
+        console.log('Component mounted.')
     }
+}
 </script>
