@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'username' => 'required',
-            'password' => 'required',
+            'password' => 'required|min:6',
         ];
     }
 
@@ -34,6 +34,7 @@ class LoginRequest extends FormRequest
         return [
             'username.required'  => 'Please enter the username!',
             'password.required'  => 'Please enter the password!',
+            'password.min'  => 'Password must be at least 6 characters!',
         ];
     }
 }

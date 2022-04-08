@@ -24,28 +24,28 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'username_register' => 'required|max:255|unique:users,username',
+            'register_username' => 'required|max:255|unique:users,username',
             'email' => 'required|email|max:255|unique:users,email',
-            'password_register' => 'required|min:6|string',
-            'confirmPassword' => 'required|same:password_register',
+            'register_password' => 'required|min:6|string',
+            'confirm_password' => 'required|same:register_password',
         ];
     }
 
     public function messages()
     {
         return [
-            'username_register.required'  => 'Please enter the username!',
-            'username_register.max' => 'username should not exceed 30 characters',
-            'username_register.unique' => 'username already exists',
+            'register_username.required'  => 'Please enter the username!',
+            'register_username.max' => 'username should not exceed 30 characters',
+            'register_username.unique' => 'username already exists',
             'email.required'  => 'Please enter the email!',
             'email.max' => 'email should not exceed 255 characters',
             'email.unique' => 'email already exists',
             'email.email' => 'Please enter correct email format',
-            'password_register.min'  => 'Passwords must be at least 6 characters!',
-            'password_register.required'  => 'Please enter the password!',
-            'confirmPassword.same'  => 'confirm password does not match password!',
-            'password_register.string'  => 'The password must not contain any spaces',
-            'confirmPassword.required'  => 'Please enter the confirmPassword!',
+            'register_password.min'  => 'Password must be at least 6 characters!',
+            'register_password.required'  => 'Please enter the password!',
+            'confirm_password.same'  => 'confirm password does not match password!',
+            'register_password.string'  => 'The password must not contain any spaces',
+            'confirm_password.required'  => 'Please enter the confirmPassword!',
         ];
     }
 }

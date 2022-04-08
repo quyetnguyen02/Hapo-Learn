@@ -42,7 +42,7 @@
                                         @enderror
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" class="checkbox-input" name="rememberme" id="rememberMe"/>
+                                        <input type="checkbox" class="checkbox-input" name="rememberme" id="rememberMe" value="true"/>
                                         <label class="control control-checkbox mb-0"><span class="caption">Remember
                                                     me</span></label>
                                         <a href="#">Forgot password</a>
@@ -63,9 +63,9 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>Username:</label>
-                                        <input type="text" name="username_register" class="form-control @error('username_register') is-invalid @enderror"
-                                               placeholder="User Name" value="@error('username_register') {{ old('username_register') }} @enderror"/>
-                                        @error('username_register')
+                                        <input type="text" name="register_username" class="form-control @error('register_username') is-invalid @enderror"
+                                               placeholder="User Name" value="@error('register_username') {{ old('register_username') }} @enderror"/>
+                                        @error('register_username')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -82,9 +82,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Password:</label>
-                                        <input type="password" name="password_register" class="form-control @error('password_register') is-invalid @enderror"
+                                        <input type="password" name="register_password" class="form-control @error('register_password') is-invalid @enderror"
                                                placeholder="Password"/>
-                                        @error('password_register')
+                                        @error('register_password')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -92,9 +92,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Repeat Password:</label>
-                                        <input type="password" name="confirmPassword" class="form-control @error('confirmPassword') is-invalid @enderror"
+                                        <input type="password" name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"
                                                placeholder=" Repeat Password"/>
-                                        @error('confirmPassword')
+                                        @error('confirm_password')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
