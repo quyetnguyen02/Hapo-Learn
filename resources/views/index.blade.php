@@ -93,7 +93,7 @@
     <div class="feedback">
         <div class="hp-feedback">
             <div class="hapo-feedback-header">
-                <a class="feed-back-header-title">Feedback</a>
+                <p class="feed-back-header-title">Feedback</p>
                 <p class="feed-back-header-content">What other students turned professionals have to say about
                     us
                     <br> after learning with us and reaching their goals

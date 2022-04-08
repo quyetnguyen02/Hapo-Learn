@@ -101,6 +101,11 @@
     box-shadow: inset 0px 1.5px 2px #6F8710;
     border-radius: 22px;
     font-family: $font;
+    color:$white;
+
+    &:hover {
+      color: black;
+    }
   }
 }
 
@@ -115,7 +120,7 @@
   font-family: $fontNunito;
 
   span {
-    border-bottom: 0.3rem solid #B2D235;
+    border-bottom: 0.3rem solid $green;
     border-radius: 3px;
   }
 }

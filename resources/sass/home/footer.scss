@@ -10,6 +10,7 @@
     text-align: center;
     font-style: normal;
     font-weight: 700;
+    padding-bottom: 20px;
   }
 }
 
@@ -103,11 +104,17 @@ a {
 }
 
 .inc {
-  width: 100%;
-  height: 38px;
-  text-align: center;
-  margin-top: 50px;
+  font-family: $fontNunito;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.05em;
   background: #454545;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
 }
 
 .link {
@@ -246,6 +253,7 @@ a {
     height: 40px;
   }
 }
+
 @media (max-width: 375px) {
   .right-logo {
     p {

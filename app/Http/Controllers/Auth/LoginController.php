@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -33,8 +36,30 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    public function login(LoginRequest $request)
     {
-        $this->middleware('guest')->except('logout');
+        $user = [
+            'username' => $request->username,
+            'password' => $request->password,
+        ];
+        if($request->rememberme == 'on'){
+            $rememberme = true;
+        }else {
+            $rememberme = false;
+        }
+        if(Auth::attempt($user,$rememberme)){
+            return redirect()->route('/');
+        }else {
+            return redirect()->back()->with('error','username password is incorrect');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('/');
     }
 }
