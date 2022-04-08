@@ -1,9 +1,9 @@
 $(document).ready(function () {
   $('#logoMess').click(function () {
-    $('#body').toggleClass('show');
+    $('#message').toggleClass('show');
   })
 
   $('#closeMess').click(function () {
-    $('#body').removeClass('show');
+    $('#message').removeClass('show');
   })
 })
