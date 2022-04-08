@@ -74,7 +74,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function register(Request $request){
+    public function register(RegisterRequest $request){
         $user = [
             'username' => $request->username_register,
             'password' => bcrypt($request->password_register),
