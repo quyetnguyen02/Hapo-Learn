@@ -71,16 +71,4 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-
-    public function register(RegisterRequest $request){
-        $user = [
-            'username' => $request->username_register,
-            'password' => bcrypt($request->password_register),
-            'email' => $request->email,
-            'role' => 0,
-            'name' => $request->username_register,
-        ];
-        User::create($user);
-        return redirect()->back()->with('message','register successfully');
-    }
 }

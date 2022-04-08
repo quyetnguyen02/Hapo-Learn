@@ -36,30 +36,8 @@ class LoginController extends Controller
      *
      * @return void
      */
-
-    public function login(LoginRequest $request)
+    public function __construct()
     {
-        $user = [
-            'username' => $request->username,
-            'password' => $request->password,
-        ];
-        if($request->rememberme == 'on'){
-            $rememberme = true;
-        }else {
-            $rememberme = false;
-        }
-        if(Auth::attempt($user,$rememberme)){
-            return redirect()->route('/');
-        }else {
-            return redirect()->back()->with('error','username password is incorrect');
-        }
-    }
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect()->route('/');
+        $this->middleware('guest')->except('logout');
     }
 }
