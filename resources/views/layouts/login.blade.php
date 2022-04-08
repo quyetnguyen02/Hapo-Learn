@@ -14,7 +14,7 @@
                         </div>
                         <div class="col-md-12 form-lg">
                             <div id="closeFormLogin">
-                                <form action="{{route('login')}}" method="post">
+                                <form action="{{ route('login') }}" method="post">
                                     @csrf
                                     @if(session()->has('message') )
                                         <div class="alert alert-success" id="success">
@@ -59,7 +59,7 @@
                                 <a class="login-rg" href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
                             </div>
                             <div id="closeRegisterForm">
-                                <form action="{{route('register')}}" method="post">
+                                <form action="{{ route('register') }}" method="post">
                                     @csrf
                                     <div class="form-group">
                                         <label>Username:</label>
