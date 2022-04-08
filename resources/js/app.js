@@ -9,6 +9,8 @@ require('slick-carousel')
 require('./header');
 require('./message');
 require('./feedback');
+require('./login');
+require('./register');
 window.Vue = require('vue').default;
 
 /**
