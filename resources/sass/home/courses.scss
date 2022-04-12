@@ -249,6 +249,12 @@
 
 @media (max-width: 576px) {
   .list-courses {
+    .list-container {
+      max-width: 67%;
+    }
+  }
+
+  .list-courses {
     margin-top: 270px;
 
     .col-card {
@@ -293,7 +299,20 @@
   }
 }
 
+@media (max-width: 425px) {
+  .list-courses {
+    .list-container {
+      max-width: 80%;
+    }
+  }
+}
+
 @media (max-width: 375px) {
+  .list-courses {
+    .list-container {
+      max-width: 100%;
+    }
+  }
   .other-text {
     font-size: 40px;
   }

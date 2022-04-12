@@ -15,22 +15,24 @@ class Course extends Model
         'name',
         'description',
         'image',
-        'time',
         'price',
     ];
+    /**
+     * @var mixed
+     */
 
     public function teachers()
     {
-        return $this->belongsToMany(User::class, 'teacher_course', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'teacher_courses', 'course_id', 'user_id');
     }
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_course', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id');
     }
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'course_tag', 'course_id', 'tag_id');
+        return $this->belongsToMany(Tag::class, 'course_tags', 'course_id', 'tag_id');
     }
 
     public function reviews()
@@ -38,8 +40,29 @@ class Course extends Model
         return $this->hasMany(Review::class, 'course_id', 'id');
     }
 
-    public function lessons()
+    public function lessons(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Lesson::class, 'course_id', 'id');
+    }
+
+    public function getLearnersAttribute()
+    {
+        return number_format($this->users->count());
+    }
+
+    public function getLessonsCountAttribute()
+    {
+        return number_format($this->lessons->count());
+    }
+
+    public function getTimeSumAttribute()
+    {
+        return number_format($this->lessons->sum('time')) . " " .  "(h)";
+    }
+
+    public function searchNameCourse($key)
+    {
+        $courses = Course::all()->where('name' , 'like' , '%' . $key . '%');
+        return $courses;
     }
 }
