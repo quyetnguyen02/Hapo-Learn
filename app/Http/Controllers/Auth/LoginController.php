@@ -43,8 +43,9 @@ class LoginController extends Controller
             'username' => $request->username,
             'password' => $request->password,
         ];
+
         if (Auth::attempt($data, isset($request->rememberme))) {
-            return redirect()->route('/');
+            return redirect()->route('homepage');
         } else {
             return redirect()->back()->with('error', 'username password is incorrect');
         }
@@ -54,6 +55,6 @@ class LoginController extends Controller
     {
         Auth::logout();
         $request->session()->regenerateToken();
-        return redirect()->route('/');
+        return redirect()->route('homepage');
     }
 }

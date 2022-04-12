@@ -81,6 +81,7 @@ class RegisterController extends Controller
             'role' => User::ROLE,
             'name' => $request->register_username,
         ];
+
         User::create($data);
         return redirect()->back()->with('message','register successfully');
     }
