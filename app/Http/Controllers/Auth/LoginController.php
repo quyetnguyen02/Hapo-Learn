@@ -36,8 +36,25 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    public function login(LoginRequest $request)
     {
-        $this->middleware('guest')->except('logout');
+        $data = [
+            'username' => $request->username,
+            'password' => $request->password,
+        ];
+
+        if (Auth::attempt($data, isset($request->rememberme))) {
+            return redirect()->route('homepage');
+        } else {
+            return redirect()->back()->with('error', 'username password is incorrect');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->regenerateToken();
+        return redirect()->route('homepage');
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -70,5 +71,18 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function register(RegisterRequest $request){
+        $data = [
+            'username' => $request->register_username,
+            'password' => bcrypt($request->register_password),
+            'email' => $request->email,
+            'role' => User::ROLE_USER,
+            'name' => $request->register_username,
+        ];
+
+        User::create($data);
+        return redirect()->back()->with('message','register successfully');
     }
 }

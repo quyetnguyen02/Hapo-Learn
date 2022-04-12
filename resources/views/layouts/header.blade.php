@@ -6,9 +6,26 @@
         <nav class="nav" id="nav">
             <a href="#" class="menu-nav">home</a>
             <a href="#" class="menu-nav">all courses</a>
-            <a href="" class="menu-nav" id="login-register" data-toggle="modal"
-               data-target="#loginModal">login/register</a>
-            <a href="#" class="menu-nav">profile</a>
+            @if (Auth::check())
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle menu-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-user">{{ Auth::user()->name }}</i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a href="#" class="menu-nav">profile</a>
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button class="menu-nav">
+                                log out
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @else
+                <a href="" class="menu-nav" id="login-register" data-toggle="modal"
+                   data-target="#loginModal">login/register</a>
+                <a href="#" class="menu-nav">profile</a>
+            @endif
         </nav>
     </div>
 </section>

@@ -3,7 +3,7 @@
         <div class="close-mess" id="closeMess"><i class="fa-solid fa-xmark"></i></div>
         <div class="message-content">
             <div class="message-logo">
-                <img src="{{asset('image/icon_owl.png')}}" alt="icon_owl">
+                <img src="{{ asset('image/icon_owl.png') }}" alt="icon_owl">
             </div>
             <div class="message-details">
                 <p class="name">HapoLearn</p>
