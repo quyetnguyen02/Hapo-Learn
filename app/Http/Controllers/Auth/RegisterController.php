@@ -78,7 +78,7 @@ class RegisterController extends Controller
             'username' => $request->register_username,
             'password' => bcrypt($request->register_password),
             'email' => $request->email,
-            'role' => User::ROLEUSER,
+            'role' => User::ROLE_USER,
             'name' => $request->register_username,
         ];
 
