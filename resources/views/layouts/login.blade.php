@@ -16,7 +16,7 @@
                             <div id="closeFormLogin">
                                 <form action="{{ route('login') }}" method="post">
                                     @csrf
-                                    @if(session()->has('message') )
+                                    @if (session()->has('message') )
                                         <div class="alert alert-success" id="success">
                                             {{ session()->get('message') }}
                                         </div>
@@ -47,7 +47,7 @@
                                                     me</span></label>
                                         <a href="#">Forgot password</a>
                                     </div>
-                                    @if(session()->has('error'))
+                                    @if (session()->has('error'))
                                         <div class="alert alert-danger" id="error">
                                             {{ session()->get('error') }}
                                         </div>
