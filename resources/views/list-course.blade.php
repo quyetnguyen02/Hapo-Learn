@@ -1,10 +1,8 @@
 @extends('layouts.layout')
 @section('content')
     @include('layouts.login')
-    <!-- Hapo-listcourses-->
     <section class="filter-search">
         <div class="container">
-            <!-- Listcourse-header -->
             <div class="search-course">
                 <div class="row">
                     <div class="col-md-6">
@@ -101,40 +99,46 @@
                 </div>
             </div>
             <div class="row courses-all">
-                @foreach($courses as $course)
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-                        <div class="course">
-                            <div class="content-courses">
-                                <div class="avatar">
-                                    <img src="{{ $course->image }}" alt="avatar {{ $course->name }}">
+                @if(session()->has('message_search') )
+                    <div >
+                        {{ session()->get('message_search') }}
+                    </div>
+                @else
+                    @foreach($courses as $course)
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                            <div class="course">
+                                <div class="content-courses">
+                                    <div class="avatar">
+                                        <img src="{{ $course->image }}" alt="avatar {{ $course->name }}">
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">{{ $course->name }}</div>
+                                        <div class="description">{{ $course->description }}</div>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <div class="title">{{ $course->name }}</div>
-                                    <div class="description">{{ $course->description }}</div>
+                                <div class="show">
+                                    <a href="" class="btn btn-success show-course-detail">More</a>
                                 </div>
-                            </div>
-                            <div class="show">
-                                <a href="" class="btn btn-success show-course-detail">More</a>
-                            </div>
-                            <div class="statistical">
-                                <div class="key-value">
-                                    <p class="key">Learners</p>
-                                    <p class="value">{{ $course->learners }}</p>
-                                </div>
-                                <div class="key-value">
-                                    <p class="key">Lessons</p>
-                                    <p class="value">{{ $course->lessons_count }}</p>
-                                </div>
-                                <div class="key-value">
-                                    <p class="key">Times</p>
-                                    <p class="value">{{ $course->time_sum }}</p>
+                                <div class="statistical">
+                                    <div class="key-value">
+                                        <p class="key">Learners</p>
+                                        <p class="value">{{ $course->learners }}</p>
+                                    </div>
+                                    <div class="key-value">
+                                        <p class="key">Lessons</p>
+                                        <p class="value">{{ $course->lessons_count }}</p>
+                                    </div>
+                                    <div class="key-value">
+                                        <p class="key">Times</p>
+                                        <p class="value">{{ $course->time_sum }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                    {{ $courses->links() }}
+                @endif
             </div>
-            {{ $courses->links() }}
         </div>
     </section>
 @endsection

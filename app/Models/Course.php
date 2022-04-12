@@ -62,7 +62,6 @@ class Course extends Model
 
     public function searchNameCourse($key)
     {
-        $courses = Course::all()->where('name' , 'like' , '%' . $key . '%');
-        return $courses;
+        return Course::where('name', 'LIKE' , '%' .$key. '%')->orWhere('description','LIKE','%'.$key.'%')->paginate(14);
     }
 }

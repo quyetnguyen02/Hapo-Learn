@@ -26,7 +26,12 @@ class ListCourseController extends Controller
 
     public function search(Request $request)
     {
-        $courses = Course::where('name' , 'like' , '%' . $request->key . '%')->paginate(14);
-        return view('list-course',compact('courses'));
+        $search_courses = new Course();
+        $courses = $search_courses -> searchNameCourse($request->key);
+        if (empty($courses->items()) == true) {
+            return redirect()->back()->with('message_search', 'No courses found');
+        } else {
+            return view('list-course',compact('courses'));
+        }
     }
 }
