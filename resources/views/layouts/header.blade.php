@@ -13,11 +13,11 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a href="#" class="menu-nav">profile</a>
-                        <a href="{{ route('logout') }}" class="menu-nav" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="fa-solid fa-right-from-bracket">log out</i>
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
+                        <form action="{{ route('logout') }}" method="post">
                             @csrf
+                            <button class="menu-nav">
+                                log out
+                            </button>
                         </form>
                     </div>
                 </div>
