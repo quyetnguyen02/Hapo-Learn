@@ -23,19 +23,6 @@
   margin-left: 20px;
   gap: 30px;
 
-  .avatar {
-    .avatar-img {
-      display: flex;
-      width: 80px;
-      height: 80px;
-
-      img {
-        width: 100%;
-        border-radius: 50px;
-      }
-    }
-  }
-
   .content {
     display: flex;
     flex-direction: column;
@@ -64,6 +51,19 @@
       -webkit-box-orient: vertical;
     }
   }
+}
+
+.avatar {
+    .avatar-img {
+        display: flex;
+        width: 80px;
+        height: 80px;
+
+        img {
+            width: 100%;
+            border-radius: 50px;
+        }
+    }
 }
 
 .show {
