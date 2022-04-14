@@ -39,14 +39,14 @@
                                 <div class="list-course-filter-new">
                                     <li>
                                         <input type="radio" name="search_new_old" id="new" value="{{ config('filter.sort.desc') }}"
-                                                 @if($data->search_new_old ==  config('filter.sort.desc')  || is_null($data->search_new_old))  checked @endif/>
+                                                 @if($data->searchNewOld ==  config('filter.sort.desc')  || is_null($data->searchNewOld))  checked @endif/>
                                         <label for="new">Mới nhất</label>
                                     </li>
                                 </div>
                                 <div class="list-course-filter-new">
                                     <li>
                                         <input type="radio" id="old" name="search_new_old" value="{{ config('filter.sort.asc') }}"
-                                               @if($data->search_new_old == 'desc')  checked @endif/>
+                                               @if($data->searchNewOld == 'desc')  checked @endif/>
                                         <label for="old">Cũ nhất</label>
                                     </li>
                                 </div>
@@ -54,34 +54,34 @@
                         </div>
                         <div class="col-md-2">
                             <select class="form-select" aria-label="Default select example" name="search_teacher">
-                                <option value="{{ $data->search_teacher }}" selected>Teacher</option>
+                                <option value="{{ $data->searchTeacher }}" selected>Teacher</option>
                                 @foreach($teachers as $teacher)
                                     <option value="{{ $teacher->id }}"
-                                            @if($data->search_teacher) selected @endif>{{ $teacher->name }}</option>
+                                            @if($data->searchTeacher) selected @endif>{{ searchTeacher->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-2">
                             <select class="form-select" aria-label="Default select example" name="search_learner">
-                                <option value="{{ $data->search_learner }}" selected>Số người học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($data->search_learner == config('filter.sort.asc')) selected @endif>Tăng dần
+                                <option value="{{ $data->searchLearner }}" selected>Số người học</option>
+                                <option value="{{ config('filter.sort.asc') }}" @if($data->searchLearner == config('filter.sort.asc')) selected @endif>Tăng dần
                                 </option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($data->search_learner == config('filter.sort.desc')) selected @endif>Giảm dần
+                                <option value="{{ config('filter.sort.desc') }}" @if($data->searchLearner == config('filter.sort.desc')) selected @endif>Giảm dần
                                 </option>
                             </select>
                         </div>
                         <div class="col-md-2">
                             <select class="form-select" aria-label="Default select example" name="search_time">
-                                <option value="{{ $data->search_time }}" selected>Thời gian học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($data->search_time == config('filter.sort.asc')) selected @endif>Tăng dần</option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($data->search_time == config('filter.sort.asc')) selected @endif>Giảm dần</option>
+                                <option value="{{ $data->searchTime }}" selected>Thời gian học</option>
+                                <option value="{{ config('filter.sort.asc') }}" @if($data->searchTime == config('filter.sort.asc')) selected @endif>Tăng dần</option>
+                                <option value="{{ config('filter.sort.desc') }}" @if($data->searchTime == config('filter.sort.asc')) selected @endif>Giảm dần</option>
                             </select>
                         </div>
                         <div class="col-md-2">
                             <select class="form-select" aria-label="Default select example" name="search_lesson">
-                                <option value="{{ $data->search_lesson }}" selected> Số bài học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($data->search_lesson == config('filter.sort.asc')) selected @endif>Tăng dần</option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($data->search_lesson == config('filter.sort.desc')) selected @endif>Giảm dần
+                                <option value="{{ $data->searchLesson }}" selected> Số bài học</option>
+                                <option value="{{ config('filter.sort.asc') }}" @if($data->searchLesson == config('filter.sort.asc')) selected @endif>Tăng dần</option>
+                                <option value="{{ config('filter.sort.desc') }}" @if($data->searchLesson == config('filter.sort.desc')) selected @endif>Giảm dần
                                 </option>
                             </select>
                         </div>

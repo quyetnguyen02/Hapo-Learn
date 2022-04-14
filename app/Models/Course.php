@@ -67,27 +67,27 @@ class Course extends Model
                 ->orWhere('description','LIKE','%'. $request->key .'%');
         }
 
-        if (!is_null($request->search_new_old) && isset($request->search_new_old)) {
-            $query->orderBy('id', $request->search_new_old);
+        if (isset($request->searchNewOld)) {
+            $query->orderBy('id', $request->searchNewOld);
         }
 
-        if (!is_null($request->search_teacher) && isset($request->search_teacher)) {
-            $search_teacher = $request->search_teacher;
-            $query->whereHas('teachers', function ($subquery) use ($search_teacher) {
-                $subquery->where('user_id', $search_teacher);
+        if (!is_null($request->searchTeacher) && isset($request->searchTeacher)) {
+            $searchTeacher = $request->searchTeacher;
+            $query->whereHas('teachers', function ($subquery) use ($searchTeacher) {
+                $subquery->where('user_id', searchTeacher);
             });
         }
 
-        if (!is_null($request->search_learner) && ($request->search_learner)) {
-            $query->withCount('users')->orderBy('users_count', $request->search_learner);
+        if (!is_null($request->searchLearner) && isset($request->searchLearner)) {
+            $query->withCount('users')->orderBy('users_count', $request->searchLearner);
         }
 
-        if (!is_null($request->search_time) && isset($request->search_time)) {
-            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $request->search_time);
+        if (!is_null($request->searchTime) && isset($request->searchTime)) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $request->searchTime);
         }
 
-        if (!is_null($request->search_lesson) && isset($request->search_lesson)) {
-            $query->withCount('lessons')->orderBy('lessons_count', $request->search_lesson);
+        if (!is_null($request->searchLesson) && isset($request->searchLesson)) {
+            $query->withCount('lessons')->orderBy('lessons_count', $request->searchLesson);
         }
 
         if (!is_null($request->tag) && isset($request->tag)) {
