@@ -5,3 +5,5 @@ require('./message');
 require('./feedback');
 require('./login');
 require('./register');
+require('./filter');
+

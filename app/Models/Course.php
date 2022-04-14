@@ -47,21 +47,56 @@ class Course extends Model
 
     public function getLearnersAttribute()
     {
-        return number_format($this->users->count());
+        return number_format($this->users()->count());
     }
 
     public function getLessonsCountAttribute()
     {
-        return number_format($this->lessons->count());
+        return number_format($this->lessons()->count());
     }
 
     public function getTimeSumAttribute()
     {
-        return number_format($this->lessons->sum('time')) . " " .  "(h)";
+        return number_format($this->lessons()->sum('time')) . " " .  "(h)";
     }
 
-    public function searchNameCourse($key)
+    public function scopeSearch($query, $request)
     {
-        return Course::where('name', 'LIKE' , '%' .$key. '%')->orWhere('description','LIKE','%'.$key.'%')->paginate(14);
+        if (!is_null($request->key) && isset($request->key)) {
+            $query->where('name', 'LIKE' , '%' . $request->key . '%')
+                ->orWhere('description','LIKE','%'. $request->key .'%');
+        }
+
+        if (!is_null($request->search_new_old) && isset($request->search_new_old)) {
+            $query->orderBy('id', $request->search_new_old);
+        }
+
+        if (!is_null($request->search_teacher) && isset($request->search_teacher)) {
+            $search_teacher = $request->search_teacher;
+            $query->whereHas('teachers', function ($subquery) use ($search_teacher) {
+                $subquery->where('user_id', $search_teacher);
+            });
+        }
+
+        if (!is_null($request->search_learner) && ($request->search_learner)) {
+            $query->withCount('users')->orderBy('users_count', $request->search_learner);
+        }
+
+        if (!is_null($request->search_time) && isset($request->search_time)) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $request->search_time);
+        }
+
+        if (!is_null($request->search_lesson) && isset($request->search_lesson)) {
+            $query->withCount('lessons')->orderBy('lessons_count', $request->search_lesson);
+        }
+
+        if (!is_null($request->tag) && isset($request->tag)) {
+            $tag = $request->tag;
+            $query->whereHas('tags', function ($subquery) use ($tag) {
+                $subquery->where('tag_id', $tag);
+            });
+        }
+        $query->orderBy('id', config('filter.sort.desc'));
+         return $query;
     }
 }

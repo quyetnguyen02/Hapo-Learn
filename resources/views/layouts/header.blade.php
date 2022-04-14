@@ -1,11 +1,11 @@
 <section class="header d-flex">
     <div class="container-fluid d-flex align-items-center justify-content-between header-container">
         <div id="menuBar" class="fas fa-bars d-md-none menu-bar"></div>
-        <a href="#" class="logo"><img class="logo-hp" src="{{ asset('image/hapo_learn.png') }}" alt="HapoLearn Logo">
+        <a href="{{ route('index') }}" class="logo"><img class="logo-hp" src="{{ asset('image/hapo_learn.png') }}" alt="HapoLearn Logo">
         </a>
         <nav class="nav" id="nav">
-            <a href="#" class="menu-nav">home</a>
-            <a href="{{ route('list-course') }}" class="menu-nav">all courses</a>
+            <a href="{{ route('index') }}" class="menu-nav">home</a>
+            <a href="{{ route('list course.index') }}" class="menu-nav">all courses</a>
             @if (Auth::check())
                 <div class="dropdown show">
                     <a class="btn btn-secondary dropdown-toggle menu-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -15,9 +15,7 @@
                         <a href="#" class="menu-nav">profile</a>
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button class="menu-nav">
-                                log out
-                            </button>
+                            <button class="menu-nav">log out</button>
                         </form>
                     </div>
                 </div>

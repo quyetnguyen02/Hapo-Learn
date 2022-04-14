@@ -94,11 +94,19 @@
     }
 
     .list-course-filter-new {
-      width: 80px;
-      background: $green;
+      width: 50%;
+      background: #E5E6E7;
       border-radius: 2px;
       text-align: center;
-      padding: 5px;
+      display: flex;
+      align-items: center;
+      font-family: $font;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      color: #505353;
+
     }
 
     .filter-new {
@@ -132,4 +140,56 @@
   .show-filter {
     display: block;
   }
+}
+
+.col-ul {
+  max-width: 30%;
+
+  .filter-time {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+
+    li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      position: relative;
+    }
+
+    label,input {
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.filter-time input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.filter-time input[type="radio"]:checked+label,
+.Checked+label {
+  background: $green;
+  color: $white;
+}
+
+.filter-time label {
+  padding: 5px;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+}
+
+.filter-time label:hover {
+  background: #DDD;
 }
