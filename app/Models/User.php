@@ -14,7 +14,8 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
     use SoftDeletes;
 
-    const ROLE_USER = 0 ;
+    const ROLE_USER = 0;
+    const ROLE_TEACHER = 1;
 
     /**
      * The attributes that are mass assignable.
@@ -71,5 +72,10 @@ class User extends Authenticatable
     public function lessons()
     {
         return $this->belongsToMany(Lesson::class, 'user_lesson', 'user_id', 'lesson_id');
+    }
+
+    public function scopeTeacher($query)
+    {
+        return $query->where('role', '=', User::ROLE_TEACHER);
     }
 }

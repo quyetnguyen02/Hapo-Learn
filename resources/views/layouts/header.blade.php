@@ -5,7 +5,7 @@
         </a>
         <nav class="nav" id="nav">
             <a href="{{ route('index') }}" class="menu-nav">home</a>
-            <a href="{{ route('list course.index') }}" class="menu-nav">all courses</a>
+            <a href="{{ route('list courses.index') }}" class="menu-nav">all courses</a>
             @if (Auth::check())
                 <div class="dropdown show">
                     <a class="btn btn-secondary dropdown-toggle menu-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

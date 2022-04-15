@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Session;
 
 class CourseController extends Controller
 {
@@ -23,10 +24,12 @@ class CourseController extends Controller
      */
     public function index(Request $request)
     {
-        $teachers = User::all()->where('role', '=', '1');
+        $teachers = User::teacher()->get();
         $tags = Tag::all();
-        $courses = Course::search($request)->paginate(14);
-        $data = $request;
-        return view('course', compact(['courses', 'teachers', 'tags', 'data']));
+        $courses = Course::search($request->all())->paginate(config('filter.item_page'));
+        if (count($courses->items()) == 0 ) {
+            return redirect()->route('list courses.index')->with('message_search', 'No courses found');
+        }
+        return view('courses.index', compact(['courses', 'teachers', 'tags', 'request']));
     }
 }

@@ -5,7 +5,6 @@
             <div class="modal-body">
                 <div class="login" id="login">
                     <div class="login-form">
-
                         <div class="close-form" id="close" data-dismiss="modal"><i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="d-flex login-register">
@@ -23,7 +22,8 @@
                                     @endif
                                     <div class="form-group">
                                         <label>Username:</label>
-                                        <input type="text" name="username" class="form-control @error('username') is-invalid login @enderror"
+                                        <input type="text" name="username"
+                                               class="form-control @error('username') is-invalid login @enderror"
                                                placeholder="User Name"/>
                                         @error('username')
                                         <span class="invalid-feedback" role="alert">
@@ -33,7 +33,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Password:</label>
-                                        <input type="password" name="password" class="form-control @error('password') is-invalid login @enderror"
+                                        <input type="password" name="password"
+                                               class="form-control @error('password') is-invalid login @enderror"
                                                placeholder="Password"/>
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -42,7 +43,8 @@
                                         @enderror
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" class="checkbox-input" name="rememberme" id="rememberMe" value="true"/>
+                                        <input type="checkbox" class="checkbox-input" name="rememberme" id="rememberMe"
+                                               value="true"/>
                                         <label class="control control-checkbox mb-0"><span class="caption">Remember
                                                     me</span></label>
                                         <a href="#">Forgot password</a>
@@ -63,8 +65,10 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>Username:</label>
-                                        <input type="text" name="register_username" class="form-control @error('register_username') is-invalid @enderror"
-                                               placeholder="User Name" value="@error('register_username') {{ old('register_username') }} @enderror"/>
+                                        <input type="text" name="register_username"
+                                               class="form-control @error('register_username') is-invalid @enderror"
+                                               placeholder="User Name"
+                                               value="@error('register_username') {{ old('register_username') }} @enderror"/>
                                         @error('register_username')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -73,7 +77,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Email:</label>
-                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="@error('email') {{ old('email') }} @enderror "/>
+                                        <input type="email" name="email"
+                                               class="form-control @error('email') is-invalid @enderror"
+                                               placeholder="Email"
+                                               value="@error('email') {{ old('email') }} @enderror "/>
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -82,7 +89,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Password:</label>
-                                        <input type="password" name="register_password" class="form-control @error('register_password') is-invalid @enderror"
+                                        <input type="password" name="register_password"
+                                               class="form-control @error('register_password') is-invalid @enderror"
                                                placeholder="Password"/>
                                         @error('register_password')
                                         <span class="invalid-feedback" role="alert">
@@ -92,7 +100,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Repeat Password:</label>
-                                        <input type="password" name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"
+                                        <input type="password" name="confirm_password"
+                                               class="form-control @error('confirm_password') is-invalid @enderror"
                                                placeholder=" Repeat Password"/>
                                         @error('confirm_password')
                                         <span class="invalid-feedback" role="alert">

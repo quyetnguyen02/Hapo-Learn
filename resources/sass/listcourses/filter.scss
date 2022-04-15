@@ -10,7 +10,7 @@
       text-align: center;
       box-sizing: border-box;
       background: $white;
-      border: 1px solid $white -border;
+      border: 1px solid $white;
       border-radius: 5px;
       height: 40px;
       cursor: pointer;
@@ -112,7 +112,7 @@
 
     .list-course-filter-old{
       width: 80px;
-      background: $white -old;
+      background: $white;
       text-align: center;
       padding: 5px;
       border-radius: 2px;
