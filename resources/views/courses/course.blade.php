@@ -1,7 +1,7 @@
 <div class="row courses-all">
-    @if(session()->has('message_search'))
+    @if(count($courses->items()) == 0)
         <div>
-            {{ session()->get('message_search') }}
+            No Course Found!
         </div>
     @else
         @foreach($courses as $course)

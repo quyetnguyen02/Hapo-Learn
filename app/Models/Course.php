@@ -66,32 +66,32 @@ class Course extends Model
 
     public function scopeSearch($query, $request)
     {
-        if (isset($request['key'])) {
-            $query->where('name', 'LIKE', '%' . $request['key'] . '%')
-                ->orWhere('description', 'LIKE', '%' . $request['key'] . '%');
+        if (isset($request['keyword'])) {
+            $query->where('name', 'LIKE', '%' . $request['keyword'] . '%')
+                ->orWhere('description', 'LIKE', '%' . $request['keyword'] . '%');
         }
 
-        if (isset($request['searchNewOld'])) {
-            $query->orderBy('id', $request['searchNewOld']);
+        if (isset($request['created_time'])) {
+            $query->orderBy('id', $request['created_time']);
         }
 
-        if (isset($request['searchTeacher'])) {
-            $searchTeacher = $request['searchTeacher'];
-            $query->whereHas('teachers', function ($subquery) use ($searchTeacher) {
-                $subquery->where('user_id', $searchTeacher);
+        if (isset($request['teacher'])) {
+
+            $query->whereHas('teachers', function ($subquery) use ($request) {
+                $subquery->where('user_id', $request['teacher']);
             });
         }
 
-        if (isset($request['searchLearner'])) {
-            $query->withCount('users')->orderBy('users_count', $request['searchLearner']);
+        if (isset($request['learner'])) {
+            $query->withCount('users')->orderBy('users_count', $request['learner']);
         }
 
-        if (isset($request['searchTime'])) {
-            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $request['searchTime']);
+        if (isset($request['learn_time'])) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $request['learn_time']);
         }
 
-        if (isset($request['searchLesson'])) {
-            $query->withCount('lessons')->orderBy('lessons_count', $request['searchLesson']);
+        if (isset($request['lesson'])) {
+            $query->withCount('lessons')->orderBy('lessons_count', $request['lesson']);
         }
 
         if (isset($request['tag'])) {

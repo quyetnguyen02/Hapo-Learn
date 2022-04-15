@@ -4,10 +4,6 @@ return [
         'asc' => 'asc',
         'desc' => 'desc',
     ],
-
     'item_page' => 14,
-
-
-
 ]
 ?>

@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="list-course-search">
-                                        <input type="text" name="key" placeholder="Search..." class="input-search"
+                                        <input type="text" name="keyword" placeholder="Search..." class="input-search"
                                                value="">
                                         <i class="fa-solid fa-magnifying-glass search"></i>
                                     </div>
@@ -38,49 +38,49 @@
                             <ul class="filter-time">
                                 <div class="list-course-filter-new">
                                     <li>
-                                        <input type="radio" name="searchNewOld" id="new" value="{{ config('filter.sort.desc') }}"
-                                                 @if($request->searchNewOld ==  config('filter.sort.desc')  || is_null($request->searchNewOld))  checked @endif/>
+                                        <input type="radio" name="created_time" id="new" value="{{ config('filter.sort.desc') }}"
+                                                 @if($request->created_time ==  config('filter.sort.desc')  || is_null($request->created_time))  checked @endif/>
                                         <label for="new">Mới nhất</label>
                                     </li>
                                 </div>
                                 <div class="list-course-filter-new">
                                     <li>
-                                        <input type="radio" id="old" name="searchNewOld" value="{{ config('filter.sort.asc') }}"
-                                               @if($request->searchNewOld == config('filter.sort.asc'))  checked @endif/>
+                                        <input type="radio" id="old" name="created_time" value="{{ config('filter.sort.asc') }}"
+                                               @if($request->created_time == config('filter.sort.asc'))  checked @endif/>
                                         <label for="old">Cũ nhất</label>
                                     </li>
                                 </div>
                             </ul>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example" name="searchTeacher">
-                                <option value="{{ $request->searchTeacher }}" selected>Teacher</option>
+                            <select class="form-select" aria-label="Default select example" name="teacher">
+                                <option value="{{ $request->teacher }}" selected>Teacher</option>
                                 @foreach($teachers as $teacher)
-                                    <option value="{{ $teacher->id }}" @if($request->searchTeacher) selected @endif>{{ $teacher->name }}</option>
+                                    <option value="{{ $teacher->id }}" @if($request->teacher) selected @endif>{{ $teacher->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example" name="searchLearner">
-                                <option value="{{ $request->searchLearner }}" selected>Số người học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($request->searchLearner == config('filter.sort.asc')) selected @endif>Tăng dần
+                            <select class="form-select" aria-label="Default select example" name="learner">
+                                <option value="{{ $request->learner }}" selected>Số người học</option>
+                                <option value="{{ config('filter.sort.asc') }}" @if($request->learner == config('filter.sort.asc')) selected @endif>Tăng dần
                                 </option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($request->searchLearner == config('filter.sort.desc')) selected @endif>Giảm dần
+                                <option value="{{ config('filter.sort.desc') }}" @if($request->learner == config('filter.sort.desc')) selected @endif>Giảm dần
                                 </option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example" name="searchTime">
-                                <option value="{{ $request->searchTime }}" selected>Thời gian học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($request->searchTime == config('filter.sort.asc')) selected @endif>Tăng dần</option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($request->searchTime == config('filter.sort.asc')) selected @endif>Giảm dần</option>
+                            <select class="form-select" aria-label="Default select example" name="learn_time">
+                                <option value="{{ $request->learn_time }}" selected>Thời gian học</option>
+                                <option value="{{ config('filter.sort.asc') }}" @if($request->learn_time == config('filter.sort.asc')) selected @endif>Tăng dần</option>
+                                <option value="{{ config('filter.sort.desc') }}" @if($request->learn_time == config('filter.sort.asc')) selected @endif>Giảm dần</option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example" name="searchLesson">
-                                <option value="{{ $request->searchLesson }}" selected> Số bài học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($request->searchLesson == config('filter.sort.asc')) selected @endif>Tăng dần</option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($request->searchLesson == config('filter.sort.desc')) selected @endif>Giảm dần
+                            <select class="form-select" aria-label="Default select example" name="lesson">
+                                <option value="{{ $request->lesson }}" selected> Số bài học</option>
+                                <option value="{{ config('filter.sort.asc') }}" @if($request->lesson == config('filter.sort.asc')) selected @endif>Tăng dần</option>
+                                <option value="{{ config('filter.sort.desc') }}" @if($request->lesson  == config('filter.sort.desc')) selected @endif>Giảm dần
                                 </option>
                             </select>
                         </div>
