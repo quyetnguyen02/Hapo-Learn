@@ -44,6 +44,14 @@
       align-items: center;
     }
   }
+
+  .a-active {
+    background: $green;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .menu-bar {

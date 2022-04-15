@@ -4,8 +4,8 @@
         <a href="{{ route('index') }}" class="logo"><img class="logo-hp" src="{{ asset('image/hapo_learn.png') }}" alt="HapoLearn Logo">
         </a>
         <nav class="nav" id="nav">
-            <a href="{{ route('index') }}" class="menu-nav a" id="a">home</a>
-            <a href="{{ route('list courses.index') }}" class="menu-nav a" id="a">all courses</a>
+            <a href="{{ route('index') }}" class="{{ '/' == request()->path() ? 'a-active'  : ''}} menu-nav " id="a">home</a>
+            <a href="{{ route('list courses.index') }}" class="{{ 'list%20courses' == request()->path() ? 'a-active'  : ''}} menu-nav a" id="a">all courses</a>
             @if (Auth::check())
                 <div class="dropdown show">
                     <a class="btn btn-secondary dropdown-toggle menu-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
