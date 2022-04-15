@@ -84,6 +84,6 @@ class RegisterController extends Controller
         ];
 
         User::create($data);
-        return redirect()->back()->with('message','register successfully');
+        return redirect()->back()->with('message', 'register successfully');
     }
 }

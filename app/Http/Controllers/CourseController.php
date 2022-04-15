@@ -27,7 +27,7 @@ class CourseController extends Controller
         $teachers = User::teacher()->get();
         $tags = Tag::all();
         $courses = Course::search($request->all())->paginate(config('filter.item_page'));
-        if (count($courses->items()) == 0 ) {
+        if (count($courses->items()) == 0) {
             return redirect()->route('list courses.index')->with('message_search', 'No courses found');
         }
         return view('courses.index', compact(['courses', 'teachers', 'tags', 'request']));
