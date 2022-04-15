@@ -54,16 +54,16 @@
 }
 
 .avatar {
-    .avatar-img {
-        display: flex;
-        width: 80px;
-        height: 80px;
+  .avatar-img {
+    display: flex;
+    width: 80px;
+    height: 80px;
 
-        img {
-            width: 100%;
-            border-radius: 50px;
-        }
+    img {
+      width: 100%;
+      border-radius: 50px;
     }
+  }
 }
 
 .show {
@@ -136,7 +136,7 @@
   }
 }
 
-.page-item.active{
+.page-item.active {
   .page-link {
     background-color: $green;
     border-color: $green;

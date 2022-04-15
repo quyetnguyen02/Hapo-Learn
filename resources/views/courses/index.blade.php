@@ -3,7 +3,7 @@
     @include('layouts.login')
     <section class="filter-search">
         <div class="container">
-            <form action="{{ route('list courses.index') }}" id="search-form" method="get">
+            <form action="{{ route('courses.index') }}" id="search-form" method="get">
                 <div class="search-course">
                     <div class="row">
                         <div class="col-md-6">
@@ -18,7 +18,7 @@
                                 <div class="col-md-6">
                                     <div class="list-course-search">
                                         <input type="text" name="keyword" placeholder="Search..." class="input-search"
-                                               value="">
+                                               value="{{ $request->keyword}}">
                                         <i class="fa-solid fa-magnifying-glass search"></i>
                                     </div>
                                 </div>

@@ -5,5 +5,5 @@ return [
         'desc' => 'desc',
     ],
     'item_page' => 14,
-]
+];
 ?>

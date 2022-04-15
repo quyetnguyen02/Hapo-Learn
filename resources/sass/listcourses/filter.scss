@@ -171,8 +171,8 @@
   z-index: 100;
 }
 
-.filter-time input[type="radio"]:checked+label,
-.Checked+label {
+.filter-time input[type="radio"]:checked+label
+{
   background: $green;
   color: $white;
 }

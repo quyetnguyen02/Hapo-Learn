@@ -64,38 +64,37 @@ class Course extends Model
         return number_format($this->lessons()->sum('time')) . " " . "(h)";
     }
 
-    public function scopeSearch($query, $request)
+    public function scopeSearch($query, $data)
     {
-        if (isset($request['keyword'])) {
-            $query->where('name', 'LIKE', '%' . $request['keyword'] . '%')
-                ->orWhere('description', 'LIKE', '%' . $request['keyword'] . '%');
+        if (isset($data['keyword'])) {
+            $query->where('name', 'LIKE', '%' . $data['keyword'] . '%')
+                ->orWhere('description', 'LIKE', '%' . $data['keyword'] . '%');
         }
 
-        if (isset($request['created_time'])) {
-            $query->orderBy('id', $request['created_time']);
+        if (isset($data['created_time'])) {
+            $query->orderBy('id', $data['created_time']);
         }
 
-        if (isset($request['teacher'])) {
-
-            $query->whereHas('teachers', function ($subquery) use ($request) {
-                $subquery->where('user_id', $request['teacher']);
+        if (isset($data['teacher'])) {
+            $query->whereHas('teachers', function ($subquery) use ($data) {
+                $subquery->where('user_id', $data['teacher']);
             });
         }
 
-        if (isset($request['learner'])) {
-            $query->withCount('users')->orderBy('users_count', $request['learner']);
+        if (isset($data['learner'])) {
+            $query->withCount('users')->orderBy('users_count', $data['learner']);
         }
 
-        if (isset($request['learn_time'])) {
-            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $request['learn_time']);
+        if (isset($data['learn_time'])) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['learn_time']);
         }
 
-        if (isset($request['lesson'])) {
-            $query->withCount('lessons')->orderBy('lessons_count', $request['lesson']);
+        if (isset($data['lesson'])) {
+            $query->withCount('lessons')->orderBy('lessons_count', $data['lesson']);
         }
 
-        if (isset($request['tag'])) {
-            $tag = $request['tag'];
+        if (isset($data['tag'])) {
+            $tag = $data['tag'];
             $query->whereHas('tags', function ($subquery) use ($tag) {
                 $subquery->where('tag_id', $tag);
             });

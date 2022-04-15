@@ -5,7 +5,7 @@
         </a>
         <nav class="nav" id="nav">
             <a href="{{ route('index') }}" class="{{ '/' == request()->path() ? 'a-active'  : ''}} menu-nav " id="a">home</a>
-            <a href="{{ route('list courses.index') }}" class="{{ 'list%20courses' == request()->path() ? 'a-active'  : ''}} menu-nav a" id="a">all courses</a>
+            <a href="{{ route('courses.index') }}" class="{{ 'courses' == request()->path() ? 'a-active'  : ''}} menu-nav a" id="a">all courses</a>
             @if (Auth::check())
                 <div class="dropdown show">
                     <a class="btn btn-secondary dropdown-toggle menu-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,7 +22,7 @@
             @else
                 <a href="" class="menu-nav" id="login-register" data-toggle="modal"
                    data-target="#loginModal">login/register</a>
-                <a href="#" class="menu-nav">profile</a>
+                <a href="#" class="menu-nav" id="profile">profile</a>
             @endif
         </nav>
     </div>
