@@ -1,0 +1,146 @@
+.course {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #FFFFFF;
+  border: 1px solid #F1F1F1;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.courses-all {
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.content-courses {
+  display: flex;
+  padding-top: 20px;
+  margin-right: 70px;
+  margin-left: 20px;
+  gap: 30px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-family: $fontNunito;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 31px;
+      letter-spacing: -0.05em;
+      color: #505353;
+    }
+
+    .description {
+      font-family: $fontNunito;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: -0.05em;
+      color: #505050;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.avatar {
+  .avatar-img {
+    display: flex;
+    width: 80px;
+    height: 80px;
+
+    img {
+      width: 100%;
+      border-radius: 50px;
+    }
+  }
+}
+
+.show {
+  border-bottom: 1px solid #F1F1F1;
+
+  .show-course-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 106px;
+    height: 42px;
+    float: right;
+    background: $green;
+    box-shadow: inset 0px 2px 4px #6F8710;
+    border-radius: 22px;
+    font-family: $fontNunito;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 10px;
+    margin-right: 35px;
+  }
+}
+
+.statistical {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 26px;
+  align-items: center;
+
+  .key-value {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .key {
+      font-family: $fontNunito;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 31px;
+      color: #505353;
+    }
+
+    .value {
+      font-family: $fontNunito;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 37px;
+      letter-spacing: -0.05em;
+      color: $green;
+    }
+  }
+}
+
+.list-course-pagination {
+  display: flex;
+  justify-content: end;
+
+  .page-item {
+    padding: 0 2px;
+  }
+
+  .page-link:hover {
+    background: #B2D235;
+    color: #FFFFFF;
+  }
+}
+
+.page-item.active {
+  .page-link {
+    background-color: $green;
+    border-color: $green;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

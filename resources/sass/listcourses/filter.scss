@@ -1,51 +1,189 @@
-.filter-container {
-  margin-top: 200px;
-  display: flex;
-  gap: 15px;
+.filter-search {
+  background: #E5E5E5;
+  width: 100%;
+  height: 100%;
 
-  .filter-options {
-    background: #FFFFFF;
-    border: 1px solid #C4C4C4;
-    border-radius: 5px;
-    display: flex;
-    gap: 9px;
-    padding: 8px 19px;
-    align-items: center;
-    justify-content: center;
+  .search-course{
+    padding-top: 30px;
 
-    img {
-      width: 18px;
-      height: 23px;
+    .list-course-filter {
+      text-align: center;
+      box-sizing: border-box;
+      background: $white;
+      border: 1px solid $white;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
     }
 
-    span {
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 22px;
+    .list-course-filter-content {
       color: #505353;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      padding: 7px 0;
+    }
+
+    .list-course-search {
+      position: relative;
+    }
+
+    .input-search {
+      width: 100%;
+      height: 40px;
+      background: $white;
+      border: 1px solid $white ;
+      border-radius: 5px;
+      padding: 12px;
+    }
+
+    .search {
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      color: #505353;
+    }
+
+    .list-course-btn-search {
+      height: 40px;
+      background: $green;
+      border: 1px solid $green;
+      border-radius: 5px;
+      color: $white;
+      padding: 6px 24px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
     }
   }
 
-  .form-search {
-    form {
+  .filter-course {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    border: 1px solid $white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: none;
+    font-family: $fontNunito;
+
+    .filter-main {
+      padding-bottom: 15px;
+      padding-left: 10px;
+      padding-top: 15px;
+    }
+
+    .filter-main-second {
+      padding-bottom: 16px;
+    }
+
+    .filter-by {
+      color: #505353;
+      line-height: 22px;
+      font-weight: 700;
+      padding-left: 5px;
+      font-style: normal;
+      font-size: 14px;
+    }
+
+    .list-course-filter-new {
+      width: 50%;
+      background: #E5E6E7;
+      border-radius: 2px;
+      text-align: center;
       display: flex;
+      align-items: center;
+      font-family: $font;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      color: #505353;
+    }
+
+    .filter-new {
+      text-decoration: none;
+      color: $white;
+      line-height: 19px;
+      font-weight: 600;
+    }
+
+    .list-course-filter-old{
+      width: 80px;
+      background: $white;
+      text-align: center;
+      padding: 5px;
+      border-radius: 2px;
+    }
+
+    .filter-old {
+      text-decoration: none;
+      color: #505353;
+      line-height: 19px;
+      font-weight: 600;
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 5px;
+    }
+  }
+
+  .show-filter {
+    display: block;
+  }
+}
+
+.col-ul {
+  max-width: 30%;
+
+  .filter-time {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+
+    li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      position: relative;
+    }
+
+    label,input {
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
   }
 }
 
-.form-search {
-  form {
-    input {
-      width: 355px;
-      height: 40px;
-    }
+.filter-time input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
 
-    btn-search {
-      margin-left: 20px;
-      background: #B2D235;
-      border: 1px solid #B2D235;
-      border-radius: 5px;
-    }
-  }
+.filter-time input[type="radio"]:checked+label
+{
+  background: $green;
+  color: $white;
+}
+
+.filter-time label {
+  padding: 5px;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+}
+
+.filter-time label:hover {
+  background: #DDD;
 }

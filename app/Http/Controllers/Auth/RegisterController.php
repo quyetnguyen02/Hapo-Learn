@@ -73,7 +73,8 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function register(RegisterRequest $request){
+    public function register(RegisterRequest $request)
+    {
         $data = [
             'username' => $request->register_username,
             'password' => bcrypt($request->register_password),
@@ -83,6 +84,6 @@ class RegisterController extends Controller
         ];
 
         User::create($data);
-        return redirect()->back()->with('message','register successfully');
+        return redirect()->back()->with('message', 'register successfully');
     }
 }
