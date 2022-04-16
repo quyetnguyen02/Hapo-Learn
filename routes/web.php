@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('', HomeController::class)->only('index');
-Route::resource('courses', CourseController::class)->only('index');
+Route::resource('courses', CourseController::class)->only(['index', 'show']);
 Auth::routes();
