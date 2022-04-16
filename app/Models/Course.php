@@ -72,7 +72,9 @@ class Course extends Model
         }
 
         if (isset($data['created_time'])) {
-            $query->orderBy('id', $data['created_time']);
+            $query->orderBy('created_at', $data['created_time']);
+        } else {
+            $query->orderBy('id', config('filter.sort.desc'));
         }
 
         if (isset($data['teacher'])) {
@@ -99,7 +101,7 @@ class Course extends Model
                 $subquery->where('tag_id', $tag);
             });
         }
-        $query->orderBy('id', config('filter.sort.desc'));
+
         return $query;
     }
 }
