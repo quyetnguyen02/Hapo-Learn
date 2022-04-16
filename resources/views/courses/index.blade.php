@@ -98,8 +98,18 @@
                         </div>
                     </div>
                 </div>
-            </form>
-            @include('courses.course')
+            </form><div class="row courses-all">
+                @foreach($courses as $course)
+                    @include('courses.course')
+                @endforeach
+                {{ $courses->links() }}
+                @if(count($courses->items()) == 0)
+                    <div>
+                        No Course Found!
+                    </div>
+                @endif
+            </div>
+
         </div>
     </section>
 @endsection
