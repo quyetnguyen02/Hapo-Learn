@@ -9,7 +9,7 @@
             </ol>
         </nav>
     </section>
-    <section class="detail-course-body">
+    <div class="detail-course-body">
        <div class="container container-detail-course">
            <div class="image-description">
                <div class="row">
@@ -30,7 +30,29 @@
                    </div>
                </div>
            </div>
+           <div class="detail-course-main">
+               <div class="row">
+                   <div class="col-md-8">
+                       <div class="list-lessons">
+
+                       </div>
+
+                   </div>
+                   <div class="col-md-4">
+                       <div class="information-other-course">
+                           <div class="information">
+
+                           </div>
+                           <div class="other-course">
+
+                           </div>
+
+                       </div>
+
+                   </div>
+               </div>
+           </div>
        </div>
 
-    </section>
+    </div>
 @endsection

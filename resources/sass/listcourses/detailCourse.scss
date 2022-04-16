@@ -1,5 +1,6 @@
 .breadcrumb-course {
   background: #E9E7E7;
+  height: 45px;
 
   .breadcrumb {
     padding-left: 95px;
@@ -16,8 +17,12 @@
   }
 }
 
-.container-detail-course {
-  max-width: 70%;
+.detail-course-body {
+  background: #F2F2F2;
+  .container-detail-course {
+    max-width: 70%;
+    padding-top: 35px;
+  }
 }
 
 .image-course {
@@ -62,5 +67,27 @@
     text-align: justify;
     letter-spacing: -0.02em;
     color: #949292;
+  }
+}
+
+.list-lessons {
+  background: $white;
+  border-radius: 10px;
+}
+
+.information-other-course {
+  display: flex;
+  flex-direction: column;
+
+  .information {
+    background: $white;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+  }
+
+  .other-course {
+    background: $white;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
   }
 }
