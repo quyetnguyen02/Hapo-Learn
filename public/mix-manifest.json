@@ -2,11 +2,14 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/image/at_hapolearn !.png": "/image/at_hapolearn !.png",
+    "/image/a_nghia_cute.png": "/image/a_nghia_cute.png",
     "/image/css.png": "/image/css.png",
     "/image/ellipse 7.png": "/image/ellipse 7.png",
     "/image/email_logo.png": "/image/email_logo.png",
+    "/image/facebook.png": "/image/facebook.png",
     "/image/face_logo.png": "/image/face_logo.png",
     "/image/filter_icon.png": "/image/filter_icon.png",
+    "/image/google_plus.png": "/image/google_plus.png",
     "/image/group.png": "/image/group.png",
     "/image/hapo_learn.png": "/image/hapo_learn.png",
     "/image/hapo_learn_banner 1.png": "/image/hapo_learn_banner 1.png",
@@ -22,5 +25,6 @@
     "/image/mess_icon.png": "/image/mess_icon.png",
     "/image/phone_logo.png": "/image/phone_logo.png",
     "/image/php_logo.png": "/image/php_logo.png",
+    "/image/slack_logo.png": "/image/slack_logo.png",
     "/image/user_avatar.png": "/image/user_avatar.png"
 }

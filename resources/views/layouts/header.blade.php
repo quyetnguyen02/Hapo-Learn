@@ -26,4 +26,5 @@
             @endif
         </nav>
     </div>
+    @include('layouts.login')
 </section>

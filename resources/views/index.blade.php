@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 @section('content')
-    @include('layouts.login')
     <section class="banner">
         <div class="container-fluid container-banner">
             <div class="row align-items-center flex-wrap-reverse banner-row">

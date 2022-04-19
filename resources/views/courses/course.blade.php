@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="show">
-            <a href="" class="btn btn-success show-course-detail">More</a>
+            <a href="{{ route('courses.show', $course->id) }}" class="btn btn-success show-course-detail">More</a>
         </div>
         <div class="statistical">
             <div class="key-value">

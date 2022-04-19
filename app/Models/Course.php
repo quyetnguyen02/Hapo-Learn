@@ -64,6 +64,11 @@ class Course extends Model
         return number_format($this->lessons()->sum('time')) . " " . "(h)";
     }
 
+    public function getTagsAllAttribute()
+    {
+        return $this->tags()->pluck('name', 'tag_id');
+    }
+
     public function scopeSearch($query, $data)
     {
         if (isset($data['keyword'])) {
@@ -101,7 +106,6 @@ class Course extends Model
                 $subquery->where('tag_id', $tag);
             });
         }
-
         return $query;
     }
 }

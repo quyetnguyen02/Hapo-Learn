@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LessonController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('', HomeController::class)->only('index');
-Route::resource('courses', CourseController::class)->only('index');
+Route::resource('courses', CourseController::class)->only(['index', 'show']);
+Route::resource('courses.lessons', LessonController::class)->only('show');
 Auth::routes();
