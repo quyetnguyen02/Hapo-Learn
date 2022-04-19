@@ -34,7 +34,7 @@ class CourseController extends Controller
     public function show($id, Request $request)
     {
         $course = Course::find($id);
-        $lessons = Lesson::lessonsAll($request->all(), $id)->paginate(config('filter.item_lesson'));
+        $lessons = Lesson::lessonsForCourse($request->all(), $id)->paginate(config('filter.item_lesson'));
         $otherCourses = Course::all()->random(config('filter.other_course'));
         return view('courses.show', compact(['course', 'lessons', 'request', 'otherCourses']));
     }

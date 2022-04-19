@@ -116,13 +116,11 @@
                                                            </div>
                                                        </div>
                                                     </div>
-
                                                 </div>
                                                 <div class="description-teacher">
                                                     <p>Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum, venenatis malesuada felis quis, ultricies convallis neque. Pellentesque tristique </p>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +213,6 @@
                                 <p>Other Courses</p>
                             </div>
                             <div class="title-other-course">
-
                                 @foreach($otherCourses as $id => $otherCourse)
                                     @include('courses.other_course')
                                 @endforeach

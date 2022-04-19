@@ -35,7 +35,7 @@ class Lesson extends Model
         return $this->belongsToMany(User::class, 'user_lesson', 'lesson_id', 'user_id');
     }
 
-    public function scopeLessonsAll($query, $data, $id)
+    public function scopeLessonsForCourse($query, $data, $id)
     {
         $query->where('course_id', $id)->orderby('created_at', config('filter.sort.asc'));
         if (isset($data['keyword'])) {
