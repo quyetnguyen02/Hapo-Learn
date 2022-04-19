@@ -13,7 +13,7 @@ class LessonController extends Controller
     {
         $course = Course::find($courseId);
         $lesson = Lesson::find($lessonId);
-        $otherCourses = Course::all()->random(5);
+        $otherCourses = Course::all()->random(config('filter.other_course'));
         return view('lessons.show', compact(['course', 'lesson', 'otherCourses']));
     }
 }

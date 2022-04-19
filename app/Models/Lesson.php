@@ -35,12 +35,11 @@ class Lesson extends Model
         return $this->belongsToMany(User::class, 'user_lesson', 'lesson_id', 'user_id');
     }
 
-    public function scopeLessons($query, $data)
+    public function scopeLessonsAll($query, $data, $id)
     {
-        $query->where('course_id', '=', $data['id'])->orderby('created_at', 'asc');
-        if (isset($data['request']))
-        {
-            $query->where('title', 'LIKE' , '%' .  $data['request'] . '%');
+        $query->where('course_id', $id)->orderby('created_at', config('filter.sort.asc'));
+        if (isset($data['keyword'])) {
+            $query->where('title', 'LIKE' , '%' .  $data['keyword'] . '%');
         }
         return $query;
     }

@@ -216,7 +216,7 @@
                             </div>
                             <div class="title-other-course">
 
-                                @foreach($otherCourses as $key => $otherCourse)
+                                @foreach($otherCourses as $id => $otherCourse)
                                     @include('courses.other_course')
                                 @endforeach
                             </div>
