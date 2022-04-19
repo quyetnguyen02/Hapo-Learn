@@ -125,14 +125,19 @@
 .list-course-pagination {
   display: flex;
   justify-content: end;
+  padding-top: 30px;
 
   .page-item {
     padding: 0 2px;
   }
 
+  .page-link {
+    color: $green;
+  }
+
   .page-link:hover {
     background: #B2D235;
-    color: #FFFFFF;
+    color: $white;
   }
 }
 

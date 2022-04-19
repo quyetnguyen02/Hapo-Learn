@@ -13,12 +13,17 @@
       line-height: 20px;
       letter-spacing: -0.02em;
       color: #505353;
+
+      a {
+        color: #505353;
+      }
     }
   }
 }
 
 .detail-course-body {
   background: #F2F2F2;
+
   .container-detail-course {
     max-width: 70%;
     padding-top: 35px;
@@ -73,6 +78,104 @@
 .list-lessons {
   background: $white;
   border-radius: 10px;
+  padding: 20px;
+
+  .menu {
+    font-family: $fontNunito;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.02em;
+    color: #505353;
+    display: flex;
+    gap: 80px;
+    border-bottom: 2px solid #DADADA;
+  }
+}
+
+.detail-course-main {
+  padding-bottom: 110px;
+}
+
+.search-lesson {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #E2E0E0;
+
+  .search-course {
+    display: flex;
+    gap: 10px;
+
+    .list-course-btn-search {
+      height: 40px;
+      background: $green;
+      border: 1px solid $green;
+      border-radius: 5px;
+      color: $white;
+      padding: 6px 24px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+  }
+
+  .btn-course {
+    background: $green;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    border-radius: 22px;
+    padding: 10px 30px;
+    font-family: $fontNunito;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.05em;
+    color: $white;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.list-course-search {
+  position: relative;
+
+  .input-search {
+    width: 100%;
+    height: 40px;
+    background: $white;
+    border-radius: 5px;
+    padding: 12px;
+  }
+
+  .search {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #505353;
+  }
+}
+
+.lessons {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #E2E0E0;
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.02em;
+  color: #505353;
+
+  a {
+    float: right;
+    background: #B2D235;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    border-radius: 22px;
+    padding: 8px 25px;
+  }
 }
 
 .information-other-course {
@@ -83,11 +186,243 @@
     background: $white;
     border: 1px solid #D1D1D1;
     box-sizing: border-box;
+    padding: 21px;
+
+    .information-item {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #D1D1D1;
+      font-family: $fontNunito;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 31px;
+      letter-spacing: -0.02em;
+      color: #505353;
+    }
+  }
+}
+
+.information-item {
+  .link-tag {
+    color: #5D8BD0;
+  }
+}
+
+.card-body {
+  text-align: left;
+}
+
+.other-course {
+  background: $white;
+  border: 1px solid #D1D1D1;
+  box-sizing: border-box;
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: $white;
+  margin-top: 30px;
+
+  .header-other-course {
+    background: $green;
+    box-sizing: border-box;
+    font-size: 25px;
+    line-height: 31px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .other-course {
-    background: $white;
-    border: 1px solid #D1D1D1;
+  .title-other-course {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: #505353;
+    padding: 15px;
+    padding-bottom: 0;
+    border-bottom: 1px solid #E2E0E0;
+  }
+
+  .btn-other-course {
+    background: $green;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    border-radius: 22px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-left: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 9px 25px;
+  }
+}
+
+.course-content {
+  border-bottom: 1px solid #E2E0E0;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.nav-tabs-bordered {
+  width: 100%;
+  height: 42px;
+}
+
+.nav-tabs-bordered .nav-link.active {
+  background-color: #fff;
+  color: $green;
+  border-bottom: 2px solid $green;
+}
+
+.nav-tabs-bordered .nav-link {
+  margin-bottom: -2px;
+  border: none;
+  background: none;
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.nav-tabs-bordered {
+  background-color: $white;
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.02em;
+  color: #B2D235;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+.title-teacher,
+.title-lesson {
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.title-lesson {
+  margin-top: 25px;
+  display: flex;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.name-teacher {
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #505353;
+
+}
+
+.btn-end-lesson {
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.05em;
+  color: $white;
+  margin-top: 6%;
+  margin-left: 20%;
+  padding: 9px 30px;
+  background: $green;
+  box-shadow: inset 0px 1.5px 2px #6f8710;
+  border-radius: 22px;
+}
+
+.tags {
+  display: flex;
+  gap: 15px;
+  margin-left: 15px;
+
+  .tag-lesson {
+    background: #F2F2F2;
+    border: 1px solid #E4E4E4;
     box-sizing: border-box;
+    border-radius: 3px;
+    padding: 6px 9px;
+
+    a {
+      font-family: $fontNunito;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: -0.02em;
+      color: #949292;
+    }
+  }
+}
+
+.documents {
+  border-bottom: 1px solid #F3F0F0;
+  padding-top: 18px;
+  padding-bottom: 18px;
+
+  .document-img {
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .document-type {
+    font-family: $fontNunito;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+    color: #BDB9B9;
+  }
+
+  .document-name {
+    font-family: $fontNunito;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    color: #505353;
+  }
+
+  .btn-view {
+    background: #B2D235;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    border-radius: 22px;
+    padding: 8px 25px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .detail-course-body {
+    .container-detail-course {
+      max-width: 95%;
+    }
   }
 }

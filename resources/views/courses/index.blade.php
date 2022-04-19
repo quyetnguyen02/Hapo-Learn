@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 @section('content')
-    @include('layouts.login')
     <section class="filter-search">
         <div class="container">
             <form action="{{ route('courses.index') }}" id="search-form" method="get">
@@ -98,7 +97,8 @@
                         </div>
                     </div>
                 </div>
-            </form><div class="row courses-all">
+            </form>
+            <div class="row courses-all">
                 @foreach($courses as $course)
                     @include('courses.course')
                 @endforeach

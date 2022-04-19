@@ -34,4 +34,14 @@ class Lesson extends Model
     {
         return $this->belongsToMany(User::class, 'user_lesson', 'lesson_id', 'user_id');
     }
+
+    public function scopeLessons($query, $data)
+    {
+        $query->where('course_id', '=', $data['id'])->orderby('created_at', 'asc');
+        if (isset($data['request']))
+        {
+            $query->where('title', 'LIKE' , '%' .  $data['request'] . '%');
+        }
+        return $query;
+    }
 }
