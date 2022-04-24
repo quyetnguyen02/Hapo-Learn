@@ -45,7 +45,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($data, isset($request->rememberme))) {
-            return redirect()->route('index');
+            return redirect(url()->previous());
         } else {
             return redirect()->back()->with('error', 'username password is incorrect');
         }

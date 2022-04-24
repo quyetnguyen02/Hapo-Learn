@@ -74,7 +74,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <a href="" class="btn btn-success btn-course">Tham gia khoá học</a>
+                                                    <form action="{{ route('user-course.store') }}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                                        <button
+                                                            class="btn-success btn-course  @if (session()->has('message_course')) btn-course-message  @endif"
+                                                            @if (session()->has('message_course')) disabled @endif">
+                                                            @if (session()->has('message_course'))
+                                                                {{ session()->get('message_course') }}
+                                                            @else
+                                                                Take part in the course
+                                                            @endif
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,29 +108,37 @@
                                             <div class="content-teacher">
                                                 <div class="avatar-name">
                                                     <div class="row">
-                                                       <div class="col-md-3">
-                                                           <div class="avatar">
-                                                               <img src="{{ asset('image/a_nghia_cute.png') }}" alt="img">
-                                                           </div>
-                                                       </div>
-                                                       <div class="col-md-9">
-                                                           <div class="name-teacher">
-                                                               <p class="name">Luu Trung Nghia </p>
-                                                               <p class="job-teacher">Second Year Teacher</p>
-                                                               <div class="logo">
-                                                                   <a href="#"> <img src="{{ asset('image/google_plus.png') }}"
-                                                                                     alt="logo-gg"></a>
-                                                                   <a href="#"><img src="{{ asset('image/facebook.png') }}"
-                                                                                    alt="logo-fb"></a>
-                                                                   <a href="#"><img src="{{ asset('image/slack_logo.png') }}"
-                                                                                    alt="logo-sl"></a>
-                                                               </div>
-                                                           </div>
-                                                       </div>
+                                                        <div class="col-md-3">
+                                                            <div class="avatar">
+                                                                <img src="{{ asset('image/a_nghia_cute.png') }}"
+                                                                     alt="img">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="name-teacher">
+                                                                <p class="name">Luu Trung Nghia </p>
+                                                                <p class="job-teacher">Second Year Teacher</p>
+                                                                <div class="logo">
+                                                                    <a href="#"> <img
+                                                                            src="{{ asset('image/google_plus.png') }}"
+                                                                            alt="logo-gg"></a>
+                                                                    <a href="#"><img
+                                                                            src="{{ asset('image/facebook.png') }}"
+                                                                            alt="logo-fb"></a>
+                                                                    <a href="#"><img
+                                                                            src="{{ asset('image/slack_logo.png') }}"
+                                                                            alt="logo-sl"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="description-teacher">
-                                                    <p>Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum, venenatis malesuada felis quis, ultricies convallis neque. Pellentesque tristique </p>
+                                                    <p>Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas
+                                                        erat dignissim. Sed quis rutrum tellus, sit amet viverra felis.
+                                                        Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum,
+                                                        venenatis malesuada felis quis, ultricies convallis neque.
+                                                        Pellentesque tristique </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -184,10 +204,11 @@
                                             <p>:</p>
                                         </div>
                                         <div class="col-md-6">
+
                                             @foreach($course->tags_all as $id => $name)
                                                 <a href="{{ route('courses.index', ['tag' => $id]) }}"
                                                    class="link-tag">
-                                                    # {{  $name }}</a>
+                                                    # {{ $name }}</a>
                                             @endforeach
                                         </div>
                                     </div>

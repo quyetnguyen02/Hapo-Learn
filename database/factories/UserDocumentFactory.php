@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserLessonFactory extends Factory
+class UserDocumentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,8 +15,7 @@ class UserLessonFactory extends Factory
     {
         return [
             'user_id' => $this->faker->numberBetween(1, 200),
-            'lesson_id' => $this->faker->numberBetween(1, 200),
-            'progress' => 0,
+            'document_id' => $this->faker->numberBetween(1, 200),
         ];
     }
 }

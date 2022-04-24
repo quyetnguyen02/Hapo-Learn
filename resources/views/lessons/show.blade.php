@@ -79,7 +79,7 @@
                                             @foreach($course->tags_all as $id => $name)
                                                 <a href="{{ route('courses.index', ['tag' => $id])}}"
                                                    class="link-tag">
-                                                    # {{  $name }}</a>
+                                                    # {{ $name }}</a>
                                             @endforeach
                                         </div>
                                     </div>
@@ -98,14 +98,24 @@
                                         <div class="col-md-6">{{ number_format($course->price) }}$</div>
                                     </div>
                                 </div>
-                                <div class="btn btn-success btn-end-lesson">
-                                    <a href="">Kết thúc khoá học</a>
-                                </div>
+                                <a class="btn btn-success btn-end-lesson @if (session()->has('message_end_course')) btn-course-message  @endif"
+                                   href="{{ route('user-course.edit', $course->id) }}" @if (session()->has('message_end_course')) disabled @endif>
+                                    @if (session()->has('message_end_course'))
+                                        {{ session()->get('message_end_course') }}
+                                    @else
+                                        Kết thúc khoá học
+                                    @endif
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+           <div>
+               <label for="file"> Learning Progress:</label>
+               <progress id="file" value="{{ $lesson->learningProgress }}" max="100"></progress>
+               <label for="file">{{ $lesson->learningProgress }}%</label>
+           </div>
             <div class="detail-course-main">
                 <div class="row">
                     <div class="col-md-8">
@@ -129,6 +139,18 @@
                                         <div class="lessons-detail">
                                             <div class="title-lesson">
                                                 <p>Descriptions lesson</p>
+                                                <form action="{{ route('courses.lessons.update', [$course->id, $lesson->id]) }}" method="POST">
+                                                    @method('PUT')
+                                                    @csrf
+                                                    <input type="hidden" name="program-lesson" value="1">
+                                                    <button @if (Auth::user()->progressLesson($lesson->id)) disabled  @endif>
+                                                        @if (Auth::user()->progressLesson($lesson->id))
+                                                            Accomplished
+                                                        @else
+                                                            Complete The Lesson
+                                                        @endif
+                                                    </button>
+                                                </form>
                                             </div>
                                             <div class="description-lesson">
                                                 <span>{{ $lesson->description }}</span>
@@ -144,9 +166,10 @@
                                                 <div class="tags">
                                                     @foreach($course->tags_all as $id => $name)
                                                         <div class="tag-lesson">
-                                                            <a href="{{ route('courses.index', ['tag' => $id])}}"
+                                                            <a href="{{ route('courses.index', ['tag' => $id]) }}"
                                                                class="link-tag">
-                                                                # {{  $name }}</a>
+                                                                # {{ $name }}
+                                                            </a>
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -155,7 +178,7 @@
                                     </div>
                                     <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
                                         <div class="main-teacher">
-                                            <div class="title-teacher">
+                                            <div class="title-program">
                                                 <p>Program</p>
                                             </div>
                                             @foreach($lesson->documents()->get() as $document)
@@ -163,7 +186,8 @@
                                                     <div class="row">
                                                         <div class="col-md-1">
                                                             <div class="document-img">
-                                                                <img src="{{ $document->thumbnail }}" alt="{{ $document->name }}">
+                                                                <img src="{{ $document->thumbnail }}"
+                                                                     alt="{{ $document->name }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
@@ -171,12 +195,28 @@
                                                                 <p>{{ $document->type }}</p>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-3">
                                                             <div class="document-name">
                                                                 <p>{{ $document->name }}</p>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
+                                                            <form action="{{ route('courses.lessons.update', [$course->id, $lesson->id]) }}" method="POST">
+                                                                @method('PUT')
+                                                                @csrf
+                                                                <input type="hidden" name="program-lesson" value="1">
+                                                                <input type="hidden" name="document-id" value="{{ $document->id }}">
+
+                                                                <button class="btn btn-success btn-view" @if ( $document->document_by_user_id ) disabled  @endif>
+                                                                    @if ($document->document_by_user_id)
+                                                                        Accomplished
+                                                                    @else
+                                                                        Complete The Lesson
+                                                                    @endif
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        <div class="col-md-1">
                                                             <div class="btn btn-success btn-view">
                                                                 <a href="{{ $document->link }}">View</a>
                                                             </div>

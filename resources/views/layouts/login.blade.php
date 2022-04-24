@@ -20,6 +20,9 @@
                                             {{ session()->get('message') }}
                                         </div>
                                     @endif
+                                    @if (session()->has('message_login'))
+                                        <div class="message-login" id="messageLogin"></div>
+                                    @endif
                                     <div class="form-group">
                                         <label>Username:</label>
                                         <input type="text" name="username"

@@ -6,13 +6,17 @@ use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\Tag;
 use App\Models\User;
+use App\Models\UserCourse;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class CourseController extends Controller
 {
+
+
     /**
      * Create a new controller instance.
      *
@@ -36,6 +40,7 @@ class CourseController extends Controller
         $course = Course::find($id);
         $lessons = Lesson::lessonsForCourse($request->all(), $id)->paginate(config('filter.item_lesson'));
         $otherCourses = Course::all()->random(config('filter.other_course'));
+
         return view('courses.show', compact(['course', 'lessons', 'request', 'otherCourses']));
     }
 }
