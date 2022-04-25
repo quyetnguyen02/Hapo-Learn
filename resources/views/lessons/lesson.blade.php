@@ -16,10 +16,14 @@
         </div>
         <div class="col-md-3">
             <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="btn btn-success">
-                @if (Auth::user()->progressLesson($lesson->id) == config('filter.progress'))
-                    Accomplished
+                @if(Auth::check())
+                    @if (Auth::user()->progressLesson($lesson->id) == config('filter.progress'))
+                        Accomplished
+                    @else
+                        Learn
+                    @endif
                 @else
-                Learn
+                    Learn
                 @endif
             </a>
         </div>

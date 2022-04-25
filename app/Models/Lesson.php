@@ -52,6 +52,6 @@ class Lesson extends Model
 
     public function getLessonByUserIdAttribute()
     {
-        return $this->users()->count();
+        return $this->users()->where('user_id', Auth::user()->id)->count();
     }
 }

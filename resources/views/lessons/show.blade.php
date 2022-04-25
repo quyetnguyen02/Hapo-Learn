@@ -98,14 +98,6 @@
                                         <div class="col-md-6">{{ number_format($course->price) }}$</div>
                                     </div>
                                 </div>
-                                <a class="btn btn-success btn-end-lesson @if (session()->has('message_end_course')) btn-course-message  @endif"
-                                   href="{{ route('user-course.edit', $course->id) }}" @if (session()->has('message_end_course')) disabled @endif>
-                                    @if (session()->has('message_end_course'))
-                                        {{ session()->get('message_end_course') }}
-                                    @else
-                                        Kết thúc khoá học
-                                    @endif
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -139,18 +131,23 @@
                                         <div class="lessons-detail">
                                             <div class="title-lesson">
                                                 <p>Descriptions lesson</p>
-                                                <form action="{{ route('courses.lessons.update', [$course->id, $lesson->id]) }}" method="POST">
-                                                    @method('PUT')
-                                                    @csrf
-                                                    <input type="hidden" name="program-lesson" value="1">
-                                                    <button @if (Auth::user()->progressLesson($lesson->id)) disabled  @endif>
-                                                        @if (Auth::user()->progressLesson($lesson->id))
-                                                            Accomplished
-                                                        @else
-                                                            Complete The Lesson
-                                                        @endif
-                                                    </button>
-                                                </form>
+                                                @if(Auth::user()->getCourseUser($course->id) > config('lesson.0'))
+                                                    <form
+                                                        action="{{ route('courses.lessons.update', [$course->id, $lesson->id]) }}"
+                                                        method="POST">
+                                                        @method('PUT')
+                                                        @csrf
+                                                        <input type="hidden" name="program-lesson" value="1">
+                                                        <button
+                                                            @if (Auth::user()->progressLesson($lesson->id)) disabled @endif>
+                                                            @if (Auth::user()->progressLesson($lesson->id))
+                                                                Accomplished
+                                                            @else
+                                                                Complete The Lesson
+                                                            @endif
+                                                        </button>
+                                                    </form>
+                                                @endif
                                             </div>
                                             <div class="description-lesson">
                                                 <span>{{ $lesson->description }}</span>

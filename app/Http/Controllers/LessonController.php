@@ -15,6 +15,7 @@ class LessonController extends Controller
     {
         $course = Course::find($courseId);
         $lesson = $course->getLessonById($lessonId);
+
         if ($lesson->lessonByUserId == config('lesson.0')) {
             $lesson->users()->attach(Auth::user()->id, ['progress' => config('lesson.progress.0')]);
         }
