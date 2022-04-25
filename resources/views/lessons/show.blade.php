@@ -103,11 +103,13 @@
                     </div>
                 </div>
             </div>
-           <div>
-               <label for="file"> Learning Progress:</label>
-               <progress id="file" value="{{ $lesson->learningProgress }}" max="100"></progress>
-               <label for="file">{{ $lesson->learningProgress }}%</label>
-           </div>
+            @if(Auth::user()->getCourseUser($course->id) > config('lesson.0'))
+                <div>
+                    <label for="file"> Learning Progress:</label>
+                    <progress id="file" value="{{ $lesson->learningProgress }}" max="100"></progress>
+                    <label for="file">{{ $lesson->learningProgress }}%</label>
+                </div>
+            @endif
             <div class="detail-course-main">
                 <div class="row">
                     <div class="col-md-8">
