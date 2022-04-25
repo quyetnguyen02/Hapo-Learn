@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            @if(Auth::user()->getCourseUser($course->id) > config('lesson.ゼロ'))
+            @if(Auth::user()->getCourseUser($course->id) > config('lesson.zero'))
                 <div>
                     <label for="file"> Learning Progress:</label>
                     <progress id="file" value="{{ $lesson->learningProgress }}" max="100"></progress>
@@ -133,23 +133,6 @@
                                         <div class="lessons-detail">
                                             <div class="title-lesson">
                                                 <p>Descriptions lesson</p>
-                                                @if(Auth::user()->getCourseUser($course->id) > config('lesson.ゼロ'))
-                                                    <form
-                                                        action="{{ route('user-lesson.update',$lesson->id) }}"
-                                                        method="POST">
-                                                        @method('PUT')
-                                                        @csrf
-                                                        <input type="hidden" name="program_lesson" value="1">
-                                                        <button
-                                                            @if (Auth::user()->progressLesson($lesson->id)) disabled @endif>
-                                                            @if (Auth::user()->progressLesson($lesson->id))
-                                                                Accomplished
-                                                            @else
-                                                                Complete The Lesson
-                                                            @endif
-                                                        </button>
-                                                    </form>
-                                                @endif
                                             </div>
                                             <div class="description-lesson">
                                                 <span>{{ $lesson->description }}</span>
@@ -200,19 +183,26 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <form action="{{ route('user-lesson.update',$lesson->id) }}" method="POST">
-                                                                @method('PUT')
-                                                                @csrf
-                                                                <input type="hidden" name="program_lesson" value="1">
-                                                                <input type="hidden" name="document_id" value="{{ $document->id }}">
-                                                                <button class="btn btn-success btn-view" @if ( $document->document_by_user_id ) disabled  @endif>
-                                                                    @if ($document->document_by_user_id)
-                                                                        Accomplished
-                                                                    @else
-                                                                        Complete The Lesson
-                                                                    @endif
-                                                                </button>
-                                                            </form>
+                                                            @if(Auth::user()->getCourseUser($course->id) > config('lesson.zero'))
+                                                                <form
+                                                                    action="{{ route('user-lesson.update',$lesson->id) }}"
+                                                                    method="POST">
+                                                                    @method('PUT')
+                                                                    @csrf
+                                                                    <input type="hidden" name="program_lesson"
+                                                                           value="1">
+                                                                    <input type="hidden" name="document_id"
+                                                                           value="{{ $document->id }}">
+                                                                    <button class="btn btn-success btn-view"
+                                                                            @if ( $document->document_by_user_id ) disabled @endif>
+                                                                        @if ($document->document_by_user_id)
+                                                                            Accomplished
+                                                                        @else
+                                                                            Complete The Lesson
+                                                                        @endif
+                                                                    </button>
+                                                                </form>
+                                                            @endif
                                                         </div>
                                                         <div class="col-md-1">
                                                             <div class="btn btn-success btn-view">

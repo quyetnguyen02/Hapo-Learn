@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class UserLesson extends Model
 {
@@ -16,4 +17,10 @@ class UserLesson extends Model
         'lesson_id',
         'progress',
     ];
+
+    public static function sumProgress($data)
+    {
+        return (($data['program_lesson'] / $data['sumDocument']) * config('lesson.one_hundreds')) + $data['progressLesson'];
+    }
+
 }

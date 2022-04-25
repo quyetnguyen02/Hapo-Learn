@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lesson;
+use App\Models\UserLesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,9 +13,12 @@ class UserLessonController extends Controller
     {
         //update tiến trình học của 1 lesson
         $lesson = Lesson::find($lessonId);
-        $progressLesson = Auth::user()->progressLesson($lessonId);
-        $sumDocument = count($lesson->documents()->get()) + config('lesson.いち');
-        $progress = (($request['program_lesson'] / $sumDocument) * config('lesson.百')) + $progressLesson;
+        $data = [
+            'program_lesson' => $request['program_lesson'],
+            'progressLesson' => $lesson->learning_progress,
+            'sumDocument' => $lesson->documents()->count(),
+        ];
+        $progress = UserLesson::sumProgress($data);
         Auth::user()->lessons()->updateExistingPivot($lessonId, ['progress' => $progress]);
         Auth::user()->documents()->attach($request['document_id']);
         return redirect(url()->previous());

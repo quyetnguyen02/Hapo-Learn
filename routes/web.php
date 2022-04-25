@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('', HomeController::class)->only('index');
 Route::resource('courses', CourseController::class)->only(['index', 'show']);
-Route::middleware(['auth', 'check.role', 'check.course.user'])->group(function () {
+Route::middleware(['auth', 'student', 'isJoined'])->group(function () {
     Route::resource('user-course', UserCourseController::class);
     Route::resource('courses.lessons', LessonController::class);
     Route::resource('user-lesson', UserLessonController::class);
