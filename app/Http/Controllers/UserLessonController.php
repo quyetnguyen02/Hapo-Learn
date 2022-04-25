@@ -10,10 +10,11 @@ class UserLessonController extends Controller
 {
     public function update(Request $request, $lessonId)
     {
+        //update tiến trình học của 1 lesson
         $lesson = Lesson::find($lessonId);
         $progressLesson = Auth::user()->progressLesson($lessonId);
-        $sumDocument = count($lesson->documents()->get()) + config('lesson.1');
-        $progress = (($request['program_lesson'] / $sumDocument) * config('lesson.100')) + $progressLesson;
+        $sumDocument = count($lesson->documents()->get()) + config('lesson.いち');
+        $progress = (($request['program_lesson'] / $sumDocument) * config('lesson.百')) + $progressLesson;
         Auth::user()->lessons()->updateExistingPivot($lessonId, ['progress' => $progress]);
         Auth::user()->documents()->attach($request['document_id']);
         return redirect(url()->previous());

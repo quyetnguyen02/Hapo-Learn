@@ -35,12 +35,12 @@ class CourseController extends Controller
         return view('courses.index', compact(['courses', 'teachers', 'tags', 'request']));
     }
 
+    //hiển thị thông tin courses
     public function show($id, Request $request)
     {
         $course = Course::find($id);
         $lessons = Lesson::lessonsForCourse($request->all(), $id)->paginate(config('filter.item_lesson'));
         $otherCourses = Course::all()->random(config('filter.other_course'));
-
         return view('courses.show', compact(['course', 'lessons', 'request', 'otherCourses']));
     }
 }

@@ -204,7 +204,6 @@
                                             <p>:</p>
                                         </div>
                                         <div class="col-md-6">
-
                                             @foreach($course->tags_all as $id => $name)
                                                 <a href="{{ route('courses.index', ['tag' => $id]) }}"
                                                    class="link-tag">
@@ -240,14 +239,6 @@
                                         @endif
                                         </button>
                                 </form>
-{{--                                <a class="btn btn-success btn-end-lesson @if (session()->has('message_end_course')) btn-course-message  @endif"--}}
-{{--                                   href="{{ route('user-course.edit', $course->id) }}">--}}
-{{--                                    @if (session()->has('message_end_course'))--}}
-{{--                                        {{ session()->get('message_end_course') }}--}}
-{{--                                    @else--}}
-{{--                                        Kết thúc khoá học--}}
-{{--                                    @endif--}}
-{{--                                </a>--}}
                             </div>
                         </div>
                         <div class="other-course">

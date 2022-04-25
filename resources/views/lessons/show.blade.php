@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            @if(Auth::user()->getCourseUser($course->id) > config('lesson.0'))
+            @if(Auth::user()->getCourseUser($course->id) > config('lesson.ゼロ'))
                 <div>
                     <label for="file"> Learning Progress:</label>
                     <progress id="file" value="{{ $lesson->learningProgress }}" max="100"></progress>
@@ -133,7 +133,7 @@
                                         <div class="lessons-detail">
                                             <div class="title-lesson">
                                                 <p>Descriptions lesson</p>
-                                                @if(Auth::user()->getCourseUser($course->id) > config('lesson.0'))
+                                                @if(Auth::user()->getCourseUser($course->id) > config('lesson.ゼロ'))
                                                     <form
                                                         action="{{ route('user-lesson.update',$lesson->id) }}"
                                                         method="POST">
@@ -205,7 +205,6 @@
                                                                 @csrf
                                                                 <input type="hidden" name="program_lesson" value="1">
                                                                 <input type="hidden" name="document_id" value="{{ $document->id }}">
-
                                                                 <button class="btn btn-success btn-view" @if ( $document->document_by_user_id ) disabled  @endif>
                                                                     @if ($document->document_by_user_id)
                                                                         Accomplished
