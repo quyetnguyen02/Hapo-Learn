@@ -22,17 +22,4 @@ class LessonController extends Controller
         $otherCourses = Course::all()->random(config('filter.other_course'));
         return view('lessons.show', compact(['course', 'lesson', 'otherCourses']));
     }
-
-    public function update(Request $request, $courseId, $lessonId)
-    {
-        $lesson = Lesson::find($lessonId);
-        $progressLesson = Auth::user()->progressLesson($lessonId);
-        $documentLesson = $request['program-lesson'];
-        $documentId = $request['document-id'];
-        $sumDocument = count($lesson->documents()->get()) + config('lesson.1');
-        $progress = (($documentLesson / $sumDocument) * config('lesson.100')) + $progressLesson;
-        Auth::user()->lessons()->updateExistingPivot($lessonId, ['progress' => $progress]);
-        Auth::user()->documents()->attach($documentId);
-        return redirect(url()->previous());
-    }
 }

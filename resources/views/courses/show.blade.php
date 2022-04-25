@@ -227,14 +227,27 @@
                                         <div class="col-md-6">{{ number_format($course->price) }}$</div>
                                     </div>
                                 </div>
-                                <a class="btn btn-success btn-end-lesson @if (session()->has('message_end_course')) btn-course-message  @endif"
-                                   href="{{ route('user-course.edit', $course->id) }}">
+                                <form action="{{ route('user-course.update', $course->id) }}" method="POST">
+                                    @method('PUT')
+                                    @csrf
+                                    <button
+                                        class="btn btn-success btn-end-lesson  @if (session()->has('message_end_course')) btn-course-message  @endif"
+                                        @if (session()->has('message_end_course')) disabled @endif">
                                     @if (session()->has('message_end_course'))
                                         {{ session()->get('message_end_course') }}
                                     @else
                                         Kết thúc khoá học
-                                    @endif
-                                </a>
+                                        @endif
+                                        </button>
+                                </form>
+{{--                                <a class="btn btn-success btn-end-lesson @if (session()->has('message_end_course')) btn-course-message  @endif"--}}
+{{--                                   href="{{ route('user-course.edit', $course->id) }}">--}}
+{{--                                    @if (session()->has('message_end_course'))--}}
+{{--                                        {{ session()->get('message_end_course') }}--}}
+{{--                                    @else--}}
+{{--                                        Kết thúc khoá học--}}
+{{--                                    @endif--}}
+{{--                                </a>--}}
                             </div>
                         </div>
                         <div class="other-course">

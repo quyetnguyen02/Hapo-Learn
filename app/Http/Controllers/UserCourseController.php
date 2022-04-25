@@ -16,7 +16,7 @@ class UserCourseController extends Controller
         return redirect()->back()->with('message_course', 'JOINED');
     }
 
-    public function edit($id)
+    public function update(Request $request, $id)
     {
         Auth::user()->courses()->updateExistingPivot($id, ['status' => config('lesson.progress.1')]);
         return redirect()->back()->with('message_end_course', 'FINISHED');

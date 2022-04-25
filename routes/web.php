@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\UserCourseController;
+use App\Http\Controllers\UserLessonController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +23,6 @@ Route::resource('courses', CourseController::class)->only(['index', 'show']);
 Route::middleware(['auth', 'check.role', 'check.course.user'])->group(function () {
     Route::resource('user-course', UserCourseController::class);
     Route::resource('courses.lessons', LessonController::class);
+    Route::resource('user-lesson', UserLessonController::class);
 });
 Auth::routes();

@@ -135,11 +135,11 @@
                                                 <p>Descriptions lesson</p>
                                                 @if(Auth::user()->getCourseUser($course->id) > config('lesson.0'))
                                                     <form
-                                                        action="{{ route('courses.lessons.update', [$course->id, $lesson->id]) }}"
+                                                        action="{{ route('user-lesson.update',$lesson->id) }}"
                                                         method="POST">
                                                         @method('PUT')
                                                         @csrf
-                                                        <input type="hidden" name="program-lesson" value="1">
+                                                        <input type="hidden" name="program_lesson" value="1">
                                                         <button
                                                             @if (Auth::user()->progressLesson($lesson->id)) disabled @endif>
                                                             @if (Auth::user()->progressLesson($lesson->id))
@@ -200,11 +200,11 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <form action="{{ route('courses.lessons.update', [$course->id, $lesson->id]) }}" method="POST">
+                                                            <form action="{{ route('user-lesson.update',$lesson->id) }}" method="POST">
                                                                 @method('PUT')
                                                                 @csrf
-                                                                <input type="hidden" name="program-lesson" value="1">
-                                                                <input type="hidden" name="document-id" value="{{ $document->id }}">
+                                                                <input type="hidden" name="program_lesson" value="1">
+                                                                <input type="hidden" name="document_id" value="{{ $document->id }}">
 
                                                                 <button class="btn btn-success btn-view" @if ( $document->document_by_user_id ) disabled  @endif>
                                                                     @if ($document->document_by_user_id)
