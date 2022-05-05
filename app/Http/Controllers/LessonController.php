@@ -17,8 +17,10 @@ class LessonController extends Controller
         $course = Course::find($courseId);
         $lesson = Lesson::find($lessonId);
         //ấn vào learn check đã có trong user_lesson .nếu chưa thì create để tính progress
-        if ($lesson->isStartedLesson()) {
-            $lesson->users()->attach(Auth::user()->id, ['progress' => config('lesson.progress.zero')]);
+        if (Auth::user()->getCourseUser($course->id) > config('lesson.zero')) {
+            if ($lesson->lessonByUserId == config('lesson.zero')) {
+                $lesson->users()->attach(Auth::user()->id, ['progress' => config('lesson.progress.zero')]);
+            }
         }
         $otherCourses = Course::all()->random(config('filter.other_course'));
         return view('lessons.show', compact(['course', 'lesson', 'otherCourses']));

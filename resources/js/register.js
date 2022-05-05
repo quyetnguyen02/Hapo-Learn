@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('#closeRegisterForm').css('display', 'none');
     $('#btnRegister').removeClass('link-register')
   }
-  if ($('input').hasClass('is-invalid')) {
+  if ($('#register').hasClass('register')) {
     $('#loginModal').modal('show');
     $('#closeFormLogin').css('display', 'none');
     $('#closeRegisterForm').css('display', 'block');

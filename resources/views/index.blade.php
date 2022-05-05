@@ -10,7 +10,7 @@
                     </p>
                     <p class="banner-text">Interactive lessons, "on-the-go" <br>
                         practice, peer support.</p>
-                    <a href="#" class="btn btn-banner">Start Learning Now!</a>
+                    <a href="{{ route('courses.index') }}" class="btn btn-banner">Start Learning Now!</a>
                 </div>
             </div>
             <div class="gradient"></div>
@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <p class="card-title">{{ $course->name }}</p>
                             <p class="card-text">{{ $course->description }}</p>
-                            <a href="#" class="btn btn-courses">Take This Course</a>
+                            <a href="{{ route('courses.show', $course->id) }}" class="btn btn-courses">Take This Course</a>
                         </div>
                     </div>
                 @endforeach
@@ -48,7 +48,7 @@
                         <div class="card-body">
                             <p class="card-title">{{ $course->name }}</p>
                             <p class="card-text">{{ $course->description }}</p>
-                            <a href="#" class="btn btn-courses">Take This Course</a>
+                            <a href="{{ route('courses.show', $course->id) }}" class="btn btn-courses">Take This Course</a>
                         </div>
                     </div>
                 @endforeach

@@ -47,7 +47,7 @@
                                         </button>
                                     </li>
                                     <li class="nav-item">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#course-preview">
                                             Reviews
                                         </button>
                                     </li>
@@ -77,15 +77,57 @@
                                                     <form action="{{ route('user-course.store') }}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="course_id" value="{{ $course->id }}">
-                                                        <button
-                                                            class="btn-success btn-course  @if (session()->has('message_course')) btn-course-message  @endif"
-                                                            @if (session()->has('message_course')) disabled @endif">
+                                                        @if(Auth::check())
+                                                            @switch(Auth::user()->statusCourse($course->id))
+                                                                @case(config('lesson.zero'))
+                                                                <button type="button" class="btn-success btn-course" data-toggle="modal" data-target="#modalCourse"
+                                                                      @if(session()->has('error_course')) disabled @endif>
+                                                                    @if(session()->has('error_course'))
+                                                                        {!! session()->get('error_course') !!}
+                                                                    @else
+                                                                    Take part in the course
+                                                                    @endif
+                                                                </button>
+                                                                @break
+                                                                @case(config('lesson.one'))
+                                                                <button class="btn-success btn-course btn-course-message" disabled>JOINED</button>
+                                                                @break
+                                                                @case(config('lesson.two'))
+                                                                <button class="btn-success btn-course btn-course-message" disabled>FINISHED</button>
+                                                                @break
+                                                            @endswitch
+                                                        @else
                                                             @if (session()->has('message_course'))
-                                                                {{ session()->get('message_course') }}
+                                                                 <button class="btn-success btn-course  @if (session()->has('message_course')) btn-course-message @endif"  @if (session()->has('message_course')) disabled @endif">{{ session()->get('message_course') }}</button>
                                                             @else
-                                                                Take part in the course
+                                                                 <button type="button" class="btn-success btn-course" data-toggle="modal" data-target="#modalCourse" @if(session()->has('error_course')) disabled @endif>
+                                                                     @if(session()->has('error_course'))
+                                                                         {!! session()->get('error_course') !!}
+                                                                     @else
+                                                                         Take part in the course
+                                                                     @endif
+                                                                 </button>
                                                             @endif
-                                                        </button>
+                                                        @endif
+                                                        <div class="modal fade" id="modalCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Xác Nhận</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Xác Nhận Tham Gia Khóa Học!
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                                                                        <button type="submit" class="btn btn-primary">Tham Gia</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>
@@ -105,42 +147,139 @@
                                             <div class="title-teacher">
                                                 <p>Main Teachers</p>
                                             </div>
-                                            <div class="content-teacher">
-                                                <div class="avatar-name">
-                                                    <div class="row">
-                                                        <div class="col-md-3">
-                                                            <div class="avatar">
-                                                                <img src="{{ asset('image/a_nghia_cute.png') }}"
-                                                                     alt="img">
+                                            @foreach($course->teachers as $teacher)
+                                                <div class="content-teacher">
+                                                    <div class="avatar-name">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="avatar">
+                                                                    <img src="{{ $teacher->avatar }}"
+                                                                         alt="{{ $teacher->name }}">
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="name-teacher">
-                                                                <p class="name">Luu Trung Nghia </p>
-                                                                <p class="job-teacher">Second Year Teacher</p>
-                                                                <div class="logo">
-                                                                    <a href="#"> <img
-                                                                            src="{{ asset('image/google_plus.png') }}"
-                                                                            alt="logo-gg"></a>
-                                                                    <a href="#"><img
-                                                                            src="{{ asset('image/facebook.png') }}"
-                                                                            alt="logo-fb"></a>
-                                                                    <a href="#"><img
-                                                                            src="{{ asset('image/slack_logo.png') }}"
-                                                                            alt="logo-sl"></a>
+                                                            <div class="col-md-9">
+                                                                <div class="name-teacher">
+                                                                    <p class="name">{{ $teacher->name }}</p>
+                                                                    <p class="job-teacher">{{ $teacher->job }}</p>
+                                                                    <div class="logo">
+                                                                        <a href="#"> <img
+                                                                                src="{{ asset('image/google_plus.png') }}"
+                                                                                alt="logo-gg"></a>
+                                                                        <a href="#"><img
+                                                                                src="{{ asset('image/facebook.png') }}"
+                                                                                alt="logo-fb"></a>
+                                                                        <a href="#"><img
+                                                                                src="{{ asset('image/slack_logo.png') }}"
+                                                                                alt="logo-sl"></a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="description-teacher">
+                                                        <p>{{ $teacher->description }}</p>
+                                                    </div>
                                                 </div>
-                                                <div class="description-teacher">
-                                                    <p>Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas
-                                                        erat dignissim. Sed quis rutrum tellus, sit amet viverra felis.
-                                                        Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum,
-                                                        venenatis malesuada felis quis, ultricies convallis neque.
-                                                        Pellentesque tristique </p>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade pt-3" id="course-preview">
+                                        <div class="title">
+                                            <span>{{ $course->count_review }} Reviews</span>
+                                        </div>
+                                        <div class="display-star">
+                                            <div class="row row-review">
+                                                <div class="col-md-4 image-review">
+                                                    <p>{{ $course->avgStarReview}}</p>
+                                                    <div>
+                                                        @for ($i = 0; $i < $course->avgStarReview; $i++)
+                                                            <i class="fa-solid fa-star start"></i>
+                                                        @endfor
+                                                        @for($i = 5; $i > $course->avgStarReview; $i--)
+                                                            <i class="fa-solid fa-star star-special"></i>
+                                                        @endfor
+                                                    </div>
+                                                    <span>{{ $course->countStarReview(5) }} Ratings</span>
+                                                </div>
+                                                <div class="col-md-7 statistics-review">
+                                                    <div class="vote-review">
+                                                        <label for="file">5 stars</label>
+                                                        <progress id="file" value="{{ $course->starDetailReview(config('lesson.five')) }}" max="100"></progress>
+                                                        <label for="file">{{ $course->countStarReview(config('lesson.five')) }}</label>
+                                                    </div>
+                                                    <div class="vote-review">
+                                                        <label for="file">4 stars</label>
+                                                        <progress id="file" value="{{ $course->starDetailReview(config('lesson.four')) }}" max="100"></progress>
+                                                        <label for="file">{{ $course->countStarReview(config('lesson.four')) }}</label>
+                                                    </div>
+                                                    <div class="vote-review">
+                                                        <label for="file">3 stars</label>
+                                                        <progress id="file" value="{{ $course->starDetailReview(config('lesson.three')) }}" max="100"></progress>
+                                                        <label for="file">{{ $course->countStarReview(config('lesson.three')) }}</label>
+                                                    </div>
+                                                    <div class="vote-review">
+                                                        <label for="file">2 stars</label>
+                                                        <progress id="file" value="{{ $course->starDetailReview(config('lesson.two')) }}" max="100"></progress>
+                                                        <label for="file">{{ $course->countStarReview(config('lesson.two')) }}</label>
+                                                    </div>
+                                                    <div class="vote-review">
+                                                        <label for="file">1 stars</label>
+                                                        <progress id="file" value="{{ $course->starDetailReview(config('lesson.one')) }}" max="100"></progress>
+                                                        <label for="file">{{ $course->countStarReview(config('lesson.one')) }}</label>
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="select-review">
+                                            <span class="dropdown-toggle">Show all reviews</span>
+                                        </div>
+                                        @foreach($reviews as $review)
+                                            <div class="review">
+                                                <div class="title-review">
+                                                    <div class="image-review">
+                                                        <img src="{{ $review->getUser()->avatar }}"
+                                                             alt="avatar">
+                                                    </div>
+                                                    <span>{{ $review->getUser()->name }}</span>
+                                                    <div>
+                                                        @for($i = 0; $i < $review->vote; $i++)
+                                                            <i class="fa-solid fa-star start"></i>
+                                                        @endfor
+                                                        @for($i = 5; $i > $review->vote; $i--)
+                                                            <i class="fa-solid fa-star star-special"></i>
+                                                        @endfor
+                                                    </div>
+                                                    <div class="date-review">
+                                                        <span>{{ Helper::formatDate($review->created_at) }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="content-review">
+                                                    <p>{{ $review->content }}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        {!! $reviews->links() !!}
+                                        <div class="leave-review">
+                                            <span class="dropdown-toggle">Leave a Review</span>
+                                        </div>
+                                        <div class="form-review">
+                                            <form action="{{ route('reviews.store', $course->id) }}" id="form-review" method="POST">
+                                                @csrf
+                                                <p>Message</p>
+                                                <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                                <textarea class="form-control" name="message" rows="4" placeholder="Message" required></textarea>
+                                                <input type="hidden" id="rating" name="rating" value="0">
+                                                <div class="rating">
+                                                    <span>Vote</span>
+                                                    <i class="ratings_stars fa start-selected fa-star" data-rating="1"></i>
+                                                    <i class="ratings_stars fa start-selected fa-star" data-rating="2"></i>
+                                                    <i class="ratings_stars fa start-selected fa-star" data-rating="3"></i>
+                                                    <i class="ratings_stars fa start-selected fa-star" data-rating="4"></i>
+                                                    <i class="ratings_stars fa start-selected fa-star" data-rating="5"></i>
+                                                    <p>(stars)</p>
+                                                </div>
+                                                <button class="btn-send-review">Send</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -226,19 +365,6 @@
                                         <div class="col-md-6">{{ number_format($course->price) }}$</div>
                                     </div>
                                 </div>
-                                <form action="{{ route('user-course.update', $course->id) }}" method="POST">
-                                    @method('PUT')
-                                    @csrf
-                                    <button
-                                        class="btn btn-success btn-end-lesson  @if (session()->has('message_end_course')) btn-course-message  @endif"
-                                        @if (session()->has('message_end_course')) disabled @endif">
-                                    @if (session()->has('message_end_course'))
-                                        {{ session()->get('message_end_course') }}
-                                    @else
-                                        Kết thúc khoá học
-                                        @endif
-                                        </button>
-                                </form>
                             </div>
                         </div>
                         <div class="other-course">

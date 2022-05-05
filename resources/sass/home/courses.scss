@@ -86,6 +86,10 @@
     letter-spacing: -0.05em;
     color: $cardText;
     font-family: $fontNunito;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .btn-courses {
@@ -188,13 +192,6 @@
       font-size: 20px;
     }
 
-    .card-text {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      font-size: 14px;
-    }
 
     .btn-courses {
       width: 116px;

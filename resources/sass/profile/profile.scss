@@ -1,0 +1,144 @@
+.profile {
+  background: #E5E5E5;
+  padding-top: 50px;
+  padding-bottom: 110px;
+
+  form {
+    display: flex;
+  }
+
+  .avatar-user {
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    label {
+      position: absolute;
+      right: 90px;
+      top: 145px;
+      font-size: 27px;
+      color: $white;
+      cursor: pointer;
+    }
+
+    form {
+      padding-top: 10px;
+    }
+
+    input {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .name-email {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    font-family:$fontNunito;
+    font-style: normal;
+    color: #505353;
+    border-bottom: 1px solid #DCDCDC;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 31px;
+      letter-spacing: -0.02em;
+    }
+
+    .email {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.02em;
+    }
+  }
+}
+
+.birthday,
+.phone,
+.address {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DCDCDC;
+  width: 50%;
+  gap: 20px;
+  display: flex;
+}
+
+.my-course {
+  font-family: $fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 47px;
+  color: #505353;
+
+  div {
+    border: 1px solid #B2D235;
+    margin-top: 2px;
+  }
+}
+
+.user-course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+  margin-bottom: 90px;
+  gap: 20px;
+
+  .img-course {
+    width: 65px;
+    height: 65px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.add-course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #B2D235 ;
+
+  a {
+    color: #B2D235;
+  }
+}
+
+.btn-submit {
+  gap: 30px;
+
+  .btn-reset {
+    color: #505353;
+    border-radius: 22px;
+    padding: 4px 28px;
+  }
+}
+
+.btn-update-avatar {
+  background: #B2D235;
+  box-shadow: inset 0px 1.5px 2px #6f8710;
+  border-radius: 22px;
+  font-size: 18px;
+  line-height: 22px;
+  color: $white;
+  font-family:$fontNunito;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  padding: 4px 28px;
+}

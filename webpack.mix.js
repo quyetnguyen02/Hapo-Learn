@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .vue()
-    .sass('resources/sass/app.scss', 'public/css')
-    .copy('resources/asset/img', 'public/image')
+  .vue()
+  .sass('resources/sass/app.scss', 'public/css')
+  .copy('resources/asset/img', 'public/image')
+  .copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce')

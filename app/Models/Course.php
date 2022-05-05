@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
+use App\Helpers\Helper;
 
 class Course extends Model
 {
@@ -78,6 +79,33 @@ class Course extends Model
     public function getLessonById($data)
     {
         return $this->lessons()->where('id', $data)->first();
+    }
+
+    public function getCountReviewAttribute()
+    {
+        return $this->reviews()->count();
+    }
+
+    public function countStarReview($numberStart)
+    {
+        return $this->reviews()->where('vote', $numberStart)->count();
+    }
+
+    public function arrayStarReview() {
+        $sumStart = array();
+        for ($i=1; $i<=5; $i++) {
+            $sum = $i * $this->countStarReview($i);
+            array_push($sumStart, $sum);
+        }
+        return $sumStart;
+    }
+
+    public function starDetailReview($data) {
+       return Helper::percentStart($this->countStarReview($data),  $this->count_review);
+    }
+
+    public function getAvgStarReviewAttribute() {
+        return Helper::avgStar($this->arrayStarReview(), $this->count_review);
     }
 
     public function scopeSearch($query, $data)

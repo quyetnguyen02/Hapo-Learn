@@ -72,18 +72,6 @@
 }
 
 .footer-address {
-  a {
-    font-family: $fontNunito;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 23px;
-    line-height: 28px;
-    letter-spacing: -0.05em;
-    color: #FFFFFF;
-  }
-}
-
-.footer-address {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,11 +84,22 @@
 
   a {
     font-family: $fontNunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 28px;
+    letter-spacing: -0.05em;
+    color: $white;
+    text-decoration: none;
   }
 }
 
 a {
   color: $white;
+
+  &:hover {
+    color: #B2D235;
+  }
 }
 
 .inc {

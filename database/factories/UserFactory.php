@@ -31,6 +31,7 @@ class UserFactory extends Factory
             'birthday' => $this->faker->date,
             'description' => $this->faker->text,
             'phone' => $this->faker->phoneNumber,
+            'address' => $this->faker->text,
             'email' => $this->faker->unique()->email,
             'email_verified_at' => now(),
             'password' => Str::random(10),

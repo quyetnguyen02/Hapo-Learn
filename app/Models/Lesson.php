@@ -47,20 +47,11 @@ class Lesson extends Model
 
     public function getLearningProgressAttribute()
     {
-        return number_format($this->users()->pluck('progress')->first(), 1);
+        return round($this->users()->where('user_id', Auth::id())->pluck('progress')->first(), 1);
     }
 
     public function getLessonByUserIdAttribute()
     {
-        return $this->users()->pluck('user_id')->count();
-    }
-
-    public function isStartedLesson()
-    {
-        if ($this->lessonByUserId == config('lesson.zero'))
-        {
-            return true;
-        }
-        return false;
+        return $this->users()->where('user_id', Auth::id())->pluck('user_id')->count();
     }
 }

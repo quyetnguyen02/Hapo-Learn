@@ -78,12 +78,13 @@ class RegisterController extends Controller
         $data = [
             'username' => $request->register_username,
             'password' => bcrypt($request->register_password),
-            'email' => $request->email,
+            'email' => $request->email_register,
             'role' => User::ROLE_USER,
             'name' => $request->register_username,
+            'avatar' => 'https://res.cloudinary.com/derrfxjxx/image/upload/v1651040852/l60Hf_t7axtm.png'
         ];
 
         User::create($data);
-        return redirect()->back()->with('message', 'register successfully');
+        return redirect()->back()->with('message_register', 'Register Successfully');
     }
 }
