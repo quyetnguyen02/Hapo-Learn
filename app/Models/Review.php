@@ -30,6 +30,6 @@ class Review extends Model
 
     public function scopeGetUser()
     {
-       return $this->user()->first();
+        return $this->user()->first();
     }
 }

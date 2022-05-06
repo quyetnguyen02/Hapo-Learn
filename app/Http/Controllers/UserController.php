@@ -14,7 +14,6 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->only('index');
-
     }
 
     public function index()
@@ -34,7 +33,7 @@ class UserController extends Controller
             'description' => $request['description'],
         ];
         if (isset($request['avatar'])) {
-            $urlImage = $cloudinary->Upload($request->file('avatar'));
+            $urlImage = $cloudinary->upload($request->file('avatar'));
             $data['avatar'] = $urlImage;
             if (is_null($request['name'])) {
                 $data = [

@@ -7,17 +7,13 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
-
-
 class SocialAccountService
 {
     public static function createOrGetUser(ProviderUser $providerUser, $social)
     {
-
         $account = SocialAccount::whereProvider($social)
             ->whereProviderUserId($providerUser->getId())
             ->first();
-
 
         if ($account) {
             $user = [
@@ -34,7 +30,6 @@ class SocialAccountService
             ]);
             $user = User::whereEmail($email)->first();
             if (!$user) {
-
                 $user = User::create([
                     'email' => $email,
                     'name' => $providerUser->getName(),

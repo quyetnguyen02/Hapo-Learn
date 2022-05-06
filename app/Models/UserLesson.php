@@ -21,7 +21,6 @@ class UserLesson extends Model
     public static function sumProgress($data)
     {
 
-        return (($data['program_lesson'] / $data['sumDocument']) * config('lesson.one_hundreds')) + $data['progressLesson'];
+        return (($data['programLesson'] / $data['sumDocument']) * config('lesson.one_hundreds')) + $data['progressLesson'];
     }
-
 }

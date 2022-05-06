@@ -91,21 +91,24 @@ class Course extends Model
         return $this->reviews()->where('vote', $numberStart)->count();
     }
 
-    public function arrayStarReview() {
+    public function arrayStarReview()
+    {
         $sumStart = array();
-        for ($i=1; $i<=5; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             $sum = $i * $this->countStarReview($i);
             array_push($sumStart, $sum);
         }
         return $sumStart;
     }
 
-    public function starDetailReview($data) {
-       return Helper::percentStart($this->countStarReview($data),  $this->count_review);
+    public function starDetailReview($data)
+    {
+        return Helper::percentStart($this->countStarReview($data), $this->countReview);
     }
 
-    public function getAvgStarReviewAttribute() {
-        return Helper::avgStar($this->arrayStarReview(), $this->count_review);
+    public function getAvgStarReviewAttribute()
+    {
+        return Helper::avgStar($this->arrayStarReview(), $this->countReview);
     }
 
     public function scopeSearch($query, $data)

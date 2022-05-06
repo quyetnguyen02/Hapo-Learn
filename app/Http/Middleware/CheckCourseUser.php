@@ -19,7 +19,7 @@ class CheckCourseUser
     {
         if (Auth::user()->getCourseUser($request['course_id']) > config('lesson.zero')) {
             return redirect()->back()->with('message_course', ' You have already attended the course');
-        }else {
+        } else {
             return $next($request);
         }
     }

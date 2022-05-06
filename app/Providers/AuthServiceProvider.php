@@ -25,7 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        Gate::define('check_course_user',function ($id){
+
+        Gate::define('check_course_user', function ($id) {
             if (Auth::user()->getCourseUser($id) > config('lesson.0')) {
                 return true;
             }

@@ -40,7 +40,7 @@ class UserCourseController extends Controller
         try {
             $course = Course::findOrFail($id);
             if ($course) {
-                if (Auth::user()->getCourseUser($course->id) == config('lesson.zero')) {
+                if (Auth::user()->getCourseUser($course->id) > config('lesson.zero')) {
                     Auth::user()->courses()->updateExistingPivot($id, ['status' => config('lesson.two')]);
                     return redirect()->back()->with('message_end_course', 'FINISHED');
                 }else {
