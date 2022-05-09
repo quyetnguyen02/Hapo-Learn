@@ -28,7 +28,7 @@ class UserController extends Controller
             'name' => $request['name'],
             'birthday' => $request['birthday'],
             'address' => $request['address'],
-            'job' =>  $request['job'],
+            'job' => $request['job'],
             'phone' => $request['phone'],
             'description' => $request['description'],
         ];

@@ -11,13 +11,13 @@ class ReviewController extends Controller
 {
     public function store(Request $request)
     {
-       $data = [
+        $data = [
            'user_id' => Auth::id(),
            'course_id' => $request['course_id'],
            'content' => $request['message'],
            'vote' => $request['rating']
-       ];
-       Review::create($data);
-       return redirect(url()->previous());
+        ];
+        Review::create($data);
+        return redirect(url()->previous());
     }
 }

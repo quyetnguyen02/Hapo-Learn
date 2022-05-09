@@ -16,7 +16,7 @@ class UserLessonController extends Controller
         if ($lesson) {
             $data = [
                 'programLesson' => config('lesson.one'),
-                'progressLesson' => $lesson->learning_progress,
+                'progressLesson' => $lesson->learningProgress,
                 'sumDocument' => $lesson->documents()->count(),
             ];
             $progress = UserLesson::sumProgress($data);

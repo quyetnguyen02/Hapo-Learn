@@ -21,19 +21,16 @@ class UserCourseController extends Controller
                 if (Auth::user()->getCourseUser($course->id) == config('lesson.zero')) {
                     Auth::user()->courses()->attach($request['course_id'], ['status' => config('lesson.one'),]);
                     return redirect()->back()->with('message_course', 'JOINED');
-                }else {
+                } else {
                     return redirect()->back()->with('message_end_course', 'có lỗi xảy ra');
                 }
-
-            }else {
+            } else {
                 return redirect()->back()->with('error_course', 'có lỗi xảy ra');
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->back()->with('error_course', 'có lỗi xảy ra');
         }
-
     }
-
     //kết thúc khóa học
     public function update(Request $request, $id)
     {
@@ -43,15 +40,14 @@ class UserCourseController extends Controller
                 if (Auth::user()->getCourseUser($course->id) > config('lesson.zero')) {
                     Auth::user()->courses()->updateExistingPivot($id, ['status' => config('lesson.two')]);
                     return redirect()->back()->with('message_end_course', 'FINISHED');
-                }else {
+                } else {
                     return redirect()->back()->with('message_end_course', 'có lỗi xảy ra');
                 }
-            }else {
+            } else {
                 return redirect()->back()->with('message_end_course', 'có lỗi xảy ra');
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->back()->with('message_end_course', 'có lỗi xảy ra');
         }
-
     }
 }
