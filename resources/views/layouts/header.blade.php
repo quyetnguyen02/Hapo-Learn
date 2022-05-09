@@ -8,7 +8,7 @@
             <a href="{{ route('courses.index') }}" class="{{ 'courses' == request()->path() ? 'a-active'  : ''}} menu-nav a" id="a">all courses</a>
             @if (Auth::check())
                 <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle menu-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn btn-secondary dropdown-toggle menu-nav a-active" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa-solid fa-user">{{ Auth::user()->name }}</i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -22,7 +22,6 @@
             @else
                 <a href="" class="menu-nav" id="login-register" data-toggle="modal"
                    data-target="#loginModal">login/register</a>
-                <a href="#" class="menu-nav" id="profile">profile</a>
             @endif
         </nav>
     </div>

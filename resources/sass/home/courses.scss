@@ -29,9 +29,9 @@
   border-radius: 15px 15px 0px 0px;
   background: rgba(63, 97, 133, 1);
 
-    img {
-        height: 100%;
-    }
+  img {
+    height: 100%;
+  }
 }
 
 .html-tut {
@@ -101,7 +101,7 @@
     box-shadow: inset 0px 1.5px 2px #6F8710;
     border-radius: 22px;
     font-family: $font;
-    color:$white;
+    color: $white;
 
     &:hover {
       color: black;
@@ -151,11 +151,11 @@
 
 
 @media (max-width: 1200px) {
-.list-courses {
-  .list-container {
-    max-width: 100%;
+  .list-courses {
+    .list-container {
+      max-width: 100%;
+    }
   }
-}
 
   .card-body {
     .card-title {
@@ -188,14 +188,6 @@
       font-size: 20px;
     }
 
-    .card-text {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      font-size: 14px;
-    }
-
     .btn-courses {
       width: 116px;
       height: 29px;
@@ -211,13 +203,14 @@
 
       .card {
         height: 300px;
-        width: 35% ;
+        width: 35%;
       }
     }
   }
 
   .img-courses {
     height: 131px;
+
     img {
       width: 60%;
     }
@@ -286,7 +279,7 @@
   }
 
   .other-text {
-    font-size: 45px ;
+    font-size: 45px;
     padding-top: 25px;
   }
 

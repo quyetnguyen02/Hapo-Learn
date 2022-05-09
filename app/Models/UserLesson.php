@@ -14,5 +14,11 @@ class UserLesson extends Model
     protected $fillable = [
         'user_id',
         'lesson_id',
+        'progress',
     ];
+
+    public static function sumProgress($data)
+    {
+        return (($data['programLesson'] / $data['sumDocument']) * config('lesson.one_hundreds')) + $data['progressLesson'];
+    }
 }

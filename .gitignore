@@ -21,3 +21,4 @@ yarn-error.log
 /public/fonts
 /public/assets
 / public/mix-manifest.json
+/composer.lock

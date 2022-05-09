@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/image/address.png": "/image/address.png",
     "/image/at_hapolearn !.png": "/image/at_hapolearn !.png",
     "/image/a_nghia_cute.png": "/image/a_nghia_cute.png",
     "/image/css.png": "/image/css.png",
@@ -24,7 +25,19 @@
     "/image/mb_right.png": "/image/mb_right.png",
     "/image/mess_icon.png": "/image/mess_icon.png",
     "/image/phone_logo.png": "/image/phone_logo.png",
+    "/image/not-found.svg": "/image/not-found.svg",
+    "/image/phone.png": "/image/phone.png",
     "/image/php_logo.png": "/image/php_logo.png",
     "/image/slack_logo.png": "/image/slack_logo.png",
-    "/image/user_avatar.png": "/image/user_avatar.png"
+    "/image/user_avatar.png": "/image/user_avatar.png",
+    "/js/tinymce/.npmignore": "/js/tinymce/.npmignore",
+    "/js/tinymce/bower.json": "/js/tinymce/bower.json",
+    "/js/tinymce/CHANGELOG.md": "/js/tinymce/CHANGELOG.md",
+    "/js/tinymce/composer.json": "/js/tinymce/composer.json",
+    "/js/tinymce/license.txt": "/js/tinymce/license.txt",
+    "/js/tinymce/package.json": "/js/tinymce/package.json",
+    "/js/tinymce/README.md": "/js/tinymce/README.md",
+    "/js/tinymce/tinymce.d.ts": "/js/tinymce/tinymce.d.ts",
+    "/js/tinymce/tinymce.js": "/js/tinymce/tinymce.js",
+    "/js/tinymce/tinymce.min.js": "/js/tinymce/tinymce.min.js"
 }
