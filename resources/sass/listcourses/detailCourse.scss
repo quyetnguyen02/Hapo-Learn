@@ -135,6 +135,15 @@
     color: $white;
     width: 100%;
     height: 100%;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .btn-course-message {
+    background-color: #6c757d;
+    border-color: $white;
   }
 }
 
@@ -175,6 +184,10 @@
     box-shadow: inset 0px 1.5px 2px #6f8710;
     border-radius: 22px;
     padding: 8px 25px;
+
+    &:hover {
+      color: black;
+    }
   }
 }
 
@@ -307,7 +320,8 @@
 }
 
 .title-teacher,
-.title-lesson {
+.title-lesson,
+.title-program {
   font-family: $fontNunito;
   font-style: normal;
   font-weight: 700;
@@ -317,9 +331,20 @@
   color: #505353;
 }
 
-.title-lesson {
+.title-lesson,
+.title-program {
   margin-top: 25px;
   display: flex;
+
+  button {
+    position: absolute;
+    right: 60px;
+    background: #B2D235;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    border-radius: 22px;
+    font-size: 18px;
+    padding: 8px 25px;
+  }
 
   span {
     display: flex;
@@ -353,6 +378,11 @@
   background: $green;
   box-shadow: inset 0px 1.5px 2px #6f8710;
   border-radius: 22px;
+
+  &:hover {
+    color: black;
+    background-color: $green;
+  }
 }
 
 .tags {
@@ -417,6 +447,23 @@
     border-radius: 22px;
     padding: 8px 25px;
   }
+}
+
+.avatar-name {
+  .avatar {
+    height: 100px;
+    width: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.progress-lesson {
+  width: 76%;
 }
 
 @media (max-width: 1500px) {

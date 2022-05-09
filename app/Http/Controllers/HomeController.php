@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\Review;
-use App\Models\UserLesson;
-use Illuminate\Http\Request;
+use App\Models\UserCourse;
 
 class HomeController extends Controller
 {
@@ -22,11 +21,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $courses = Course::all()->random(3);
-        $reviews = Review::all()->random(4);
+        $courses = Course::inRandomOrder()->limit(3)->get();
+        $reviews = Review::inRandomOrder()->limit(4)->get();
         $courseCount = Course::count();
         $lessonCount = Lesson::count();
-        $userLessonCount = UserLesson::count();
+        $userLessonCount = UserCourse::count();
         return view('index', compact(['courses', 'reviews', 'courseCount', 'lessonCount', 'userLessonCount']));
     }
 }

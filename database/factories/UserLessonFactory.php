@@ -16,6 +16,7 @@ class UserLessonFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 200),
             'lesson_id' => $this->faker->numberBetween(1, 200),
+            'progress' => 0,
         ];
     }
 }

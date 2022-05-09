@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'avatar' => $this->faker->imageUrl,
             'birthday' => $this->faker->date,
             'description' => $this->faker->text,
+            'address' => $this->faker->text,
             'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->email,
             'email_verified_at' => now(),

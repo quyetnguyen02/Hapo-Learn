@@ -41,11 +41,11 @@ class LoginController extends Controller
     {
         $data = [
             'username' => $request->username,
-            'password' => $request->password,
+            'password' => $request->password_login,
         ];
 
         if (Auth::attempt($data, isset($request->rememberme))) {
-            return redirect()->route('index');
+            return redirect(url()->previous());
         } else {
             return redirect()->back()->with('error', 'username password is incorrect');
         }
