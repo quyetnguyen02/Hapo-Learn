@@ -10,7 +10,6 @@
     <link rel="shortcut icon" href="https://res.cloudinary.com/derrfxjxx/image/upload/v1646625166/icon_owl_ebeado.png">
     <link rel="stylesheet" href={{ asset('css/app.css') }}>
 </head>
-
 <body>
 @include('Layouts.header')
 @yield('content')
@@ -18,4 +17,5 @@
 @include('Layouts.message')
 </body>
 <script src="{{ asset('js/app.js') }}"></script>
+@stack('scripts')
 </html>

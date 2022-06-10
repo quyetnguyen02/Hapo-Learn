@@ -6,3 +6,5 @@ require('./feedback');
 require('./login');
 require('./register');
 require('./filter');
+require('./review')
+require('./profile')

@@ -79,7 +79,7 @@
                                             @foreach($course->tags_all as $id => $name)
                                                 <a href="{{ route('courses.index', ['tag' => $id])}}"
                                                    class="link-tag">
-                                                    # {{  $name }}</a>
+                                                    # {{ $name }}</a>
                                             @endforeach
                                         </div>
                                     </div>
@@ -98,14 +98,54 @@
                                         <div class="col-md-6">{{ number_format($course->price) }}$</div>
                                     </div>
                                 </div>
-                                <div class="btn btn-success btn-end-lesson">
-                                    <a href="">Kết thúc khoá học</a>
-                                </div>
+                                @if(Auth::user()->getCourseUser($course->id) > config('lesson.zero'))
+                                    <form action="{{ route('user-course.update', $course->id) }}" method="POST">
+                                        @method('PUT')
+                                        @csrf
+                                        <button type="button"
+                                            class="btn btn-success btn-end-lesson  @if (session()->has('message_end_course')) btn-course-message  @endif"
+                                            @if (session()->has('message_end_course')) disabled @endif" data-toggle="modal" data-target="#modalCourse" >
+                                          @if(Auth::user()->statusCourse($course->id) == config('lesson.two'))
+                                           FINISHED
+                                          @elseif(session()->has('message_end_course'))
+                                            {{ session()->get('message_end_course') }}
+                                           @else
+                                            Kết thúc khoá học
+                                            @endif
+                                            </button>
+                                            <div class="modal fade" id="modalCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Xác Nhận</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Xác Nhận Kết Thúc Khóa Học!
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                                                            <button type="submit" class="btn btn-primary">Kết Thúc</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </form>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @if(Auth::user()->getCourseUser($course->id) > config('lesson.zero'))
+                <div class="progress-lesson">
+                    <label for="file"> Learning Progress:</label>
+                    <progress id="file" value="{{ $lesson->learningProgress }}" max="100"></progress>
+                    <label for="file">{{ $lesson->learningProgress }}%</label>
+                </div>
+            @endif
             <div class="detail-course-main">
                 <div class="row">
                     <div class="col-md-8">
@@ -144,9 +184,10 @@
                                                 <div class="tags">
                                                     @foreach($course->tags_all as $id => $name)
                                                         <div class="tag-lesson">
-                                                            <a href="{{ route('courses.index', ['tag' => $id])}}"
+                                                            <a href="{{ route('courses.index', ['tag' => $id]) }}"
                                                                class="link-tag">
-                                                                # {{  $name }}</a>
+                                                                # {{ $name }}
+                                                            </a>
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -155,7 +196,7 @@
                                     </div>
                                     <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
                                         <div class="main-teacher">
-                                            <div class="title-teacher">
+                                            <div class="title-program">
                                                 <p>Program</p>
                                             </div>
                                             @foreach($lesson->documents()->get() as $document)
@@ -163,7 +204,8 @@
                                                     <div class="row">
                                                         <div class="col-md-1">
                                                             <div class="document-img">
-                                                                <img src="{{ $document->thumbnail }}" alt="{{ $document->name }}">
+                                                                <img src="{{ $document->thumbnail }}"
+                                                                     alt="{{ $document->name }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
@@ -171,12 +213,33 @@
                                                                 <p>{{ $document->type }}</p>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-3">
                                                             <div class="document-name">
                                                                 <p>{{ $document->name }}</p>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
+                                                            @if(Auth::user()->getCourseUser($course->id) > config('lesson.zero'))
+                                                                <form
+                                                                    action="{{ route('user-lesson.update',$lesson->id) }}"
+                                                                    method="POST">
+                                                                    @method('PUT')
+                                                                    @csrf
+                                                                    <input type="hidden" name="document_id"
+                                                                           value="{{ $document->id }}">
+                                                                    <button class="btn btn-success btn-view" @if ( $document->document_by_user_id ) disabled @endif>
+                                                                        @if(session()->has('error_lesson'))
+                                                                            {!! session()->get('error_lesson') !!}
+                                                                        @elseif ($document->document_by_user_id)
+                                                                            Accomplished
+                                                                        @else
+                                                                            Complete The Lesson
+                                                                        @endif
+                                                                    </button>
+                                                                </form>
+                                                            @endif
+                                                        </div>
+                                                        <div class="col-md-1">
                                                             <div class="btn btn-success btn-view">
                                                                 <a href="{{ $document->link }}">View</a>
                                                             </div>

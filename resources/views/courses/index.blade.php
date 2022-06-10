@@ -55,31 +55,31 @@
                             <select class="form-select" aria-label="Default select example" name="teacher">
                                 <option value="{{ $request->teacher }}" selected>Teacher</option>
                                 @foreach($teachers as $teacher)
-                                    <option value="{{ $teacher->id }}" @if($request->teacher) selected @endif>{{ $teacher->name }}</option>
+                                    <option class="@if(!is_null($request->teacher)) pick @endif" value="{{ $teacher->id }}" @if($request->teacher) selected @endif>{{ $teacher->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-2">
                             <select class="form-select" aria-label="Default select example" name="learner">
                                 <option value="{{ $request->learner }}" selected>Số người học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($request->learner == config('filter.sort.asc')) selected @endif>Tăng dần
+                                <option class="@if(!is_null($request->learner)) pick @endif" value="{{ config('filter.sort.asc') }}" @if($request->learner == config('filter.sort.asc')) selected @endif>Tăng dần
                                 </option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($request->learner == config('filter.sort.desc')) selected @endif>Giảm dần
+                                <option class="@if(!is_null($request->learner)) pick @endif" value="{{ config('filter.sort.desc') }}" @if($request->learner == config('filter.sort.desc')) selected @endif>Giảm dần
                                 </option>
                             </select>
                         </div>
                         <div class="col-md-2">
                             <select class="form-select" aria-label="Default select example" name="learn_time">
                                 <option value="{{ $request->learn_time }}" selected>Thời gian học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($request->learn_time == config('filter.sort.asc')) selected @endif>Tăng dần</option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($request->learn_time == config('filter.sort.asc')) selected @endif>Giảm dần</option>
+                                <option class="@if(!is_null($request->learn_time)) pick @endif" value="{{ config('filter.sort.asc') }}" @if($request->learn_time == config('filter.sort.asc')) selected @endif>Tăng dần</option>
+                                <option class="@if(!is_null($request->learn_time)) pick @endif" value="{{ config('filter.sort.desc') }}" @if($request->learn_time == config('filter.sort.asc')) selected @endif>Giảm dần</option>
                             </select>
                         </div>
                         <div class="col-md-2">
                             <select class="form-select" aria-label="Default select example" name="lesson">
                                 <option value="{{ $request->lesson }}" selected> Số bài học</option>
-                                <option value="{{ config('filter.sort.asc') }}" @if($request->lesson == config('filter.sort.asc')) selected @endif>Tăng dần</option>
-                                <option value="{{ config('filter.sort.desc') }}" @if($request->lesson  == config('filter.sort.desc')) selected @endif>Giảm dần
+                                <option class="@if(!is_null($request->lesson)) pick @endif" value="{{ config('filter.sort.asc') }}" @if($request->lesson == config('filter.sort.asc')) selected @endif>Tăng dần</option>
+                                <option class="@if(!is_null($request->lesson)) pick @endif" value="{{ config('filter.sort.desc') }}" @if($request->lesson  == config('filter.sort.desc')) selected @endif>Giảm dần
                                 </option>
                             </select>
                         </div>
@@ -109,7 +109,6 @@
                     </div>
                 @endif
             </div>
-
         </div>
     </section>
 @endsection

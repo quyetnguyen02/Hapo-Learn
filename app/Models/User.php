@@ -33,6 +33,7 @@ class User extends Authenticatable
         'avatar',
         'birthday',
         'description',
+        'address',
     ];
 
     /**
@@ -56,12 +57,12 @@ class User extends Authenticatable
 
     public function teacherCourses()
     {
-        return $this->belongsToMany(Course::class, 'teacher_course', 'user_id', 'course_id');
+        return $this->belongsToMany(Course::class, 'teacher_courses', 'user_id', 'course_id');
     }
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'user_course', 'user_id', 'course_id');
+        return $this->belongsToMany(Course::class, 'user_courses', 'user_id', 'course_id')->withPivot('status')->withTimestamps();
     }
 
     public function reviews()
@@ -71,7 +72,27 @@ class User extends Authenticatable
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'user_lesson', 'user_id', 'lesson_id');
+        return $this->belongsToMany(Lesson::class, 'user_lessons', 'user_id', 'lesson_id')->withPivot('progress')->withTimestamps();
+    }
+
+    public function documents()
+    {
+        return $this->belongsToMany(Document::class, 'user_documents', 'user_id', 'document_id')->withTimestamps();
+    }
+
+    public function statusCourse($data)
+    {
+        return $this->courses()->where('course_id', $data)->pluck('status')->first();
+    }
+
+    public function progressLesson($data)
+    {
+        return $this->lessons()->where('lesson_id', $data)->pluck('progress')->first();
+    }
+
+    public function getCourseUser($data)
+    {
+        return $this->courses()->where('course_id', $data)->count();
     }
 
     public function scopeTeacher($query)

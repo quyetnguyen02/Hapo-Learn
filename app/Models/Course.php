@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
+use App\Helpers\Helper;
 
 class Course extends Model
 {
@@ -31,7 +33,7 @@ class Course extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id')->withPivot('status')->withTimestamps();
     }
 
     public function tags()
@@ -67,6 +69,46 @@ class Course extends Model
     public function getTagsAllAttribute()
     {
         return $this->tags()->pluck('name', 'tag_id');
+    }
+
+    public function getStatusCourseAttribute()
+    {
+        return $this->users()->pluck('status');
+    }
+
+    public function getLessonById($data)
+    {
+        return $this->lessons()->where('id', $data)->first();
+    }
+
+    public function getCountReviewAttribute()
+    {
+        return $this->reviews()->count();
+    }
+
+    public function countStarReview($numberStart)
+    {
+        return $this->reviews()->where('vote', $numberStart)->count();
+    }
+
+    public function arrayStarReview()
+    {
+        $sumStart = array();
+        for ($i = 1; $i <= 5; $i++) {
+            $sum = $i * $this->countStarReview($i);
+            array_push($sumStart, $sum);
+        }
+        return $sumStart;
+    }
+
+    public function starDetailReview($data)
+    {
+        return Helper::percentStart($this->countStarReview($data), $this->countReview);
+    }
+
+    public function getAvgStarReviewAttribute()
+    {
+        return Helper::avgStar($this->arrayStarReview(), $this->countReview);
     }
 
     public function scopeSearch($query, $data)

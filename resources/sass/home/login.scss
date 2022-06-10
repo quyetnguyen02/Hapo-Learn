@@ -26,7 +26,19 @@
   .checkbox-input {
     accent-color: #74992e;
   }
+
+  a {
+    color: #007bff;
+    float: right;
+  }
 }
+
+.dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
 .active {
   display: block;
@@ -62,6 +74,11 @@
     color: $white;
   }
 }
+
+.form-group {
+  margin-bottom: 5px;
+}
+
 
 .form-lg {
   margin-top: 10px;
@@ -151,6 +168,21 @@
   a {
     float: right;
     color: $green;
+  }
+}
+
+.modal-login {
+  background: none;
+  border: none;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
